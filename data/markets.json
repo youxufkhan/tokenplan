@@ -1,0 +1,45 @@
+{
+  "fx": {
+    "pkrPerUsd": 276.7137,
+    "date": "2026-11-03",
+    "sourceUrl": "https://www.sbp.org.pk/psd/reports/report.htm"
+  },
+  "quotes": [
+    {
+      "market": "US",
+      "planId": "chatgpt-plus",
+      "amount": 19.99,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04"
+    },
+    {
+      "market": "US",
+      "planId": "claude-pro",
+      "amount": 20,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04"
+    },
+    {
+      "market": "PK",
+      "planId": "chatgpt-plus",
+      "amount": 4900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069?platform=ipad",
+      "verifiedAt": "2026-11-04"
+    },
+    {
+      "market": "PK",
+      "planId": "claude-pro",
+      "amount": 4900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684?platform=ipad",
+      "verifiedAt": "2026-11-04"
+    }
+  ]
+}

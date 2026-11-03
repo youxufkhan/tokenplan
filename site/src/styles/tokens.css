@@ -1,15 +1,15 @@
 /* TokenPlan 独立嫩绿配色；SuperCLI 仅复用几何标记。 */
 :root {
-  --bg: #f8fbf5;
-  --surface: #f0f6e9;
-  --surface-hover: #e5efd9;
-  --brand-tint: #e0f3d3;
-  --ink: #213026;
-  --muted: #4e6554;
-  --faint: #607568;
-  --line: #d5e3d0;
-  --accent: #296b3f;
-  --accent-hover: #1e5631;
+  --bg: #faf8ff;
+  --surface: #f0ebf8;
+  --surface-hover: #e8def5;
+  --brand-tint: #e8dcfa;
+  --ink: #221b37;
+  --muted: #514665;
+  --faint: #635775;
+  --line: #ddd4e9;
+  --accent: #57399a;
+  --accent-hover: #422877;
   --on-accent: #fff;
   --on-accent-muted: rgb(255 255 255 / .75);
   --terminal: #1d3023;
@@ -39,7 +39,7 @@
   --shadow: 0 16px 48px rgb(30 65 32 / .08);
   --shadow-sm: 0 4px 16px rgb(30 65 32 / .06);
   --grid-dot: rgb(72 137 71 / .19);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background: var(--bg);
   font-synthesis: none;
@@ -47,22 +47,22 @@
   font-size: var(--fs-body);
 }
 :root[data-theme="dark"] {
-  --bg: #101b14;
-  --surface: #19291d;
-  --surface-hover: #25402b;
-  --brand-tint: #203b27;
-  --ink: #e9f5e9;
-  --muted: #b5d0b8;
-  --faint: #a1bca7;
-  --line: #36513a;
-  --accent: #a1e4a0;
-  --accent-hover: #c5f0be;
-  --on-accent: #102316;
-  --on-accent-muted: rgb(16 35 22 / .75);
+  --bg: #1a1628;
+  --surface: #252038;
+  --surface-hover: #332945;
+  --brand-tint: #392b53;
+  --ink: #f4edff;
+  --muted: #d6c8e8;
+  --faint: #bfafd6;
+  --line: #504261;
+  --accent: #d5b7ff;
+  --accent-hover: #ecd8ff;
+  --on-accent: #25173b;
+  --on-accent-muted: rgb(37 23 59 / .75);
   --terminal: #0b120e;
-  --terminal-line: #36513a;
+  --terminal-line: #504261;
   --terminal-text: #eff9ef;
-  --terminal-muted: #b5d0b8;
+  --terminal-muted: #d6c8e8;
   --success: #81d38b;
   --good: #9ce4a4;
   --warn: #e2c978;
@@ -72,11 +72,11 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #101b14; --surface: #19291d; --surface-hover: #25402b; --brand-tint: #203b27;
-    --ink: #e9f5e9; --muted: #b5d0b8; --faint: #a1bca7; --line: #36513a;
-    --accent: #a1e4a0; --accent-hover: #c5f0be; --on-accent: #102316;
-    --on-accent-muted: rgb(16 35 22 / .75); --terminal: #0b120e; --terminal-line: #36513a;
-    --terminal-text: #eff9ef; --terminal-muted: #b5d0b8; --success: #81d38b;
+    --bg: #1a1628; --surface: #252038; --surface-hover: #332945; --brand-tint: #392b53;
+    --ink: #f4edff; --muted: #d6c8e8; --faint: #bfafd6; --line: #504261;
+    --accent: #d5b7ff; --accent-hover: #ecd8ff; --on-accent: #25173b;
+    --on-accent-muted: rgb(37 23 59 / .75); --terminal: #0b120e; --terminal-line: #504261;
+    --terminal-text: #eff9ef; --terminal-muted: #d6c8e8; --success: #81d38b;
     --good: #9ce4a4; --warn: #e2c978; --shadow: 0 16px 48px rgb(0 0 0 / .38);
     --shadow-sm: 0 4px 16px rgb(0 0 0 / .3); --grid-dot: rgb(136 199 128 / .2);
   }

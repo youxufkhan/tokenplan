@@ -1,127 +1,62 @@
-<div align="center">
-
 # Awesome Coding Plan
 
-**AI 编程套餐与 API 价格对比 —— 国内国外 Coding Plan 价格、API 单价、性价比排行**
+Compare AI coding subscriptions, pay-as-you-go API prices, and model benchmarks in USD. The catalog covers U.S. and Pakistan storefront offers alongside published USD reference prices, with links to official pricing and purchase pages.
 
-[比价站](https://plan.supercli.site) · [数据真源](data/) · [选购路线核对](docs/BUYING-GUIDE-FACTCHECK.md) · [提交修正](CONTRIBUTING.md)
+This English adaptation is based on [Awesome Coding Plan by SuperCLI and contributors](https://github.com/supercli-site/awesome-coding-plan). The underlying data and documentation are distributed under [CC BY 4.0](LICENSE). Model benchmarks are credited to [ModelGo](https://modelgo.ai/models/rankings/agent) and [Artificial Analysis](https://artificialanalysis.ai).
 
-</div>
+## Run locally
 
----
+Use Node.js 24 or newer and pnpm.
 
-## 这个仓库解决什么问题
+```bash
+pnpm install --frozen-lockfile
+pnpm -C site install --frozen-lockfile
+pnpm -C site dev
+```
 
-AI 编程的账单分两种，混在一起看很容易选错：
+Open [localhost:5183](http://localhost:5183). Run `pnpm -C site build` to generate the static site in `site/dist`.
 
-| 账单形态 | 怎么付 | 适合谁 |
-|---|---|---|
-| **套餐制**（Coding Plan / 会员） | 月费换固定额度，用完就停或限速 | 每天稳定写代码、预算要封顶 |
-| **按量制**（API） | 按 token 计费，用多少付多少 | 偶发使用、要把模型嵌进自己的产品 |
+## Reading the prices
 
-所以这里分三张表：**国内套餐**、**海外套餐**、**API 单价**，外加一张用真实评测数据算的**性价比排行**。
+- Plan tables show prices per billing period. The website also shows monthly equivalents.
+- API prices are per million tokens. The site’s blended rate weights uncached input and output 3:1.
+- The monthly API estimator uses your input, output and cache-hit share to project spend in the selected market.
+- Pakistan estimates use the [recorded State Bank of Pakistan rate](data/markets.json). App Store prices are listed separately from USD reference prices.
+- Model value compares Agentic Index points per USD of task cost for models meeting the minimum benchmark score. Variants are listed separately.
 
-所有价格都标注**官方来源链接**和**核实日期**，没核实到的一律留空并标记低置信度，不猜、不编。
-
----
-
-## 一、国内套餐
-
-<!-- data:plans:cn -->
-
----
-
-## 二、海外套餐
+## Global subscriptions
 
 <!-- data:plans:global -->
 
----
+## Pay-as-you-go API prices
 
-## 三、API 单价（按量）
-
-### 国内厂商
-
-<!-- data:api:cn -->
-
-### 海外厂商
+### Global
 
 <!-- data:api:global -->
 
----
+## Model benchmarks
 
-## 四、性价比排行
-
-数据来自 [ModelGo](https://modelgo.ai/models/rankings/agent) 的公开 Agent 排行榜（快照日期 <!-- data:meta:snapshotDate -->）：
-
-- **Agentic Index** — Artificial Analysis 的 Agent 能力综合评分
-- **单任务成本** — 跑完一个 Agent 任务的平均美元成本
-- **输出 TPS** — 吐字速度
+Snapshot date: <!-- data:meta:snapshotDate -->
 
 <!-- data:rank:overall -->
 
-### 开源权重模型（可自部署 / 私有化）
+### Open-weight models
 
 <!-- data:rank:open -->
 
-### 性价比（Agentic Index ≥ <!-- data:meta:valueMinIndex --> 的模型里，按「分数 ÷ 单任务成本」排序）
+### Model value (Agentic Index ≥ <!-- data:meta:valueMinIndex -->)
 
 <!-- data:rank:value -->
 
----
+## Update the data
 
-## 五、怎么读这些数字
-
-**Agentic Index 越高越强，单任务成本越低越省。** 两个一起看才有意义：榜首模型往往也最贵，便宜的模型可能弱到没法干活。
-
-**别拿不同档位的变体直接比。** 排行榜里同一个模型有 Max / High / Medium / Low 多档，价格差好几倍，表里的变体名都保留了。
-
-**套餐额度不等于 token 数。** 官方多数只写「每 5 小时 X 次请求」这类口径，本仓库原样转述，不擅自换算成 token 数。
-
-**缓存命中价差别很大。** 长上下文的 Agent 场景里缓存命中率高，输入成本能差好几倍，表里单列了缓存价。
-
----
-
-## 六、数据更新
-
-| 数据 | 来源 | 更新方式 |
-|---|---|---|
-| 套餐价格 | 厂商官方定价页 | 人工核实，带核实日期 |
-| API 单价 | 厂商官方定价页 | 人工核实，带核实日期 |
-| 模型排行 | ModelGo 公开排行榜 | `pnpm sync` 自动拉取 |
-
-价格类数据靠自动抓取太脆（页面多改版、促销期常变），所以只有**模型排行**是自动同步的，价格靠人核。
+Update prices and verification dates in the source JSON after checking the linked provider pages. Run `pnpm sync` to refresh the ranking snapshot and regenerate the USD view. After editing source data locally, run the following commands.
 
 ```bash
-pnpm install
-pnpm sync      # 拉取 ModelGo 排行快照
-pnpm check     # 校验数据门禁
+node scripts/derive-usd.mjs
+node scripts/render-readme.mjs
+pnpm check
+pnpm test
 ```
 
----
-
-## 七、贡献
-
-发现价格过期了？直接提 PR：
-
-1. 改 `data/plans.json` 或 `data/api-prices.json` 里对应条目
-2. 同步更新 `verifiedAt`
-3. 跑 `pnpm check` 过门禁
-4. 改完 `data/` 后执行 `node scripts/render-readme.mjs` 刷新表格
-
-详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
----
-
-## 数据说明
-
-- 排行快照共 <!-- data:meta:modelsCount --> 个模型档位，采集于 <!-- data:meta:snapshotDate -->
-- 套餐条目 <!-- data:meta:plansCount --> 条，API 价格条目 <!-- data:meta:apiCount --> 条
-- 最后一次核实：<!-- data:meta:verifiedAt -->
-
----
-
-## 许可
-
-数据与文档采用 [CC BY 4.0](LICENSE) 协议，署名「Awesome Coding Plan 贡献者」。
-
-排行数据版权归 [ModelGo](https://modelgo.ai) 与 [Artificial Analysis](https://artificialanalysis.ai) 所有，此处仅做引用与再整理。
+See [Contributing](CONTRIBUTING.md) for source and verification requirements.

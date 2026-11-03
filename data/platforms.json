@@ -1,31 +1,30 @@
 {
-  "$schema": "平台注册表：区分「原厂直营 / 云平台上架 / 第三方中转」，并记录各家卖模型的网站。",
   "offeringDefs": {
     "first-party": {
-      "label": "原厂直营",
-      "desc": "模型归属厂商自己开卖的套餐或 API 价格，通常最先拿到新模型、条款也最直接。"
+      "label": "Model provider",
+      "desc": "Model provider"
     },
     "cloud-platform": {
-      "label": "云平台上架",
-      "desc": "大厂云平台把自有模型和第三方模型一起上架，同一张账单里可以混用多家模型；额度与计费口径由平台统一定。"
+      "label": "Cloud platform",
+      "desc": "Cloud platform"
     },
     "reseller": {
-      "label": "第三方中转/聚合",
-      "desc": "自己不训练模型，转卖或聚合上游模型的额度：可能加价、限速、改写条款，也可能提供更便宜或更稳定的通道。"
+      "label": "Reseller",
+      "desc": "Reseller"
     },
     "tool-vendor": {
-      "label": "工具官方订阅",
-      "desc": "由工具厂商直接销售的官方订阅，额度通常绑定该工具；与独立第三方API中转服务分开标注。"
+      "label": "Tool vendor",
+      "desc": "Tool vendor"
     }
   },
   "bundleDefs": {
     "model-access": {
-      "label": "纯模型额度",
-      "desc": "买的就是模型调用额度，用什么都行，不绑定编辑器。"
+      "label": "Model access",
+      "desc": "Model access"
     },
     "tool": {
-      "label": "工具自带额度",
-      "desc": "额度绑定在这家的编辑器或 Agent 工具里，不能把 key 拿去别处用。"
+      "label": "Tool subscription",
+      "desc": "Tool subscription"
     }
   },
   "platforms": [
@@ -35,7 +34,7 @@
       "url": "https://claude.com/pricing",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "Claude 原厂；Pro/Max 含 Claude Code 额度"
+      "note": ""
     },
     {
       "id": "openai",
@@ -43,7 +42,7 @@
       "url": "https://openai.com/chatgpt/pricing/",
       "bundle": "model-access",
       "offering": "first-party",
-      "note": "GPT 原厂；订阅含 Codex 用量"
+      "note": ""
     },
     {
       "id": "google",
@@ -51,7 +50,7 @@
       "url": "https://ai.google.dev/pricing",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "Gemini 原厂；AI Pro/Ultra 含 Gemini CLI 等额度"
+      "note": ""
     },
     {
       "id": "xai",
@@ -59,7 +58,7 @@
       "url": "https://x.ai/api",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "Grok 原厂"
+      "note": ""
     },
     {
       "id": "deepseek",
@@ -67,31 +66,23 @@
       "url": "https://platform.deepseek.com",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "无订阅套餐，仅按量"
-    },
-    {
-      "id": "zhipu",
-      "name": "智谱 BigModel",
-      "url": "https://bigmodel.cn",
-      "offering": "first-party",
-      "bundle": "model-access",
-      "note": "GLM 原厂（国内站）"
+      "note": ""
     },
     {
       "id": "zai",
-      "name": "智谱 Z.ai",
+      "name": "Z.ai",
       "url": "https://z.ai",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "智谱海外站，同一模型族的美元定价"
+      "note": ""
     },
     {
       "id": "moonshot",
-      "name": "月之暗面 Kimi",
+      "name": "Moonshot AI (Kimi)",
       "url": "https://platform.moonshot.cn",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "Kimi 原厂；会员含 Kimi Code"
+      "note": ""
     },
     {
       "id": "minimax",
@@ -99,31 +90,15 @@
       "url": "https://platform.minimaxi.com",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "M 系列原厂"
+      "note": ""
     },
     {
       "id": "xiaomi",
-      "name": "小米 MiMo",
+      "name": "Xiaomi MiMo",
       "url": "https://mimo.mi.com",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "MiMo 原厂"
-    },
-    {
-      "id": "stepfun",
-      "name": "阶跃星辰",
-      "url": "https://platform.stepfun.com",
-      "offering": "first-party",
-      "bundle": "model-access",
-      "note": "Step 系列原厂"
-    },
-    {
-      "id": "tencent-hunyuan",
-      "name": "腾讯混元",
-      "url": "https://cloud.tencent.com/product/hunyuan",
-      "offering": "first-party",
-      "bundle": "model-access",
-      "note": "混元原厂模型价格"
+      "note": ""
     },
     {
       "id": "mistral",
@@ -131,7 +106,7 @@
       "url": "https://mistral.ai/pricing",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "Mistral 原厂"
+      "note": ""
     },
     {
       "id": "meta",
@@ -139,39 +114,7 @@
       "url": "https://dev.meta.ai/docs/pricing-rate-limits",
       "offering": "first-party",
       "bundle": "model-access",
-      "note": "Meta 官方按量 API，当前主推 Muse 系列"
-    },
-    {
-      "id": "aliyun-bailian",
-      "name": "阿里云百炼",
-      "url": "https://bailian.console.aliyun.com",
-      "offering": "cloud-platform",
-      "bundle": "model-access",
-      "note": "通义千问原厂 + 第三方模型混合上架"
-    },
-    {
-      "id": "volcengine-ark",
-      "name": "火山方舟",
-      "url": "https://console.volcengine.com/ark",
-      "offering": "cloud-platform",
-      "bundle": "model-access",
-      "note": "字节豆包原厂 + 第三方模型混合上架"
-    },
-    {
-      "id": "baidu-qianfan",
-      "name": "百度千帆",
-      "url": "https://console.bce.baidu.com/qianfan",
-      "offering": "cloud-platform",
-      "bundle": "model-access",
-      "note": "文心原厂 + 第三方模型混合上架"
-    },
-    {
-      "id": "tencent-cloud",
-      "name": "腾讯云",
-      "url": "https://cloud.tencent.com",
-      "offering": "cloud-platform",
-      "bundle": "model-access",
-      "note": "混元 + 第三方模型，Token Plan/TokenHub 为平台额度包"
+      "note": ""
     },
     {
       "id": "aws",
@@ -179,7 +122,7 @@
       "url": "https://aws.amazon.com/bedrock/pricing/",
       "offering": "cloud-platform",
       "bundle": "tool",
-      "note": "Kiro 走 Bedrock 额度，模型来自 Anthropic 等上游"
+      "note": ""
     },
     {
       "id": "fireworks",
@@ -187,7 +130,7 @@
       "url": "https://fireworks.ai/pricing",
       "offering": "reseller",
       "bundle": "model-access",
-      "note": "托管开源模型推理，转卖上游权重"
+      "note": ""
     },
     {
       "id": "openrouter",
@@ -195,7 +138,7 @@
       "url": "https://openrouter.ai",
       "offering": "reseller",
       "bundle": "model-access",
-      "note": "聚合各家模型，同一模型可能有多条上游通道与价格"
+      "note": ""
     },
     {
       "id": "opencode",
@@ -203,7 +146,7 @@
       "url": "https://opencode.ai",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "开源编码 Agent，Zen 档位为聚合额度"
+      "note": ""
     },
     {
       "id": "ollama",
@@ -211,7 +154,7 @@
       "url": "https://ollama.com/pricing",
       "offering": "reseller",
       "bundle": "model-access",
-      "note": "托管开源模型的云端算力，附带每月 credits"
+      "note": ""
     },
     {
       "id": "kilo",
@@ -219,7 +162,7 @@
       "url": "https://kilo.ai",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "VS Code/JetBrains 插件，额度转卖上游模型"
+      "note": ""
     },
     {
       "id": "amp",
@@ -227,7 +170,7 @@
       "url": "https://ampcode.com",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "终端 Agent，用量转卖上游模型"
+      "note": ""
     },
     {
       "id": "cursor",
@@ -235,15 +178,15 @@
       "url": "https://cursor.com/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "编辑器订阅，模型走自家通道转卖"
+      "note": ""
     },
     {
       "id": "cognition",
-      "name": "Cognition（Windsurf / Devin）",
+      "name": "Cognition (Windsurf / Devin)",
       "url": "https://devin.ai/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "Windsurf 已并入 Devin 定价体系"
+      "note": ""
     },
     {
       "id": "github",
@@ -251,7 +194,7 @@
       "url": "https://github.com/features/copilot/plans",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "模型来自 OpenAI/Anthropic 等，按 AI credits 计"
+      "note": ""
     },
     {
       "id": "qoder",
@@ -259,7 +202,7 @@
       "url": "https://qoder.com/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "阿里系 IDE 工具订阅"
+      "note": ""
     },
     {
       "id": "augment",
@@ -267,7 +210,7 @@
       "url": "https://augmentcode.com/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "企业向编码 Agent"
+      "note": ""
     },
     {
       "id": "factory",
@@ -275,7 +218,7 @@
       "url": "https://factory.ai/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "Droid Agent 平台"
+      "note": ""
     },
     {
       "id": "zed",
@@ -283,47 +226,15 @@
       "url": "https://zed.dev/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "编辑器 Pro 档含 token 额度"
+      "note": ""
     },
     {
       "id": "bytedance-trae",
-      "name": "Trae（字节，海外）",
+      "name": "ByteDance TRAE",
       "url": "https://trae.ai/pricing",
       "offering": "tool-vendor",
       "bundle": "tool",
-      "note": "字节自研 IDE，模型侧含自有与第三方"
-    },
-    {
-      "id": "trae-cn",
-      "name": "Trae（国内版）",
-      "url": "https://www.trae.cn",
-      "offering": "tool-vendor",
-      "bundle": "tool",
-      "note": "字节自研 IDE 国内版"
-    },
-    {
-      "id": "codebuddy",
-      "name": "腾讯 CodeBuddy",
-      "url": "https://copilot.tencent.com",
-      "offering": "tool-vendor",
-      "bundle": "tool",
-      "note": "腾讯自研编码工具，模型走混元等上游"
-    },
-    {
-      "id": "tongyi-lingma",
-      "name": "阿里 Qoder CN（原通义灵码）",
-      "url": "https://qoder.com.cn/pricing",
-      "offering": "tool-vendor",
-      "bundle": "tool",
-      "note": "阿里自研编码助手，通义灵码已更名 Qoder CN"
-    },
-    {
-      "id": "comate",
-      "name": "百度文心快码",
-      "url": "https://comate.baidu.com/zh/pricing",
-      "offering": "tool-vendor",
-      "bundle": "tool",
-      "note": "百度自研编码助手，模型走文心等上游"
+      "note": ""
     }
   ]
 }

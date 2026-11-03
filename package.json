@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "AI 编程套餐与 API 价格对比：国内国外套餐价格、API 单价、性价比排行",
+  "description": "AI coding subscription and API price comparison for the United States and Pakistan",
   "license": "CC BY 4.0",
   "repository": "https://github.com/supercli-site/awesome-coding-plan",
   "scripts": {
-    "sync": "node scripts/sync-modelgo.mjs && node scripts/sync-fx.mjs && node scripts/derive-cny.mjs",
+    "sync": "node scripts/sync-modelgo.mjs && node scripts/derive-usd.mjs",
     "check": "node scripts/validate.mjs",
-    "test": "node --test scripts/*.test.mjs",
-    "sync:fx": "node scripts/sync-fx.mjs && node scripts/derive-cny.mjs"
+    "test": "node --test scripts/*.test.mjs"
   },
   "engines": {
     "node": ">=24"

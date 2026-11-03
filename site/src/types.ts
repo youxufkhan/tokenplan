@@ -1,23 +1,16 @@
-/** 站点侧类型：cny.json（派生）+ 原始数据（详情）合并后的形状。 */
+/** 站点侧类型：usd.json（派生）+ 原始数据（详情）合并后的形状。 */
 
-export interface Fx {
-  rate: number;
-  date: string;
-  source: string;
-  sourceUrl: string;
-  fallbackUsed: boolean;
-}
 
-export interface CnyPlan {
+export interface UsdPlan {
   id: string;
   vendor: string;
   name: string;
   region: "cn" | "global";
   kind: string;
   originalCurrency: "CNY" | "USD";
-  monthlyCny: number | null;
-  firstPeriodCny: number | null;
-  includedCreditCny: number | null;
+  monthlyUsd: number | null;
+  firstPeriodUsd: number | null;
+  includedCreditUsd: number | null;
   creditRatio: number | null;
   confidence: "high" | "medium" | "low";
   status: string;
@@ -37,16 +30,16 @@ export interface CnyPlan {
   multimodal?: boolean | null;
 }
 
-export interface CnyApi {
+export interface UsdApi {
   id: string;
   vendor: string;
   model: string;
   region: "cn" | "global";
   originalCurrency: "CNY" | "USD";
-  inputCny: number;
-  outputCny: number;
-  cacheHitCny: number | null;
-  blendedCny: number;
+  inputUsd: number;
+  outputUsd: number;
+  cacheHitUsd: number | null;
+  blendedUsd: number;
   confidence: "high" | "medium" | "low";
   platformId: string | null;
   offering: "first-party" | "cloud-platform" | "tool-vendor" | "reseller" | null;
@@ -60,15 +53,15 @@ export interface CnyApi {
   notes?: string | null;
 }
 
-export interface CnyModel {
+export interface UsdModel {
   model: string;
   creator: string;
   openWeights: boolean;
   agenticIndex: number | null;
-  costPerTaskCny: number | null;
-  valuePerYuan: number | null;
-  inputCny: number | null;
-  outputCny: number | null;
+  costPerTaskUsd: number | null;
+  valuePerUsd: number | null;
+  inputUsd: number | null;
+  outputUsd: number | null;
 }
 
 export interface Platform {
@@ -86,17 +79,16 @@ export interface PlatformsFile {
   platforms: Platform[];
 }
 
-export interface CnyView {
-  fx: Fx;
+export interface UsdView {
   method: Record<string, string>;
   highlights: {
     plans: { cheapest: string[]; priciest: string[]; mostCredit: string[] };
     api: { cheapest: string[]; priciest: string[] };
     models: { bestValue: string[]; cheapestPerTask: string[] };
   };
-  plans: CnyPlan[];
-  api: CnyApi[];
-  models: CnyModel[];
+  plans: UsdPlan[];
+  api: UsdApi[];
+  models: UsdModel[];
 }
 
 export interface RawPlan {

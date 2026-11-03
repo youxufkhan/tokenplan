@@ -1,6 +1,5 @@
 /** 站头：品牌标记复用 SuperCLI 官方资产，链回主站。 */
 import { h } from "./dom";
-import brandMark from "../assets/supercli-mint.svg";
 
 const THEME_KEY = "supercli-theme";
 
@@ -23,21 +22,20 @@ const SUN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 const MOON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"/></svg>`;
 
 const SECTIONS = [
-  ["route", "官方推荐"],
-  ["featured", "官方入口"],
-  ["plans", "套餐"],
-  ["api", "API 单价"],
-  ["value", "性价比"],
-  ["platforms", "售卖平台"],
-  ["method", "口径"],
+  ["market", "Markets"],
+  ["plans", "Subscriptions"],
+  ["api", "API rates"],
+  ["estimate", "Estimator"],
+  ["value", "Benchmarks"],
+  ["platforms", "Providers"],
 ];
 
 export function renderHeader(): HTMLElement {
   const toggle = h("button", {
     class: "theme-toggle",
     type: "button",
-    "aria-label": "切换深色模式",
-    title: "切换深色模式",
+    "aria-label": "Toggle color theme",
+    title: "Toggle color theme",
     html: currentTheme() === "dark" ? SUN : MOON,
   });
   toggle.addEventListener("click", () => {
@@ -48,7 +46,7 @@ export function renderHeader(): HTMLElement {
 
   const nav = h(
     "nav",
-    { class: "site-nav", "aria-label": "页面导航" },
+    { class: "site-nav", "aria-label": "Main navigation" },
     SECTIONS.map(([id, label]) =>
       h("a", { href: `#${id}`, "data-section": id } as never, label),
     ),
@@ -56,12 +54,10 @@ export function renderHeader(): HTMLElement {
 
   const header = h("header", { class: "site-header" }, [
     h("div", { class: "shell site-header__inner" }, [
-      h("a", { class: "brand", href: "https://supercli.site", "aria-label": "SuperCLI 主站" }, [
-        h("img", { class: "brand__mark", src: brandMark, alt: "", width: 26, height: 26 }),
-        h("span", null, "SuperCLI"),
+      h("a", { class: "brand", href: "#market" }, [
+        h("span", { class: "brand__symbol", "aria-hidden": "true" }, "≋"),
+        h("span", null, "TokenPlan"),
       ]),
-      h("span", { class: "brand__divider", "aria-hidden": "true" }),
-      h("span", { class: "brand__product" }, "TokenPlan"),
       nav,
       toggle,
     ]),

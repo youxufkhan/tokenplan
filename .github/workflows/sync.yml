@@ -1,4 +1,4 @@
-name: Daily sync (rankings + FX + CNY view)
+name: Daily sync (rankings and USD catalog)
 
 on:
   schedule:
@@ -25,7 +25,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Pull rankings + FX, derive CNY view (keeps old files on failure)
+      - name: Refresh rankings and derive the USD catalog
         run: pnpm sync
       - run: pnpm check
       - run: node scripts/render-readme.mjs
@@ -35,5 +35,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           date=$(node -p 'require("./data/rankings.json").snapshotDate')
-          git commit -am "data(daily): 排行快照 ${date} · 汇率 $(node -p 'require("./data/fx.json").rate')"
+          git commit -am "data(daily): ranking snapshot ${date}"
           git push

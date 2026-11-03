@@ -16,10 +16,10 @@ const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), "
 const plans = read("../data/plans.json");
 const apiPrices = read("../data/api-prices.json");
 const rankings = read("../data/rankings.json");
-const fx = read("../data/fx.json");
-const cny = read("../data/cny.json");
+const markets = read("../data/markets.json");
+const usd = read("../data/usd.json");
 const platforms = read("../data/platforms.json");
-for (const [name, data] of Object.entries({ plans, apiPrices, rankings, fx, cny, platforms }))
+for (const [name, data] of Object.entries({ plans, apiPrices, rankings, markets, usd, platforms }))
   assertPublicData(data, name);
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 
@@ -38,7 +38,7 @@ validate("plans.schema.json", plans, "plans");
 validate("api-prices.schema.json", apiPrices, "api-prices");
 
 const platformIds = new Set(platforms.platforms.map((p) => p.id));
-assert.ok(platformIds.size >= 30, `platforms 注册表过小：${platformIds.size}`);
+assert.ok(platformIds.size >= 15, `platforms 注册表过小：${platformIds.size}`);
 const offeringIds = new Set(Object.keys(platforms.offeringDefs));
 const bundleIds = new Set(Object.keys(platforms.bundleDefs));
 for (const p of platforms.platforms) {
@@ -76,12 +76,26 @@ assert.ok(apiPrices.length >= 15, `api-prices 条目过少：${apiPrices.length}
 assert.ok(rankings.models.length > 50, "rankings 模型数异常");
 assert.ok(rankings.snapshotDate, "rankings 缺 snapshotDate");
 
-// 汇率与人民币视图必须同源，否则页面上会出现两套折算口径
-assert.ok(fx.rate > 5 && fx.rate < 9, `fx.rate 越界：${fx.rate}`);
-assert.ok(/^\d{4}-\d{2}-\d{2}/.test(fx.date), "fx.date 非法");
-assert.ok(Math.abs(cny.fx.rate - fx.rate) < 1e-9, "cny.json 的汇率与 fx.json 不一致，请重跑 derive-cny");
+assert.ok(Number.isFinite(markets.fx.pkrPerUsd) && markets.fx.pkrPerUsd > 0);
+assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(markets.fx.date));
+assert.equal(new URL(markets.fx.sourceUrl).protocol, "https:");
+const marketQuotes = new Set();
+for (const quote of markets.quotes) {
+  const key = `${quote.market}:${quote.planId}:${quote.channel}`;
+  assert.ok(!marketQuotes.has(key), `Duplicate regional quote: ${key}`);
+  marketQuotes.add(key);
+  assert.ok(ids.has(quote.planId), `Unknown plan: ${quote.planId}`);
+  assert.ok((quote.market === "US" && quote.currency === "USD")
+    || (quote.market === "PK" && quote.currency === "PKR"), `Invalid market and currency: ${key}`);
+  assert.ok(Number.isFinite(quote.amount) && quote.amount >= 0, `Invalid price: ${key}`);
+  assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(quote.verifiedAt), `Missing verification date: ${key}`);
+  assert.equal(new URL(quote.sourceUrl).protocol, "https:");
+}
+assert.ok(plans.every((p) => p.region === "global" && p.price.currency === "USD"));
+assert.ok(apiPrices.every((a) => a.region === "global" && a.currency === "USD"));
+
 for (const key of ["cheapest", "priciest"]) {
-  assert.ok(cny.highlights.plans[key].length > 0, `cny.highlights.plans.${key} 为空`);
+  assert.ok(usd.highlights.plans[key].length > 0, `usd.highlights.plans.${key} 为空`);
 }
 
 const staleDays = 90;
@@ -93,8 +107,4 @@ for (const item of [...plans, ...apiPrices]) {
   }
 }
 
-const cn = plans.filter((p) => p.region === "cn").length;
-const global = plans.filter((p) => p.region === "global").length;
-console.log(
-  `✅ 校验通过：套餐 ${plans.length}（国内 ${cn} / 海外 ${global}）· 按量 ${apiPrices.length} · 排行 ${rankings.models.length} · 平台 ${platformIds.size}`,
-);
+console.log(`Validated ${plans.length} plans, ${apiPrices.length} API prices and ${marketQuotes.size} local quotes.`);
