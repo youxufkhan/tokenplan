@@ -17,3 +17,5 @@ pnpm test
 ```
 
 Model rankings are refreshed separately with `pnpm sync`.
+
+Full-record review dates (`verifiedAt`) are maintained by reviewers. Automated exact price matches use `priceVerifiedAt`. Source observations live in `data/source-checks.json` and do not certify limits or billing conditions. Web extractors initially run in observation mode. Enable `TOKENPLAN_AUTO_WEB_PRICES=1` only after reviewing the first deployed sync report. Automatic changes require matching billing dimensions and a change of at most 40%, with free/paid transitions held for review.

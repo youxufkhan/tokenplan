@@ -33,7 +33,7 @@ async function mount(app: HTMLElement) {
   const raw = new Map(rawPlans.map((p) => [p.id, p]));
   const plans: UsdPlan[] = view.plans.map((p) => {
     const r = raw.get(p.id);
-    return { ...p, quota: r?.quota, models: r?.models, buyUrl: r?.buyUrl, sourceUrl: r?.sourceUrl, verifiedAt: r?.verifiedAt, notes: r?.notes, multimodal: r?.multimodal, priceNote: r?.price?.note, creditText: r?.includedCredit?.text };
+    return { ...p, quota: r?.quota, models: r?.models, buyUrl: r?.buyUrl, sourceUrl: r?.sourceUrl, verifiedAt: r?.verifiedAt, priceVerifiedAt: r?.priceVerifiedAt, notes: r?.notes, multimodal: r?.multimodal, priceNote: r?.price?.note, creditText: r?.includedCredit?.text };
   });
   const apiRaw = new Map(rawApi.map((a) => [a.id, a]));
   const ctx: Ctx = {
@@ -41,13 +41,14 @@ async function mount(app: HTMLElement) {
     ...makeFormatters(currency, rate),
     fmtQuote: quoteText,
     premium: (q, list) => (list ? Math.round(((q.amount / (q.currency === "USD" ? 1 : markets.fx.rates[q.currency])) / list - 1) * 100) : null),
-    plans, api: view.api.map((a) => ({ ...a, sourceUrl: apiRaw.get(a.id)?.sourceUrl, verifiedAt: apiRaw.get(a.id)?.verifiedAt })), models: view.models, platforms,
+    plans, api: view.api.map((a) => ({ ...a, sourceUrl: apiRaw.get(a.id)?.sourceUrl, priceVerifiedAt: apiRaw.get(a.id)?.priceVerifiedAt, verifiedAt: apiRaw.get(a.id)?.verifiedAt })), models: view.models, platforms,
     quotes: new Map(markets.quotes.filter((q) => q.market === market).map((q) => [q.planId, q])),
   };
 
   const live = plans.filter((p) => p.status === "active" || p.status === "sold-out-daily");
   const vendors = new Set(live.map((p) => p.vendor)).size;
-  const newest = [...plans, ...ctx.api].map((x) => x.verifiedAt ?? "").sort().pop();
+  const rankings = await load<{ snapshotDate: string }>("rankings");
+  const fxStale = Date.now() - Date.parse(markets.fx.date) > 7 * 86400000;
   const fxNote = currency === "USD"
     ? "Prices are published USD list prices. App Store prices can differ from web checkout."
     : `${MARKETS[market].label.split(" · ")[0]} view: list prices converted at 1 USD = ${currency} ${rate} (${shortDate(markets.fx.date)}). The App Store column is the price recorded in that storefront, with its difference from the converted list price.`;
@@ -64,6 +65,7 @@ async function mount(app: HTMLElement) {
   app.append(
     h("a", { class: "skip", href: "#plans" }, "Skip to plans"),
     renderHeader(market),
+    ...(fxStale ? [h("p", { class: "wrap", role: "status" }, "Exchange rates are over seven days old. Converted estimates may be outdated.")] : []),
     h("main", null, [
       hero,
       section("plans", "Compare plans", fxNote, renderPlans(ctx)),
@@ -73,7 +75,7 @@ async function mount(app: HTMLElement) {
     ]),
     renderCompare(ctx),
     h("footer", { class: "foot" }, h("div", { class: "wrap foot__in" }, [
-      h("p", null, `Every price links to its official page. Data last re-checked ${shortDate(newest)}. Benchmark data: Artificial Analysis via ModelGo, snapshot refreshed daily.`),
+      h("p", null, `See each quote for its review and price verification dates. Benchmark data: Artificial Analysis via ModelGo, snapshot ${shortDate(rankings.snapshotDate)}.`),
       h("p", null, [h("a", { href: "https://github.com/supercli-site/awesome-coding-plan" }, "Adapted from Awesome Coding Plan"), " · CC BY 4.0 · ", h("a", { href: markets.fx.sourceUrl }, "Exchange rates"), "."]),
     ])),
   );
