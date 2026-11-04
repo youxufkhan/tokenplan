@@ -77,11 +77,12 @@ a:hover { text-decoration-color: var(--ink); }
 .ladder__legend span { display: inline-flex; align-items: center; gap: 8px; } .ladder__scale { margin-left: auto; color: var(--text-3); }
 .key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink); }
 .key--paid { background: var(--ink); } .key--free { background: var(--card); } .key--picked { background: var(--mark); } .key--open { background: transparent; } .key--line { width: 20px; height: 0; border: 0; border-top: 2px solid var(--ink); border-radius: 0; }
-.ladder__readout { min-height: 44px; margin-bottom: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; align-content: center; }
+.ladder__readout { box-sizing: border-box; height: 100px; overflow: hidden; margin-bottom: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; align-content: center; }
 .ladder__hint { color: var(--text-3); }
 .leader { display: flex; align-items: baseline; gap: 8px; } .leader strong { font-weight: 500; }
 .leader__fill { flex: 1; border-bottom: 2px dotted var(--line-strong); transform: translateY(-4px); min-width: 16px; }
 .ladder__price { font-weight: 500; } .ladder__quota { color: var(--text-2); font-size: 13px; }
+.ladder__readout > * { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* Starting points: one quiet line of facts */
 .picks { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 24px; border-top: 1px solid var(--line); }
