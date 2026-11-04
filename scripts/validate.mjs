@@ -20,8 +20,24 @@ const markets = read("../data/markets.json");
 const usd = read("../data/usd.json");
 const history = read("../data/price-history.json");
 assert.ok(Array.isArray(history), "price-history must be an array");
+const checks = read("../data/source-checks.json");
+assert.ok(checks && !Array.isArray(checks) && typeof checks === "object", "source-checks must be an object");
+const statuses = new Set(["exact-match", "changed-price", "ambiguous", "unsupported", "fetch-failed"]);
+for (const [key, check] of Object.entries(checks)) {
+  assert.ok(/^(plans|api|markets):/.test(key), `Invalid source-check key: ${key}`);
+  assert.ok(statuses.has(check.status), `Invalid source-check status: ${key}`);
+  assert.ok(Number.isFinite(Date.parse(check.checkedAt)), `Invalid check time: ${key}`);
+  assert.equal(new URL(check.sourceUrl).protocol, "https:");
+  assert.ok(typeof check.extractorVersion === "string" && check.extractorVersion.length > 0);
+  assert.ok(typeof check.evidence === "string" && check.evidence.length <= 600);
+}
+for (const change of history) {
+  assert.ok(Number.isFinite(change.from) && change.from >= 0 && Number.isFinite(change.to) && change.to >= 0, "Invalid history amounts");
+  assert.equal(new URL(change.source).protocol, "https:");
+  assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(change.date), "Invalid history date");
+}
 const platforms = read("../data/platforms.json");
-for (const [name, data] of Object.entries({ plans, apiPrices, rankings, markets, usd, platforms }))
+for (const [name, data] of Object.entries({ plans, apiPrices, rankings, markets, usd, platforms, checks, history }))
   assertPublicData(data, name);
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 
@@ -105,6 +121,11 @@ for (const key of ["cheapest", "priciest"]) {
   assert.ok(usd.highlights.plans[key].length > 0, `usd.highlights.plans.${key} is empty`);
 }
 
+for (const entry of [...plans, ...apiPrices, ...markets.quotes]) {
+  if (entry.priceVerifiedAt != null) {
+    assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(entry.priceVerifiedAt) && new Date(entry.priceVerifiedAt) <= tomorrow, "Invalid automated verification date");
+  }
+}
 const staleDays = 90;
 const today = new Date();
 for (const item of [...plans, ...apiPrices]) {
