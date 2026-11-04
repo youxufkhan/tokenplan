@@ -34,6 +34,10 @@ jobs:
           pnpm -C site exec tsc --noEmit
           pnpm -C site build
           echo '{"commit":"${{ github.sha }}","run":"${{ github.run_id }}"}' > site/dist/deployment.json
+      - name: Browser regression checks
+        run: |
+          pnpm -C site exec playwright install --with-deps chromium
+          pnpm -C site test:browser
       - uses: actions/upload-artifact@v4
         with:
           name: tokenplan-site
