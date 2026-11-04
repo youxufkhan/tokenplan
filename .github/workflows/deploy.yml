@@ -37,6 +37,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm -C site install --frozen-lockfile
       - run: pnpm verify
       - name: Record deployment
         run: echo '{"commit":"'"$(git rev-parse HEAD)"'","run":"${{ github.run_id }}"}' > site/dist/deployment.json
