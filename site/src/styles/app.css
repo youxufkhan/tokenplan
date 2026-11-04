@@ -205,3 +205,8 @@ input[type="range"] { padding: 0; min-width: 160px; accent-color: var(--ink); bo
 .saved-controls input,.saved-controls select { min-width:0; max-width:100%; }
 .saved-controls [role=status] { flex-basis:100%; color:var(--muted); }
 .saved-comparisons { padding-block:1.5rem; }
+@media (max-width: 480px) {
+  .top__in { flex-wrap:wrap; height:auto; min-height:56px; padding-block:8px; }
+  .top__in .seg { order:3; flex-basis:100%; justify-content:center; }
+  .top__in .icon-btn { margin-left:auto; }
+}
