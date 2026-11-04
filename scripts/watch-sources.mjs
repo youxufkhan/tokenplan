@@ -1,33 +1,34 @@
-/**
- * Check each official source page still shows the prices we recorded.
- * All recorded prices present -> bump verifiedAt. Any missing -> report, never edit the price.
- * ponytail: number presence is weak evidence (a page may show "20" elsewhere); a missing number is the reliable signal.
- */
-import { fetchText, pageNumbers, showsUsdPrices, readData, writeData, report, today } from "./sync-lib.mjs";
-
+/** Observe source pages; only exact product/billing matches can verify a price. */
+import { fetchText, readData, writeData, report, today, logChange } from "./sync-lib.mjs";
+import { extractSubscription, guardPrice } from "./price-extractors.mjs";
 const plans = readData("plans.json");
 const api = readData("api-prices.json");
-const recorded = (e) => (e.price ? [e.price.amount] : [e.input, e.output, e.cacheHit]).filter((n) => n > 0);
-const entries = [...plans, ...api].filter((e) => recorded(e).length);
-const urls = [...new Set(entries.map((e) => e.sourceUrl))];
-
+const checks = readData("source-checks.json");
 const pages = new Map();
-const queue = [...urls];
-await Promise.all(Array.from({ length: 4 }, async () => {
-  for (let url; (url = queue.pop());) {
-    try { const html = await fetchText(url); pages.set(url, showsUsdPrices(html) ? pageNumbers(html) : null); } catch (err) { pages.set(url, err.message); }
-  }
-}));
-
-let bumped = 0;
-for (const e of entries) {
-  const page = pages.get(e.sourceUrl);
-  if (typeof page === "string") { report(`${e.id}: could not fetch ${e.sourceUrl} (${page})`); continue; }
-  if (page === null) { console.log(`${e.id}: unwatchable (no readable USD prices on the page)`); continue; }
-  const missing = recorded(e).filter((n) => !page.has(n));
-  if (missing.length) report(`${e.id}: ${e.sourceUrl} no longer shows ${missing.join(", ")}`);
-  else { e.verifiedAt = today(); bumped++; }
+for (const url of new Set([...plans, ...api].map((entry) => entry.sourceUrl))) {
+  try { pages.set(url, { html: await fetchText(url) }); }
+  catch (error) { pages.set(url, { error: error.message }); }
 }
+for (const [dataset, entries] of [["plans", plans], ["api", api]]) {
+  for (const entry of entries) {
+    const key = `${dataset}:${entry.id}`;
+    const page = pages.get(entry.sourceUrl);
+    const observation = page.error ? { status: "fetch-failed", evidence: page.error }
+      : dataset === "plans" ? extractSubscription(page.html, entry)
+      : { status: "unsupported", evidence: "API rate extraction requires a product-specific adapter" };
+    checks[key] = { checkedAt: new Date().toISOString(), sourceUrl: entry.sourceUrl,
+      extractorVersion: "subscriptions-v1", status: observation.status, evidence: observation.evidence.slice(0, 600),
+      ...(observation.amount != null ? { candidate: observation.amount } : {}) };
+    if (observation.status === "exact-match") entry.priceVerifiedAt = today();
+    else if (observation.status === "changed-price" && guardPrice(observation.amount, entry.price.amount)
+      && process.env.TOKENPLAN_AUTO_WEB_PRICES === "1") {
+      logChange({ id: entry.id, from: entry.price.amount, to: observation.amount, currency: "USD",
+        period: "month", channel: "web", source: entry.sourceUrl, evidenceRef: key });
+      entry.price.amount = observation.amount;
+      entry.priceVerifiedAt = today();
+    } else if (observation.status !== "unsupported") report(`${key}: ${observation.status}; ${observation.evidence.slice(0, 200)}`);
+  }
+}
+writeData("source-checks.json", checks);
 writeData("plans.json", plans);
 writeData("api-prices.json", api);
-console.log(`Reverified ${bumped}/${entries.length} entries across ${urls.length} pages`);

@@ -1,5 +1,5 @@
 /** Shared helpers for the data sync scripts. Pure functions are unit-tested; I/O stays thin. */
-import { readFileSync, writeFileSync, appendFileSync } from "node:fs";
+import { readFileSync, writeFileSync, appendFileSync, existsSync } from "node:fs";
 
 const dataUrl = (name) => new URL(`../data/${name}`, import.meta.url);
 export const readData = (name) => JSON.parse(readFileSync(dataUrl(name), "utf8"));
@@ -8,7 +8,7 @@ export const today = () => new Date().toISOString().slice(0, 10);
 
 /** Problems a human should look at; the workflow turns this file into a GitHub issue. */
 const REPORT = process.env.SYNC_REPORT ?? new URL("../.sync-report.md", import.meta.url).pathname;
-export const report = (line) => { console.warn(`! ${line}`); appendFileSync(REPORT, `- ${line}\n`); };
+export const report = (line) => { console.warn(`! ${line}`); appendFileSync(REPORT, `- ${line}\n`); const path = new URL("../.sync-report.json", import.meta.url); const rows = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : []; rows.push({ observedAt: new Date().toISOString(), message: line }); writeFileSync(path, JSON.stringify(rows, null, 2)); };
 
 export async function fetchText(url, timeout = 20_000) {
   const res = await fetch(url, {
@@ -31,7 +31,7 @@ export function parseIap(html) {
   const out = [];
   for (const m of html.matchAll(/"leadingText":"((?:[^"\\]|\\.)*)","trailingText":"((?:[^"\\]|\\.)*)"/g)) {
     const amount = parseAmount(m[2]);
-    if (amount != null) out.push({ label: JSON.parse(`"${m[1]}"`), amount });
+    if (amount != null) out.push({ label: JSON.parse(`"${m[1]}"`), amount, currency: /^(?:\$|USD)/.test(m[2]) ? "USD" : /^(?:Rs|PKR)/.test(m[2]) ? "PKR" : /^(?:AED)/.test(m[2]) ? "AED" : /^(?:SAR)/.test(m[2]) ? "SAR" : null, period: /monthly|per month/i.test(m[1]) ? "month" : /annual|year/i.test(m[1]) ? "year" : null });
   }
   return out;
 }
@@ -61,6 +61,7 @@ export const validRate = (next, prev, pct = 0.05) =>
 
 export function logChange(entry) {
   const history = readData("price-history.json");
+  if (history.some((row) => row.id === entry.id && row.date === today() && row.from === entry.from && row.to === entry.to && row.currency === entry.currency)) return;
   history.push({ date: today(), ...entry });
   writeData("price-history.json", history);
 }

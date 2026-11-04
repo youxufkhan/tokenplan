@@ -26,6 +26,7 @@ export interface UsdPlan {
   buyUrl?: string | null;
   sourceUrl?: string;
   verifiedAt?: string;
+  priceVerifiedAt?: string;
   notes?: string | null;
   multimodal?: boolean | null;
   priceNote?: string | null;
@@ -52,6 +53,7 @@ export interface UsdApi {
   sourceUrl?: string;
   buyUrl?: string;
   verifiedAt?: string;
+  priceVerifiedAt?: string;
   notes?: string | null;
 }
 
@@ -100,6 +102,7 @@ export interface RawPlan {
   buyUrl?: string | null;
   sourceUrl: string;
   verifiedAt: string;
+  priceVerifiedAt?: string;
   notes?: string | null;
   multimodal?: boolean | null;
   price: { note?: string | null };
@@ -113,5 +116,6 @@ export interface RawApi {
   sourceUrl: string;
   buyUrl: string;
   verifiedAt: string;
+  priceVerifiedAt?: string;
   notes?: string | null;
 }

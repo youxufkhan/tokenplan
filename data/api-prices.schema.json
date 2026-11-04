@@ -120,6 +120,10 @@
         ],
         "pattern": "^[a-z0-9][a-z0-9-]*$",
         "description": "Same as plans.platformId"
+      },
+      "priceVerifiedAt": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
       }
     }
   }
