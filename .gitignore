@@ -9,3 +9,5 @@ site/public/data/
 .sync-report.md
 .env.*
 .dev.vars*
+
+.sync-report.json
