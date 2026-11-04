@@ -1,21 +1,14 @@
-/** Refresh USD exchange rates for the local markets. Keeps the old value when a rate fails its guard. */
-import { fetchText, readData, writeData, report, today, validRate } from "./sync-lib.mjs";
+/** Refresh all FX rates together, retaining the source publication timestamp. */
+import { fetchText, readData, writeData, report } from "./sync-lib.mjs";
+import { fxCandidate } from "./fx-candidate.mjs";
 
-const SOURCE = "https://open.er-api.com/v6/latest/USD";
-const markets = readData("markets.json");
-const body = JSON.parse(await fetchText(SOURCE));
-if (body.result !== "success") throw new Error(`FX API result: ${body.result}`);
-
-let failed = false;
-for (const code of Object.keys(markets.fx.rates)) {
-  const next = body.rates?.[code];
-  if (!validRate(next, markets.fx.rates[code])) {
-    report(`FX ${code}: rejected ${next} (previous ${markets.fx.rates[code]}, allowed ±5%)`);
-    failed = true;
-  } else markets.fx.rates[code] = Math.round(next * 10_000) / 10_000;
+try {
+  const markets = readData("markets.json");
+  const body = JSON.parse(await fetchText("https://open.er-api.com/v6/latest/USD"));
+  const candidate = fxCandidate(body, markets.fx);
+  writeData("markets.json", { ...markets, fx: candidate });
+  console.log(`FX published ${candidate.publishedAt}; fetched ${candidate.fetchedAt}`);
+} catch (error) {
+  report(`FX update rejected; previous snapshot retained: ${error.message}`);
+  process.exitCode = 1;
 }
-if (!failed) markets.fx.date = today();
-markets.fx.sourceUrl = SOURCE;
-writeData("markets.json", markets);
-console.log(`FX updated: ${JSON.stringify(markets.fx.rates)}`);
-process.exitCode = failed ? 1 : 0;

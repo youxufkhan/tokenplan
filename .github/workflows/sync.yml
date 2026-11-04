@@ -28,32 +28,32 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # Each source is independent: a failed guard keeps that source's old data and reports an issue,
-      # but never blocks the others.
-      - name: Rankings
-        continue-on-error: true
-        run: node scripts/sync-modelgo.mjs
-      - name: Exchange rates
-        continue-on-error: true
-        run: node scripts/sync-fx.mjs
-      - name: App Store prices
-        continue-on-error: true
-        run: node scripts/sync-appstore.mjs
-      - name: Official source pages
-        continue-on-error: true
-        run: node scripts/watch-sources.mjs
+      - name: Check independent sources and capture outcomes
+        run: node scripts/sync-run.mjs
       - run: node scripts/derive-usd.mjs
       - run: pnpm check
       - run: pnpm test
       - run: node scripts/render-readme.mjs
       - name: Open or update the price-drift issue
+        if: always()
         run: |
           [ -s .sync-report.md ] || exit 0
           gh label create price-drift --color d93f0b 2>/dev/null || true
-          body="Automated checks found sources that need a human look ($(date -u +%F)).\n\n$(cat .sync-report.md)"
           n=$(gh issue list --label price-drift --state open --json number -q '.[0].number')
-          if [ -n "$n" ]; then gh issue comment "$n" --body "$(printf "$body")"
-          else gh issue create --label price-drift --title "Price drift report" --body "$(printf "$body")"; fi
+          if [ -n "$n" ]; then gh issue comment "$n" --body-file .sync-report.md
+          else gh issue create --label price-drift --title "Price drift report" --body-file .sync-report.md; fi
+      - name: Retain source observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-report
+          path: |
+            .sync-report.json
+            .sync-report.md
+      - name: Validate generated site
+        run: |
+          pnpm -C site install --frozen-lockfile
+          pnpm verify
       - name: Commit and push to main
         run: |
           if git diff --quiet; then echo "No changes"; exit 0; fi
