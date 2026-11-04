@@ -124,50 +124,50 @@ Open [localhost:5183](http://localhost:5183). Run `pnpm -C site build` to genera
 
 ## Model benchmarks
 
-Snapshot date: 2026-11-03
+Snapshot date: 2026-11-04
 
 | # | Model | Provider | Agentic Index | Cost per task | Output TPS | Weights | API rates (input/output, $/1M) |
 |---:|---|---|---:|---:|---:|---|---|
-| 1 | Claude Fable 5.1 (Max, Default Fallback) | Anthropic | 57.9 | $7.6297 | 69.28 | Closed weights | $10.00 / $50.00 |
-| 2 | Claude Fable 5.1 (Xhigh, Default Fallback) | Anthropic | 57.2 | $5.9783 | 62.03 | Closed weights | $10.00 / $50.00 |
-| 3 | Claude Opus 5 (Max) | Anthropic | 56.5 | $5.8584 | 52.65 | Closed weights | $5.00 / $25.00 |
-| 4 | Qwen3.8 Max (0902) | Alibaba | 56 | $5.4085 | 39.44 | Closed weights | $2.00 / $6.00 |
-| 5 | Claude Opus 5 (Xhigh) | Anthropic | 55.6 | $4.8778 | 52.77 | Closed weights | $5.00 / $25.00 |
-| 6 | Muse Spark 1.3 (Max) | Meta | 55.5 | $1.3146 | 194.3 | Closed weights | $1.25 / $4.25 |
-| 7 | Qwen3.8-Flash-Next | Alibaba | 53.6 | $0.3722 | 54.42 | Open weights | $0.15 / $0.47 |
-| 8 | Claude Fable 5.1 (High, Default Fallback) | Anthropic | 53.1 | $3.9125 | 57.24 | Closed weights | $10.00 / $50.00 |
-| 9 | GLM-5.3 (Max) | Z AI | 53.1 | $2.0056 | 88.71 | Open weights | $1.40 / $4.40 |
-| 10 | Grok 4.6 (High) | SpaceXAI | 53 | $1.4848 | 68.44 | Closed weights | $2.00 / $6.00 |
+| 1 | Claude Fable 5.1 (Max, Default Fallback) | Anthropic | 57.9 | $7.6297 | 69.59 | Closed weights | $10.00 / $50.00 |
+| 2 | Claude Fable 5.1 (Xhigh, Default Fallback) | Anthropic | 57.2 | $5.9783 | 61.14 | Closed weights | $10.00 / $50.00 |
+| 3 | Claude Opus 5 (Max) | Anthropic | 56.5 | $5.8584 | 51.04 | Closed weights | $5.00 / $25.00 |
+| 4 | Qwen3.8 Max (0902) | Alibaba | 56 | $5.4085 | 37.87 | Closed weights | $2.00 / $6.00 |
+| 5 | Claude Opus 5 (Xhigh) | Anthropic | 55.6 | $4.8778 | 52.3 | Closed weights | $5.00 / $25.00 |
+| 6 | Muse Spark 1.3 (Max) | Meta | 55.5 | $1.3146 | 150.48 | Closed weights | $1.25 / $4.25 |
+| 7 | Qwen3.8-Flash-Next | Alibaba | 53.6 | $0.3722 | 54.69 | Open weights | $0.15 / $0.47 |
+| 8 | Claude Fable 5.1 (High, Default Fallback) | Anthropic | 53.1 | $3.9125 | 57.16 | Closed weights | $10.00 / $50.00 |
+| 9 | GLM-5.3 (Max) | Z AI | 53.1 | $2.0056 | 85.66 | Open weights | $1.40 / $4.40 |
+| 10 | Grok 4.6 (High) | SpaceXAI | 53 | $1.4848 | 67.11 | Closed weights | $2.00 / $6.00 |
 
 ### Open-weight models
 
 | # | Model | Provider | Agentic Index | Cost per task | Output TPS | Weights | API rates (input/output, $/1M) |
 |---:|---|---|---:|---:|---:|---|---|
-| 1 | Qwen3.8-Flash-Next | Alibaba | 53.6 | $0.3722 | 54.42 | Open weights | $0.15 / $0.47 |
-| 2 | GLM-5.3 (Max) | Z AI | 53.1 | $2.0056 | 88.71 | Open weights | $1.40 / $4.40 |
-| 3 | GLM-5.3-Flash | Z AI | 50.9 | $0.2836 | 75.17 | Open weights | $0.15 / $0.50 |
-| 4 | Qwen3.8 2.4T A95B | Alibaba | 50.1 | $2.1552 | 38.72 | Open weights | $2.00 / $6.00 |
-| 5 | Kimi K3 (Max) | Kimi | 50 | $2.0001 | 64.22 | Open weights | $3.00 / $15.00 |
-| 6 | Qwen3.8 27B (Xhigh) | Alibaba | 45.8 | $1.1464 | 41.41 | Open weights | $0.50 / $3.00 |
-| 7 | Qwen3.8 27B (Medium) | Alibaba | 44.4 | $1.2709 | 47.78 | Open weights | $0.50 / $3.00 |
-| 8 | DeepSeek V4 Pro 0813 (Max) | DeepSeek | 41.3 | $0.674 | 89.95 | Open weights | $1.32 / $3.96 |
-| 9 | DeepSeek V4 Flash 0731 (Max) | DeepSeek | 41 | $0.1775 | 145.27 | Open weights | $0.14 / $0.28 |
-| 10 | Qwen3.8 27B (Low) | Alibaba | 38.9 | $1.1702 | 48.22 | Open weights | $0.50 / $3.00 |
+| 1 | Qwen3.8-Flash-Next | Alibaba | 53.6 | $0.3722 | 54.69 | Open weights | $0.15 / $0.47 |
+| 2 | GLM-5.3 (Max) | Z AI | 53.1 | $2.0056 | 85.66 | Open weights | $1.40 / $4.40 |
+| 3 | GLM-5.3-Flash | Z AI | 50.9 | $0.2836 | 71.29 | Open weights | $0.15 / $0.50 |
+| 4 | Qwen3.8 2.4T A95B | Alibaba | 50.1 | $2.1552 | 39.08 | Open weights | $2.00 / $6.00 |
+| 5 | Kimi K3 (Max) | Kimi | 50 | $2.0001 | 50.76 | Open weights | $3.00 / $15.00 |
+| 6 | Qwen3.8 27B (Xhigh) | Alibaba | 45.8 | $1.1464 | 41.9 | Open weights | $0.50 / $3.00 |
+| 7 | Qwen3.8 27B (Medium) | Alibaba | 44.4 | $1.2709 | 46.93 | Open weights | $0.50 / $3.00 |
+| 8 | DeepSeek V4 Pro 0813 (Max) | DeepSeek | 41.3 | $0.674 | 81.48 | Open weights | $1.32 / $3.96 |
+| 9 | DeepSeek V4 Flash 0731 (Max) | DeepSeek | 41 | $0.1775 | 133.43 | Open weights | $0.14 / $0.28 |
+| 10 | Qwen3.8 27B (Low) | Alibaba | 38.9 | $1.1702 | 44.68 | Open weights | $0.50 / $3.00 |
 
 ### Model value (Agentic Index ≥ 40)
 
 | # | Model | Provider | Agentic Index | Cost per task | Output TPS | Weights | API rates (input/output, $/1M) |
 |---:|---|---|---:|---:|---:|---|---|
-| 1 | GPT-5.6 Luna (Max) | OpenAI | 42.1 | $0.1783 | 112.46 | Closed weights | $0.20 / $1.20 |
-| 2 | DeepSeek V4 Flash 0731 (Max) | DeepSeek | 41 | $0.1775 | 145.27 | Open weights | $0.14 / $0.28 |
-| 3 | GLM-5.3-Flash | Z AI | 50.9 | $0.2836 | 75.17 | Open weights | $0.15 / $0.50 |
-| 4 | Qwen3.8-Flash-Next | Alibaba | 53.6 | $0.3722 | 54.42 | Open weights | $0.15 / $0.47 |
-| 5 | Grok 4.6 (Low) | SpaceXAI | 41.2 | $0.3758 | 73.43 | Closed weights | $2.00 / $6.00 |
-| 6 | GPT-5.6 Terra (Xhigh) | OpenAI | 41.4 | $0.6318 | 112.71 | Closed weights | $2.00 / $12.00 |
-| 7 | DeepSeek V4 Pro 0813 (Max) | DeepSeek | 41.3 | $0.674 | 89.95 | Open weights | $1.32 / $3.96 |
-| 8 | GPT-5.6 Sol (High) | OpenAI | 44.2 | $0.808 | 125.1 | Closed weights | $4.00 / $20.00 |
+| 1 | GPT-5.6 Luna (Max) | OpenAI | 42.1 | $0.1783 | 106.15 | Closed weights | $0.20 / $1.20 |
+| 2 | DeepSeek V4 Flash 0731 (Max) | DeepSeek | 41 | $0.1775 | 133.43 | Open weights | $0.14 / $0.28 |
+| 3 | GLM-5.3-Flash | Z AI | 50.9 | $0.2836 | 71.29 | Open weights | $0.15 / $0.50 |
+| 4 | Qwen3.8-Flash-Next | Alibaba | 53.6 | $0.3722 | 54.69 | Open weights | $0.15 / $0.47 |
+| 5 | Grok 4.6 (Low) | SpaceXAI | 41.2 | $0.3758 | 68.04 | Closed weights | $2.00 / $6.00 |
+| 6 | GPT-5.6 Terra (Xhigh) | OpenAI | 41.4 | $0.6318 | 112.07 | Closed weights | $2.00 / $12.00 |
+| 7 | DeepSeek V4 Pro 0813 (Max) | DeepSeek | 41.3 | $0.674 | 81.48 | Open weights | $1.32 / $3.96 |
+| 8 | GPT-5.6 Sol (High) | OpenAI | 44.2 | $0.808 | 116.54 | Closed weights | $4.00 / $20.00 |
 | 9 | Grok 4.5 (High) | SpaceXAI | 41.2 | $0.7603 | 57.56 | Closed weights | $2.00 / $6.00 |
-| 10 | Muse Spark 1.2 (Xhigh) | Meta | 43.2 | $0.812 | 265.18 | Closed weights | $1.25 / $4.25 |
+| 10 | Muse Spark 1.2 (Xhigh) | Meta | 43.2 | $0.812 | 238.25 | Closed weights | $1.25 / $4.25 |
 
 ## Update the data
 

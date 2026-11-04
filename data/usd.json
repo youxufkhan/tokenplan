@@ -2480,8 +2480,8 @@
       "agenticIndex": 21.3,
       "costPerTaskUsd": 0.1493,
       "valuePerUsd": 142.7,
-      "inputUsd": 0.4125,
-      "outputUsd": 1.02
+      "inputUsd": 0.435,
+      "outputUsd": 0.87
     },
     {
       "model": "Kimi K2.7 Code",
@@ -2716,7 +2716,7 @@
     {
       "model": "Mistral Medium 3.5",
       "creator": "Mistral",
-      "openWeights": false,
+      "openWeights": true,
       "agenticIndex": 7,
       "costPerTaskUsd": 0.4286,
       "valuePerUsd": 16.3,
