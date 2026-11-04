@@ -1,10 +1,10 @@
-/** 数值格式化：全站统一口径，别在组件里各写一套。 */
+/** Number formatting shared site-wide; do not reimplement it in components. */
 
 const usd = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
 const usdTiny = new Intl.NumberFormat("en-US", { maximumFractionDigits: 6, minimumFractionDigits: 2 });
 const int = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
 
-/** 小于一分的 token / 任务成本保留最多六位；极小正数不显示为 $0.00。 */
+/** Costs under one cent keep up to six decimals; tiny positive values never show as $0.00. */
 export const money = (v: number | null | undefined) => {
   if (v == null) return "—";
   if (v !== 0 && Math.abs(v) < 0.000001) return `${v < 0 ? "−" : ""}$<0.000001`;
@@ -24,7 +24,6 @@ export const pct = (v: number | null | undefined) => (v == null ? "—" : `${(v 
 
 export const PERIOD: Record<string, string> = { month: "/mo", quarter: "/quarter", year: "/yr", week: "/wk", none: "" };
 
-export const REGION: Record<string, string> = { cn: "China", global: "Global" };
 
 export const KIND: Record<string, string> = {
   "coding-plan": "Coding Plan",
@@ -44,7 +43,7 @@ export const STATUS: Record<string, string> = {
 
 export const CONFIDENCE: Record<string, string> = { high: "Verified", medium: "Partially verified", low: "Unverified" };
 
-/** 相对最贵者的条宽，用于表格里的可视化，避免引入图表库。 */
+/** Bar width relative to the most expensive entry, for table visuals without a chart library. */
 export const barWidth = (value: number | null, max: number) =>
   value == null || !max ? 0 : Math.max(2, Math.round((value / max) * 100));
 

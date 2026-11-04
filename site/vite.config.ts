@@ -1,4 +1,4 @@
-// 站点构建：根 public 素材和 data JSON 一并进入 dist；不生成第二份数据真源。
+// Site build: root public assets and data JSON are emitted into dist; no second copy of the data is kept.
 import { defineConfig } from "vite";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 

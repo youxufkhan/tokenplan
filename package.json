@@ -9,7 +9,8 @@
   "scripts": {
     "sync": "node scripts/sync-modelgo.mjs && node scripts/derive-usd.mjs",
     "check": "node scripts/validate.mjs",
-    "test": "node --test scripts/*.test.mjs"
+    "test": "node --test scripts/*.test.mjs",
+    "verify": "pnpm check && pnpm test && pnpm -C site exec tsc --noEmit && pnpm -C site build"
   },
   "engines": {
     "node": ">=24"

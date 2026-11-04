@@ -1,4 +1,4 @@
-/** 极简 DOM 工具：不引框架，站点是静态数据渲染，体积优先。 */
+/** Minimal DOM helper: no framework, the site renders static data and bundle size matters. */
 
 type Attrs = Record<string, string | number | boolean | null | undefined>;
 

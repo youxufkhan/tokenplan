@@ -36,13 +36,11 @@
       },
       "region": {
         "enum": [
-          "cn",
           "global"
         ]
       },
       "currency": {
         "enum": [
-          "CNY",
           "USD"
         ]
       },
@@ -81,7 +79,7 @@
           "null"
         ],
         "maxLength": 200,
-        "description": "阶梯价、长上下文加价、错峰折扣等官方规则"
+        "description": "Official rules such as tiered pricing, long-context surcharges and off-peak discounts"
       },
       "multimodal": {
         "type": [
@@ -121,7 +119,7 @@
           "null"
         ],
         "pattern": "^[a-z0-9][a-z0-9-]*$",
-        "description": "同 plans.platformId"
+        "description": "Same as plans.platformId"
       }
     }
   }

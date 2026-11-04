@@ -49,8 +49,8 @@ jobs:
             const d = require("./data/rankings.json");
             const days = (Date.now() - new Date(d.snapshotDate)) / 86400000;
             if (days > 7) {
-              console.error(`排行快照已过期 ${days.toFixed(1)} 天（${d.snapshotDate}），请运行 pnpm sync`);
+              console.error(`Ranking snapshot is ${days.toFixed(1)} days old (${d.snapshotDate}); run pnpm sync`);
               process.exit(1);
             }
-            console.log(`排行快照 ${d.snapshotDate}，${days.toFixed(1)} 天前`);
+            console.log(`Ranking snapshot ${d.snapshotDate}, ${days.toFixed(1)} days old`);
           '

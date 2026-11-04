@@ -1,4 +1,4 @@
-/** 站头：品牌标记复用 SuperCLI 官方资产，链回主站。 */
+/** Site header: the brand mark reuses SuperCLI assets and links to the main site. */
 import { h } from "./dom";
 
 const THEME_KEY = "supercli-theme";
@@ -14,7 +14,7 @@ function applyTheme(theme: "light" | "dark") {
   try {
     localStorage.setItem(THEME_KEY, theme);
   } catch {
-    /* 隐私模式下 localStorage 不可写，忽略 */
+    /* localStorage is not writable in private mode; ignore */
   }
 }
 
@@ -63,7 +63,7 @@ export function renderHeader(): HTMLElement {
     ]),
   ] as never);
 
-  // 滚动高亮当前章节
+  // Highlight the current section while scrolling
   const links = new Map<string, HTMLAnchorElement>();
   nav.querySelectorAll<HTMLAnchorElement>("a[data-section]").forEach((a) => links.set(a.dataset.section!, a));
   const observer = new IntersectionObserver(

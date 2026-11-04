@@ -1,11 +1,11 @@
 /* ==========================================================================
-   AI 编程套餐比价站 — 样式
-   组织：1 基础  2 站点框架  3 通用组件  4 榜单  5 套餐卡  6 表格  7 散点图
-        8 平台清单  9 方法说明  10 响应式
-   颜色只走 tokens.css 的语义令牌，禁止裸写 hex。
+   TokenPlan styles
+   Sections: 1 Base  2 Site frame  3 Shared components  4 Rankings  5 Plan cards
+             6 Tables  7 Scatter  8 Platforms  9 Method  10 Responsive
+   Colors come only from the semantic tokens in tokens.css; no raw hex.
    ========================================================================== */
 
-/* 1 基础 ---------------------------------------------------------------- */
+/* 1 Base ---------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -86,7 +86,7 @@ a:hover {
   border: 0;
 }
 
-/* 2 站点框架 ------------------------------------------------------------ */
+/* 2 Site frame ------------------------------------------------------------ */
 .shell {
   max-width: 1240px;
   margin: 0 auto;
@@ -197,7 +197,7 @@ a:hover {
   height: 16px;
 }
 
-/* 页首 */
+/* Header */
 .hero {
   padding: 76px 0 44px;
   border-bottom: 1px solid var(--line);
@@ -205,7 +205,7 @@ a:hover {
   overflow: clip;
 }
 
-/* 品牌蓝点阵：低对比背景，不抢正文 */
+/* Brand dot grid: low-contrast background that does not compete with text */
 .hero::before {
   content: "";
   position: absolute;
@@ -279,7 +279,7 @@ a:hover {
   color: var(--muted);
 }
 
-/* 章节 */
+/* Sections */
 .section {
   padding: 64px 0;
   border-bottom: 1px solid var(--line);
@@ -327,7 +327,7 @@ a:hover {
   color: var(--ink);
 }
 
-/* 页脚 */
+/* Footer */
 .site-footer {
   padding: 44px 0 64px;
   border-top: 1px solid var(--line);
@@ -353,7 +353,7 @@ a:hover {
   color: var(--ink);
 }
 
-/* 3 通用组件 ------------------------------------------------------------ */
+/* 3 Shared components ------------------------------------------------------------ */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -387,7 +387,7 @@ a:hover {
   color: var(--warn);
 }
 
-/* 原厂 / 云平台 / 工具厂商 / 聚合渠道按售卖主体区分 */
+/* Model provider / cloud platform / tool vendor / reseller, by seller type */
 .chip--first-party {
   background: var(--brand-tint);
   color: var(--accent);
@@ -422,7 +422,7 @@ a:hover {
   background: currentColor;
 }
 
-/* 置信度：已核实/部分核实/未核实 */
+/* Confidence: verified / partly verified / unverified */
 .conf {
   display: inline-flex;
   align-items: center;
@@ -452,7 +452,7 @@ a:hover {
   background: var(--faint);
 }
 
-/* 工具条：筛选 + 排序 + 搜索 */
+/* Toolbar: filter + sort + search */
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -527,7 +527,7 @@ a:hover {
   color: var(--muted);
 }
 
-/* 4 榜单（最便宜 / 最贵 / 性价比） -------------------------------------- */
+/* 4 Rankings (cheapest / priciest / value) -------------------------------------- */
 .podiums {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -619,7 +619,7 @@ a:hover {
   font-weight: 400;
 }
 
-/* 5 套餐卡 -------------------------------------------------------------- */
+/* 5 Plan cards -------------------------------------------------------------- */
 .plan-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
@@ -754,7 +754,7 @@ a:hover {
   font-weight: 600;
 }
 
-/* 空状态 */
+/* Empty state */
 .empty {
   padding: 48px 20px;
   text-align: center;
@@ -764,7 +764,7 @@ a:hover {
   border-radius: var(--radius-lg);
 }
 
-/* 6 表格 ---------------------------------------------------------------- */
+/* 6 Tables ---------------------------------------------------------------- */
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -844,7 +844,7 @@ th[aria-sort="descending"]::after {
   white-space: nowrap;
 }
 
-/* 表格内的条形 */
+/* Bars inside tables */
 .barcell {
   position: relative;
   min-width: 108px;
@@ -867,7 +867,7 @@ th[aria-sort="descending"]::after {
   font-weight: 600;
 }
 
-/* 7 散点图 -------------------------------------------------------------- */
+/* 7 Scatter -------------------------------------------------------------- */
 .scatter {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.75fr);
@@ -979,7 +979,7 @@ th[aria-sort="descending"]::after {
   color: var(--terminal-muted);
 }
 
-/* 8 平台清单 ------------------------------------------------------------ */
+/* 8 Platforms ------------------------------------------------------------ */
 .platform-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
@@ -1029,7 +1029,7 @@ th[aria-sort="descending"]::after {
   font-variant-numeric: tabular-nums;
 }
 
-/* 9 方法说明 ------------------------------------------------------------ */
+/* 9 Method ------------------------------------------------------------ */
 .method {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1073,14 +1073,14 @@ th[aria-sort="descending"]::after {
   font-variant-numeric: tabular-nums;
 }
 
-/* 本地品牌图标保持原色，白色底片保证双色主题下单色图标可辨。 */
+/* Local brand icons keep their colors; a white backing keeps mono icons readable in both themes. */
 .model-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; flex: 0 0 32px; border-radius: 8px; padding: 5px; background: #fff; border: 1px solid #dedede; }
 .model-icon img { width: 22px; height: 22px; object-fit: contain; }
 .model-icon--fallback { background: var(--surface); color: var(--muted); border-color: var(--line); font-size: 11px; font-weight: 650; }
 .model-cell { display: flex; align-items: center; gap: 10px; }
 .platform__top { flex-wrap: wrap; }
 
-/* 10 响应式 ------------------------------------------------------------- */
+/* 10 Responsive ------------------------------------------------------------- */
 @media (max-width: 1000px) {
   .podiums {
     grid-template-columns: 1fr;
@@ -1127,7 +1127,7 @@ th[aria-sort="descending"]::after {
   }
 }
 
-/* TokenPlan 的独立页面结构；颜色由 tokens.css 控制。 */
+/* TokenPlan's own page structure; colors come from tokens.css. */
 .route-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr)); gap: 12px; }
 .route-card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--brand-tint); display: flex; flex-direction: column; }
 .route-card h3 { margin: 8px 0; font-size: var(--fs-h3); }

@@ -1,13 +1,13 @@
-/** 站点侧类型：usd.json（派生）+ 原始数据（详情）合并后的形状。 */
+/** Site types: usd.json (derived) merged with the raw data (details). */
 
 
 export interface UsdPlan {
   id: string;
   vendor: string;
   name: string;
-  region: "cn" | "global";
+  region: "global";
   kind: string;
-  originalCurrency: "CNY" | "USD";
+  originalCurrency: "USD";
   monthlyUsd: number | null;
   firstPeriodUsd: number | null;
   includedCreditUsd: number | null;
@@ -20,7 +20,7 @@ export interface UsdPlan {
   bundle: "model-access" | "tool" | null;
   bundleLabel: string | null;
   platformUrl: string | null;
-  // 来自 plans.json 的详情
+  // Details from plans.json
   quota?: string;
   models?: string[];
   buyUrl?: string | null;
@@ -34,8 +34,8 @@ export interface UsdApi {
   id: string;
   vendor: string;
   model: string;
-  region: "cn" | "global";
-  originalCurrency: "CNY" | "USD";
+  region: "global";
+  originalCurrency: "USD";
   inputUsd: number;
   outputUsd: number;
   cacheHitUsd: number | null;

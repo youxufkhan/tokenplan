@@ -1,4 +1,4 @@
-/** 套餐、API、平台清单与真实观测值散点图；路由：单页锚点。API：静态 data/*.json。 */
+/** Plan catalog, API table, platform list and the cost/benchmark scatter. Routing: single-page anchors. Data: static data/*.json. */
 import { h, clear } from "./dom";
 import { modelBadge, vendorBadge } from "./model-icons";
 import { CONFIDENCE, KIND, STATUS, money, moneyCompact } from "./format";
@@ -13,7 +13,7 @@ const field = (name: string, options: [string, string][]) => h("label", { class:
   h("select", { "aria-label": name }, options.map(([value, text]) => h("option", { value }, text))),
 ]);
 
-/** 过滤套餐卡，原始数据详情与人民币派生数据按 id 对齐。 */
+/** Filterable plan cards; raw details and derived USD data are joined by id. */
 export function renderPlans(plans: UsdPlan[], raw: RawPlan[], format = money): HTMLElement {
   const details = new Map(raw.map((p) => [p.id, p]));
   const status = field("Status", [["all", "All"], ["active", "Available"], ["sold-out-daily", "Limited daily"], ["other", "Other"]]);
@@ -60,7 +60,7 @@ export function renderPlans(plans: UsdPlan[], raw: RawPlan[], format = money): H
   return h("div", null, [toolbar, grid]);
 }
 
-/** API 单价列表：以每百万 token 的真实输入、输出与 3:1 加权价展示。 */
+/** API rate table: input, output and 3:1 blended price per million tokens. */
 export function renderApi(prices: UsdApi[], raw: RawApi[], format = money): HTMLElement {
   const details = new Map(raw.map((p) => [p.id, p]));
   const search = h("input", { type: "search", placeholder: "Search models or providers", "aria-label": "Search API models" });
@@ -93,7 +93,7 @@ export function renderApi(prices: UsdApi[], raw: RawApi[], format = money): HTML
   return h("div", null, [toolbar, h("div", { class: "table-wrap" }, table)]);
 }
 
-/** 绘制完整观测点；缺 Agentic Index 或单任务成本的记录不进入图。 */
+/** Plot every observation; records missing Agentic Index or cost per task are skipped. */
 export function renderScatter(models: UsdModel[]): HTMLElement {
   const valid = models.filter((m) => m.agenticIndex != null && Number.isFinite(m.agenticIndex)
     && m.costPerTaskUsd != null && Number.isFinite(m.costPerTaskUsd) && m.costPerTaskUsd > 0);
@@ -133,7 +133,7 @@ export function renderScatter(models: UsdModel[]): HTMLElement {
   return h("figure", { class: "scatter__card" }, [svg, h("figcaption", { class: "detail-note" }, `${valid.length} models. Purple indicates closed weights and gold indicates open weights. Focus or hover over a point for details.`) ]);
 }
 
-/** 平台登记表：售卖主体与工具绑定方式均来自 platforms.json。 */
+/** Platform registry: sellers and tool bundling come from platforms.json. */
 export function renderPlatforms(file: PlatformsFile, plans: UsdPlan[], api: UsdApi[]): HTMLElement {
   return h("div", { class: "platform-grid" }, file.platforms.map((p) => h("article", { class: "platform" }, [
     h("div", { class: "platform__top" }, [vendorBadge(p.id, p.name), h("h3", { class: "platform__name" }, p.name),

@@ -1,4 +1,4 @@
-/** 本地 LobeHub 图标：平台按稳定 id，API 按模型家族；许可证见站点 public/model-icons。 */
+/** Local LobeHub icons: platforms by stable id, APIs by model family; license in site/public/model-icons. */
 import { h } from "./dom";
 
 const PROVIDERS = new Map<string, string>([
@@ -30,12 +30,12 @@ function badge(slug: string | undefined, name: string): HTMLElement {
     : name.trim().slice(0, 2).toLocaleUpperCase() || "?");
 }
 
-/** 不以模型品牌替代未知售卖平台。 */
+/** Never substitute a model brand for an unknown seller platform. */
 export function vendorBadge(platformId: string | null, name: string): HTMLElement {
   return badge(PROVIDERS.get(platformId ?? ""), name);
 }
 
-/** 家族名称必须从开头匹配，括号内提及的基础模型不会触发替代。 */
+/** Family names must match from the start, so base models mentioned in parentheses do not trigger a match. */
 export function modelBadge(name: string): HTMLElement {
   return badge(FAMILIES.find(([pattern]) => pattern.test(name.trim()))?.[1], name);
 }

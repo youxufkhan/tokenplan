@@ -24,7 +24,7 @@
       "id": {
         "type": "string",
         "pattern": "^[a-z0-9][a-z0-9-]*$",
-        "description": "全局唯一 slug，跨版本不可改名"
+        "description": "Globally unique slug; never renamed across versions"
       },
       "vendor": {
         "type": "string",
@@ -38,7 +38,6 @@
       },
       "region": {
         "enum": [
-          "cn",
           "global"
         ]
       },
@@ -49,7 +48,7 @@
           "ide",
           "free"
         ],
-        "description": "coding-plan=厂商官方额度包；token-plan=按额度/积分包；ide=编辑器或 Agent 工具订阅；free=免费额度"
+        "description": "coding-plan = vendor quota bundle; token-plan = quota/credit pack; ide = editor or agent tool subscription; free = free tier"
       },
       "price": {
         "type": "object",
@@ -69,7 +68,6 @@
           },
           "currency": {
             "enum": [
-              "CNY",
               "USD"
             ]
           },
@@ -104,13 +102,13 @@
           "type": "string",
           "maxLength": 60
         },
-        "description": "该档位可调用的主力模型，写官方模型 id"
+        "description": "Main models available on this tier, using official model ids"
       },
       "quota": {
         "type": "string",
         "minLength": 1,
         "maxLength": 300,
-        "description": "官方原文额度描述的紧凑转述；无公开额度就写「官方未公开」"
+        "description": "Compact paraphrase of the official quota text; write 'Not published by the provider' when there is none"
       },
       "quotaWindow": {
         "type": [
@@ -126,7 +124,7 @@
               "null"
             ],
             "maxLength": 160,
-            "description": "官方额度数值或文字口径；单位见 quotaUnit"
+            "description": "Official quota value or wording; see quotaUnit for the unit"
           },
           "week": {
             "type": [
@@ -135,7 +133,7 @@
               "null"
             ],
             "maxLength": 160,
-            "description": "官方额度数值或文字口径；单位见 quotaUnit"
+            "description": "Official quota value or wording; see quotaUnit for the unit"
           },
           "month": {
             "type": [
@@ -144,7 +142,7 @@
               "null"
             ],
             "maxLength": 160,
-            "description": "官方额度数值或文字口径；单位见 quotaUnit"
+            "description": "Official quota value or wording; see quotaUnit for the unit"
           }
         }
       },
@@ -153,7 +151,7 @@
           "object",
           "null"
         ],
-        "description": "仅当官方明确给出 token 数量时填写，用于估算额度价值；否则为 null，禁止推算",
+        "description": "Fill only when the provider states a token count, to estimate quota value; otherwise null, never infer",
         "additionalProperties": false,
         "properties": {
           "amount": {
@@ -193,7 +191,7 @@
           "null"
         ],
         "pattern": "^https://",
-        "description": "购买直达；仅 confidence=low 或 status=unknown 时允许为 null（validate.mjs 强制）"
+        "description": "Direct purchase link; may be null only when confidence=low or status=unknown (enforced by validate.mjs)"
       },
       "sourceUrl": {
         "type": "string",
@@ -219,7 +217,7 @@
           "medium",
           "low"
         ],
-        "description": "high=官方页原文确认；medium=官方页但需推算或二手转述；low=未核实"
+        "description": "high = confirmed on the official page; medium = official page but inferred or paraphrased; low = unverified"
       },
       "notes": {
         "type": [
@@ -234,7 +232,7 @@
           "null"
         ],
         "additionalProperties": false,
-        "description": "套餐附带的按金额计的用量额度（如 $60/月 credits），仅官方明写时填",
+        "description": "Usage credit in currency bundled with the plan (e.g. $60/month); fill only when stated officially",
         "properties": {
           "amount": {
             "type": [
@@ -245,7 +243,6 @@
           },
           "currency": {
             "enum": [
-              "CNY",
               "USD"
             ]
           },
@@ -277,7 +274,7 @@
           "multiplier",
           null
         ],
-        "description": "quotaWindow 的单位：requests=请求次数，credits=厂商积分，tokens=token 数，multiplier=倍数（如 5x Pro）"
+        "description": "Unit of quotaWindow: requests, credits (vendor points), tokens, or multiplier (e.g. 5x Pro)"
       },
       "platformId": {
         "type": [
@@ -285,7 +282,7 @@
           "null"
         ],
         "pattern": "^[a-z0-9][a-z0-9-]*$",
-        "description": "platforms.json 里的平台 id；标注售卖主体是原厂/云平台/中转"
+        "description": "Platform id from platforms.json; marks the seller as first-party, cloud platform or reseller"
       }
     }
   }
