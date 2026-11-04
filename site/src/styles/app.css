@@ -200,3 +200,8 @@ input[type="range"] { padding: 0; min-width: 160px; accent-color: var(--ink); bo
 .provider h3 { font-size: 14px; font-weight: 500; } .provider p { font-size: 12px; color: var(--text-2); }
 .foot { margin-top: 80px; padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--text-2); font-size: 13px; } .foot__in { display: grid; gap: 8px; }
 .error { padding: 80px 0; display: grid; gap: 16px; justify-items: start; }
+
+.saved-controls { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin:1rem 0; }
+.saved-controls input,.saved-controls select { min-width:0; max-width:100%; }
+.saved-controls [role=status] { flex-basis:100%; color:var(--muted); }
+.saved-comparisons { padding-block:1.5rem; }

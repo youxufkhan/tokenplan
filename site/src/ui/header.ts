@@ -27,6 +27,9 @@ export function renderHeader(market: Market): HTMLElement {
   const to = (m: string) => { const q = new URLSearchParams(location.search); q.set("market", m); return `?${q}`; };
   const seg = h("div", { class: "seg", role: "group", "aria-label": "Market" },
     (Object.keys(MARKETS) as Market[]).map((m) => h("a", { href: to(m.toLowerCase()), "aria-current": market === m ? "true" : null }, MARKETS[m].label)));
+  seg.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor, index) => {
+    anchor.addEventListener("click", () => { anchor.href = to(Object.keys(MARKETS)[index].toLowerCase()); });
+  });
   const nav = h("nav", { class: "nav", "aria-label": "Sections" }, SECTIONS.map(([id, label]) => h("a", { href: `#${id}`, "data-section": id }, label)));
   const links = new Map<string, HTMLAnchorElement>();
   nav.querySelectorAll<HTMLAnchorElement>("a").forEach((a) => links.set(a.dataset.section!, a));

@@ -1,6 +1,8 @@
+import { reviewText } from "./trust";
 /** Sticky tray plus a side-by-side dialog for the plans the reader picked. */
 import { h, clear } from "./dom";
 import type { Ctx } from "./ctx";
+import { savedPanel } from "./saved";
 import { selection } from "./store";
 import { CONFIDENCE, KIND, shortDate } from "./format";
 import type { UsdPlan } from "../types";
@@ -25,7 +27,7 @@ export function renderCompare(ctx: Ctx): HTMLElement {
       field("Limits", (p) => p.quota ?? "See provider"),
       field("Models", (p) => (p.models ?? []).join(", ") || "See provider"),
       field("Type", (p) => `${KIND[p.kind] ?? p.kind}${p.offeringLabel ? ` · ${p.offeringLabel}` : ""}`),
-      field("Verification", (p) => `${CONFIDENCE[p.confidence] ?? "Unverified"}, checked ${shortDate(p.verifiedAt)}`),
+      field("Verification", (p) => `${CONFIDENCE[p.confidence] ?? "Unverified"}, ${reviewText(p)}`),
       field("Links", (p) => h("span", { class: "cmp__links" }, [
         p.buyUrl ? h("a", { href: p.buyUrl, target: "_blank", rel: "noopener noreferrer" }, "Buy") : null,
         p.sourceUrl ? h("a", { href: p.sourceUrl, target: "_blank", rel: "noopener noreferrer" }, "Source") : null,
@@ -66,6 +68,12 @@ export function renderCompare(ctx: Ctx): HTMLElement {
   dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
   selection.subscribe(paint);
 
+  const notice = h("p", { role: "status" });
+  const saves = savedPanel<string[]>("comparisons", () => selection.ids(), (ids) => {
+    const remaining = ids.filter((id) => byId.has(id));
+    notice.textContent = remaining.length < ids.length ? "Some saved plans are no longer available and were removed." : "Comparison loaded.";
+    selection.set(remaining);
+  }, (value): value is string[] => Array.isArray(value) && value.length > 0 && value.length <= 4 && value.every((id) => typeof id === "string"));
   const fromUrl = new URLSearchParams(location.search).get("cmp");
   if (fromUrl) selection.set(fromUrl.split(",").filter((id) => byId.has(id)));
   paint();
@@ -74,5 +82,5 @@ export function renderCompare(ctx: Ctx): HTMLElement {
     selection.ids().length ? next.set("cmp", selection.ids().join(",")) : next.delete("cmp");
     history.replaceState(null, "", `${location.pathname}${next.size ? `?${next}` : ""}${location.hash}`);
   });
-  return h("div", { class: "cmpwrap" }, [tray, dialog]);
+  return h("div", { class: "cmpwrap" }, [h("div", { class: "wrap saved-comparisons" }, [h("h2", null, "Saved comparisons"), saves, notice]), tray, dialog]);
 }

@@ -15,7 +15,7 @@ export const selection = {
     emit();
     return true;
   },
-  set(ids: string[]) { picked.splice(0, picked.length, ...ids.slice(0, MAX_COMPARE)); emit(); },
+  set(ids: string[]) { picked.splice(0, picked.length, ...[...new Set(ids)].slice(0, MAX_COMPARE)); emit(); },
   clear() { picked.length = 0; emit(); },
   subscribe(fn: () => void) { listeners.add(fn); },
 };

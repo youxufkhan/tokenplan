@@ -1,3 +1,4 @@
+import { reviewText } from "./trust";
 /** Plan comparison list: filter, sort, expand a row for terms, pick plans for side-by-side comparison. */
 import { h, clear } from "./dom";
 import type { Ctx, Quote } from "./ctx";
@@ -20,11 +21,11 @@ export function renderPlans(ctx: Ctx): HTMLElement {
     kind: params.get("kind") ?? "all",
     vendor: params.get("vendor") ?? "all",
     q: params.get("q") ?? "",
-    max: Number(params.get("max")) || 0,
+    max: params.has("max") ? Number(params.get("max")) : Infinity,
     unavailable: params.get("all") === "1",
   };
   const maxPrice = Math.ceil(Math.max(...ctx.plans.map((p) => p.monthlyUsd ?? 0)));
-  if (!state.max || state.max > maxPrice) state.max = maxPrice;
+  if (!Number.isFinite(state.max) || state.max < 0 || state.max > maxPrice) state.max = maxPrice;
 
   const list = h("div", { class: "plist", role: "list" });
   const count = h("p", { class: "toolbar__count", role: "status" });
@@ -93,7 +94,7 @@ export function renderPlans(ctx: Ctx): HTMLElement {
         : [h("span", { class: "muted" }, "Not recorded")]),
       h("div", { class: "row__trust" }, [
         h("span", { class: `conf conf--${p.confidence}` }, CONFIDENCE[p.confidence] ?? "Unverified"),
-        h("span", { class: "muted" }, `Checked ${shortDate(p.verifiedAt)}`),
+        h("span", { class: "muted" }, reviewText(p)),
         h("div", { class: "row__links" }, [link(p.status === "active" || p.status === "sold-out-daily" ? "Buy" : "Provider", p.buyUrl ?? p.platformUrl, "btn"), link("Source", p.sourceUrl), toggle]),
       ]),
       more,
