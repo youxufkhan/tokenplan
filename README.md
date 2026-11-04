@@ -1,8 +1,12 @@
-# Awesome Coding Plan
+# AI Plan Pricing
 
 Compare AI coding subscriptions, pay-as-you-go API prices, and model benchmarks in USD. The catalog covers U.S. and Pakistan storefront offers alongside published USD reference prices, with links to official pricing and purchase pages.
 
 This English adaptation is based on [Awesome Coding Plan by SuperCLI and contributors](https://github.com/supercli-site/awesome-coding-plan). The underlying data and documentation are distributed under [CC BY 4.0](LICENSE). Model benchmarks are credited to [ModelGo](https://modelgo.ai/models/rankings/agent) and [Artificial Analysis](https://artificialanalysis.ai).
+
+[Visit AI Plan Pricing](https://aiplanpricing.yousufkhan.uk/)
+
+Hosted on Cloudflare Pages. Updates to `main` trigger a verified production build.
 
 ## Run locally
 

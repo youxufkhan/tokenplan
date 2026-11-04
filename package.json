@@ -1,11 +1,11 @@
 {
-  "name": "awesome-coding-plan",
+  "name": "ai-plan-pricing",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "AI coding subscription and API price comparison for the United States and Pakistan",
   "license": "CC BY 4.0",
-  "repository": "https://github.com/supercli-site/awesome-coding-plan",
+  "repository": "https://github.com/youxufkhan/tokenplan",
   "scripts": {
     "sync": "node scripts/sync-modelgo.mjs && node scripts/sync-fx.mjs && node scripts/sync-appstore.mjs && node scripts/watch-sources.mjs && node scripts/derive-usd.mjs",
     "check": "node scripts/validate.mjs",

@@ -38,7 +38,7 @@ export function renderHeader(market: Market): HTMLElement {
   }, { rootMargin: "-90px 0px -65% 0px" });
   requestAnimationFrame(() => links.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); }));
   return h("header", { class: "top" }, h("div", { class: "wrap top__in" }, [
-    h("a", { class: "brand", href: "#top" }, [h("span", { class: "brand__mark", html: MARK }), h("span", null, "TokenPlan")]),
+    h("a", { class: "brand", href: "#top" }, [h("span", { class: "brand__mark", html: MARK }), h("span", null, "AI Plan Pricing")]),
     nav, seg, toggle,
   ]));
 }

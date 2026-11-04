@@ -1,5 +1,5 @@
 {
-  "name": "coding-plan-site",
+  "name": "ai-plan-pricing-site",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -17,5 +17,6 @@
     "typescript": "^5.9.3",
     "vite": "^7.1.14"
   },
-  "packageManager": "pnpm@12.4.1"
+  "packageManager": "pnpm@12.4.1",
+  "repository": "https://github.com/youxufkhan/tokenplan"
 }
