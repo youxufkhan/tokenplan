@@ -84,14 +84,15 @@ assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(markets.fx.date));
 assert.equal(new URL(markets.fx.sourceUrl).protocol, "https:");
 const tomorrow = new Date(Date.now() + 86400000);
 assert.ok(new Date(markets.fx.date) <= tomorrow, "FX date is in the future");
+const MARKET_CURRENCY = { US: "USD", PK: "PKR", AE: "AED", SA: "SAR" };
 const marketQuotes = new Set();
 for (const quote of markets.quotes) {
   const key = `${quote.market}:${quote.planId}:${quote.channel}`;
   assert.ok(!marketQuotes.has(key), `Duplicate regional quote: ${key}`);
   marketQuotes.add(key);
   assert.ok(ids.has(quote.planId), `Unknown plan: ${quote.planId}`);
-  assert.ok((quote.market === "US" && quote.currency === "USD")
-    || (quote.market === "PK" && quote.currency === "PKR"), `Invalid market and currency: ${key}`);
+  assert.equal(MARKET_CURRENCY[quote.market], quote.currency, `Invalid market and currency: ${key}`);
+  assert.ok(quote.currency === "USD" || markets.fx.rates[quote.currency], `No FX rate for ${quote.currency}`);
   assert.ok(Number.isFinite(quote.amount) && quote.amount >= 0, `Invalid price: ${key}`);
   assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(quote.verifiedAt), `Missing verification date: ${key}`);
   assert.ok(new Date(quote.verifiedAt) <= tomorrow, `Verification date is in the future: ${key}`);

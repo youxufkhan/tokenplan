@@ -3,13 +3,22 @@
     "rates": {
       "PKR": 276.5278,
       "AED": 3.6725,
-      "SAR": 3.75,
-      "BDT": 124.497
+      "SAR": 3.75
     },
     "date": "2026-11-04",
     "sourceUrl": "https://open.er-api.com/v6/latest/USD"
   },
   "quotes": [
+    {
+      "market": "US",
+      "planId": "chatgpt-go",
+      "amount": 8,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Go"
+    },
     {
       "market": "US",
       "planId": "chatgpt-plus",
@@ -22,6 +31,16 @@
     },
     {
       "market": "US",
+      "planId": "chatgpt-pro",
+      "amount": 100,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Pro 100"
+    },
+    {
+      "market": "US",
       "planId": "claude-pro",
       "amount": 20,
       "currency": "USD",
@@ -31,14 +50,64 @@
       "match": "Claude Pro - Monthly"
     },
     {
+      "market": "US",
+      "planId": "claude-max",
+      "amount": 124.99,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Max - Monthly"
+    },
+    {
+      "market": "US",
+      "planId": "claude-ultra",
+      "amount": 249.99,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Ultra - Monthly"
+    },
+    {
+      "market": "US",
+      "planId": "google-ai-pro",
+      "amount": 19.99,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/google-gemini/id6477489729",
+      "verifiedAt": "2026-11-04",
+      "match": "Google AI Pro (5 TB)"
+    },
+    {
+      "market": "PK",
+      "planId": "chatgpt-go",
+      "amount": 1400,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Go"
+    },
+    {
       "market": "PK",
       "planId": "chatgpt-plus",
       "amount": 4900,
       "currency": "PKR",
       "channel": "Apple App Store",
-      "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069?platform=ipad",
+      "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069",
       "verifiedAt": "2026-11-04",
       "match": "ChatGPT Plus"
+    },
+    {
+      "market": "PK",
+      "planId": "chatgpt-pro",
+      "amount": 27999,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Pro 100"
     },
     {
       "market": "PK",
@@ -46,9 +115,179 @@
       "amount": 4900,
       "currency": "PKR",
       "channel": "Apple App Store",
-      "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684?platform=ipad",
+      "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Pro - Monthly"
+    },
+    {
+      "market": "PK",
+      "planId": "claude-max",
+      "amount": 34900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Max - Monthly"
+    },
+    {
+      "market": "PK",
+      "planId": "claude-ultra",
+      "amount": 69900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Ultra - Monthly"
+    },
+    {
+      "market": "PK",
+      "planId": "google-ai-pro",
+      "amount": 5600,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/google-gemini/id6477489729",
+      "verifiedAt": "2026-11-04",
+      "match": "Google AI Pro (5 TB)"
+    },
+    {
+      "market": "AE",
+      "planId": "chatgpt-go",
+      "amount": 29.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Go"
+    },
+    {
+      "market": "AE",
+      "planId": "chatgpt-plus",
+      "amount": 79.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Plus"
+    },
+    {
+      "market": "AE",
+      "planId": "chatgpt-pro",
+      "amount": 384.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Pro 100"
+    },
+    {
+      "market": "AE",
+      "planId": "claude-pro",
+      "amount": 79.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Pro - Monthly"
+    },
+    {
+      "market": "AE",
+      "planId": "claude-max",
+      "amount": 499.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Max - Monthly"
+    },
+    {
+      "market": "AE",
+      "planId": "claude-ultra",
+      "amount": 999.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Ultra - Monthly"
+    },
+    {
+      "market": "AE",
+      "planId": "google-ai-pro",
+      "amount": 76.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/google-gemini/id6477489729",
+      "verifiedAt": "2026-11-04",
+      "match": "Google AI Pro (5 TB)"
+    },
+    {
+      "market": "SA",
+      "planId": "chatgpt-go",
+      "amount": 35,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Go"
+    },
+    {
+      "market": "SA",
+      "planId": "chatgpt-plus",
+      "amount": 89.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Plus"
+    },
+    {
+      "market": "SA",
+      "planId": "chatgpt-pro",
+      "amount": 429.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/chatgpt/id6448311069",
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Pro 100"
+    },
+    {
+      "market": "SA",
+      "planId": "claude-pro",
+      "amount": 89.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Pro - Monthly"
+    },
+    {
+      "market": "SA",
+      "planId": "claude-max",
+      "amount": 499.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Max - Monthly"
+    },
+    {
+      "market": "SA",
+      "planId": "claude-ultra",
+      "amount": 999.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Ultra - Monthly"
+    },
+    {
+      "market": "SA",
+      "planId": "google-ai-pro",
+      "amount": 85.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/google-gemini/id6477489729",
+      "verifiedAt": "2026-11-04",
+      "match": "Google AI Pro (5 TB)"
     }
   ]
 }

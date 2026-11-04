@@ -19,7 +19,7 @@ export function renderCompare(ctx: Ctx): HTMLElement {
     const q = (p: UsdPlan) => ctx.quotes.get(p.id);
     return [
       field("Monthly price", (p) => p.monthlyUsd === 0 ? "Free" : ctx.fmt(p.monthlyUsd), (p) => p.monthlyUsd === cheapest),
-      field("Local App Store price", (p) => q(p) ? `${q(p)!.currency === "PKR" ? "PKR " + q(p)!.amount.toLocaleString("en-US") : "$" + q(p)!.amount} (${q(p)!.channel})` : "Not recorded"),
+      field("App Store price", (p) => q(p) ? `${ctx.fmtQuote(q(p)!)} (${ctx.premium(q(p)!, p.monthlyUsd) ?? 0}% vs list)` : "Not recorded"),
       field("First period", (p) => p.firstPeriodUsd != null ? ctx.fmt(p.firstPeriodUsd) : "Same as regular"),
       field("Included usage credit", (p) => p.includedCreditUsd != null ? `${ctx.fmt(p.includedCreditUsd)} (${p.creditRatio?.toFixed(1)}× the price)` : "None listed"),
       field("Limits", (p) => p.quota ?? "See provider"),

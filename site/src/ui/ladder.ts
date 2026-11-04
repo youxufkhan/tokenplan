@@ -26,7 +26,7 @@ export function renderLadder(ctx: Ctx): HTMLElement {
     const quote = ctx.quotes.get(p.id);
     readout.replaceChildren(...[
       h("div", { class: "leader" }, [h("strong", null, p.name), h("i", { class: "leader__fill" }), h("span", { class: "ladder__price" }, p.monthlyUsd === 0 ? "Free" : `${ctx.fmt(p.monthlyUsd)}/mo`)]),
-      quote ? h("span", null, `${quote.channel}: ${quote.currency === "PKR" ? "PKR " + quote.amount.toLocaleString("en-US") : "$" + quote.amount}`) : null,
+      quote ? h("span", null, `${quote.channel}: ${ctx.fmtQuote(quote)}`) : null,
       h("span", { class: "ladder__quota" }, p.quota ?? ""),
     ].filter((n): n is HTMLElement => n != null));
   };

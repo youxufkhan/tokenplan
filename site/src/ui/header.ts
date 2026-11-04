@@ -1,5 +1,6 @@
 /** Site header: brand, section links, market switch and theme toggle. */
 import { h } from "./dom";
+import { MARKETS, type Market } from "./ctx";
 
 const THEME_KEY = "tokenplan-theme";
 type Theme = "light" | "dark";
@@ -16,7 +17,7 @@ const applyTheme = (t: Theme) => {
 const SECTIONS: [string, string][] = [["plans", "Plans"], ["api", "API rates"], ["models", "Models"], ["providers", "Providers"]];
 const MARK = `<svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M5 20h18" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="20" r="2.6" fill="var(--mark)"/><circle cx="15" cy="20" r="2.6" fill="var(--bg)"/><circle cx="21.5" cy="20" r="2.6" fill="var(--bg)"/><path d="M8 14h7M15 9h6" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" opacity=".55"/></svg>`;
 
-export function renderHeader(market: "US" | "PK"): HTMLElement {
+export function renderHeader(market: Market): HTMLElement {
   const toggle = h("button", { class: "icon-btn", type: "button", "aria-label": "Switch between light and dark theme" }, currentTheme() === "dark" ? "Light" : "Dark");
   toggle.addEventListener("click", () => {
     const next: Theme = currentTheme() === "dark" ? "light" : "dark";
@@ -24,10 +25,8 @@ export function renderHeader(market: "US" | "PK"): HTMLElement {
     toggle.textContent = next === "dark" ? "Light" : "Dark";
   });
   const to = (m: string) => { const q = new URLSearchParams(location.search); q.set("market", m); return `?${q}`; };
-  const seg = h("div", { class: "seg", role: "group", "aria-label": "Market" }, [
-    h("a", { href: to("us"), "aria-current": market === "US" ? "true" : null }, "US · USD"),
-    h("a", { href: to("pk"), "aria-current": market === "PK" ? "true" : null }, "Pakistan · PKR"),
-  ]);
+  const seg = h("div", { class: "seg", role: "group", "aria-label": "Market" },
+    (Object.keys(MARKETS) as Market[]).map((m) => h("a", { href: to(m.toLowerCase()), "aria-current": market === m ? "true" : null }, MARKETS[m].label)));
   const nav = h("nav", { class: "nav", "aria-label": "Sections" }, SECTIONS.map(([id, label]) => h("a", { href: `#${id}`, "data-section": id }, label)));
   const links = new Map<string, HTMLAnchorElement>();
   nav.querySelectorAll<HTMLAnchorElement>("a").forEach((a) => links.set(a.dataset.section!, a));

@@ -13,4 +13,4 @@ pnpm -C site build
 
 Serve `site/dist` from a static host. To preview the build locally, run `pnpm -C site preview --port 5183`.
 
-The two markets use the same page with `?market=us` and `?market=pk`.
+The four markets use the same page: `?market=us`, `?market=pk`, `?market=ae` and `?market=sa`.

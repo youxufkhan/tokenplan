@@ -1,6 +1,6 @@
 /** Plan comparison list: filter, sort, expand a row for terms, pick plans for side-by-side comparison. */
 import { h, clear } from "./dom";
-import type { Ctx } from "./ctx";
+import type { Ctx, Quote } from "./ctx";
 import { selection, MAX_COMPARE } from "./store";
 import { vendorBadge } from "./model-icons";
 import { CONFIDENCE, KIND, STATUS, shortDate } from "./format";
@@ -48,6 +48,11 @@ export function renderPlans(ctx: Ctx): HTMLElement {
 
   const credit = (p: UsdPlan) => p.creditRatio != null ? h("span", { class: `credit${p.creditRatio >= 1 ? " credit--good" : ""}`, title: p.creditText ?? "" }, `${ctx.fmt(p.includedCreditUsd)} credit · ${p.creditRatio.toFixed(1)}×`) : null;
 
+  const premiumLine = (quote: Quote, p: UsdPlan) => {
+    const d = ctx.premium(quote, p.monthlyUsd);
+    return d == null || d === 0 ? null : h("span", { class: d > 0 ? "premium premium--up" : "premium" }, `${d > 0 ? "+" : ""}${d}% vs list`);
+  };
+
   function row(p: UsdPlan, maxMonthly: number): HTMLElement {
     const quote = ctx.quotes.get(p.id);
     const bar = p.monthlyUsd != null ? Math.max(p.monthlyUsd > 0 ? 2 : 0, (p.monthlyUsd / maxMonthly) * 100) : 0;
@@ -84,7 +89,7 @@ export function renderPlans(ctx: Ctx): HTMLElement {
         h("div", { class: "models" }, (p.models ?? []).slice(0, 4).map((m) => h("span", { class: "tag" }, m))),
       ]),
       h("div", { class: "row__local" }, quote
-        ? [h("strong", null, quote.currency === "PKR" ? `PKR ${quote.amount.toLocaleString("en-US")}` : `$${quote.amount}`), link(quote.channel, quote.sourceUrl) ?? quote.channel]
+        ? [h("strong", null, ctx.fmtQuote(quote)), premiumLine(quote, p), link(quote.channel, quote.sourceUrl) ?? quote.channel]
         : [h("span", { class: "muted" }, "Not recorded")]),
       h("div", { class: "row__trust" }, [
         h("span", { class: `conf conf--${p.confidence}` }, CONFIDENCE[p.confidence] ?? "Unverified"),
@@ -165,7 +170,7 @@ export function renderPlans(ctx: Ctx): HTMLElement {
     ]),
     count,
   ]);
-  const head = h("div", { class: "plist__head", "aria-hidden": "true" }, ["", "Plan", "Monthly price", "What you get", ctx.market === "PK" ? "Pakistan App Store" : "US App Store", "Verification"].map((t) => h("span", null, t)));
+  const head = h("div", { class: "plist__head", "aria-hidden": "true" }, ["", "Plan", "Monthly price", "What you get", `${ctx.market} App Store`, "Verification"].map((t) => h("span", null, t)));
   update();
   return h("div", null, [toolbar, head, list]);
 }

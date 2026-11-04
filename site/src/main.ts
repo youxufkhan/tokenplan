@@ -7,7 +7,7 @@ import { renderCompare } from "./ui/compare";
 import { renderApi } from "./ui/api";
 import { renderScatter } from "./ui/scatter";
 import { renderProviders } from "./ui/providers";
-import { makeFormatters, type Ctx, type Quote } from "./ui/ctx";
+import { MARKETS, makeFormatters, quoteText, type Ctx, type Market, type Quote } from "./ui/ctx";
 import { shortDate } from "./ui/format";
 import type { PlatformsFile, RawApi, RawPlan, UsdPlan, UsdView } from "./types";
 
@@ -26,8 +26,10 @@ async function mount(app: HTMLElement) {
   const [view, rawPlans, rawApi, platforms, markets] = await Promise.all([
     load<UsdView>("usd"), load<RawPlan[]>("plans"), load<RawApi[]>("api-prices"), load<PlatformsFile>("platforms"), load<Markets>("markets"),
   ]);
-  const market = new URLSearchParams(location.search).get("market") === "pk" ? "PK" : "US";
-  const rate = markets.fx.rates.PKR;
+  const asked = (new URLSearchParams(location.search).get("market") ?? "").toUpperCase();
+  const market: Market = asked in MARKETS ? (asked as Market) : "US";
+  const currency = MARKETS[market].currency;
+  const rate = currency === "USD" ? 1 : markets.fx.rates[currency];
   const raw = new Map(rawPlans.map((p) => [p.id, p]));
   const plans: UsdPlan[] = view.plans.map((p) => {
     const r = raw.get(p.id);
@@ -35,8 +37,10 @@ async function mount(app: HTMLElement) {
   });
   const apiRaw = new Map(rawApi.map((a) => [a.id, a]));
   const ctx: Ctx = {
-    market, currency: market === "PK" ? "PKR" : "USD", rate, rateDate: markets.fx.date,
-    ...makeFormatters(market, rate),
+    market, currency, rate, rateDate: markets.fx.date,
+    ...makeFormatters(currency, rate),
+    fmtQuote: quoteText,
+    premium: (q, list) => (list ? Math.round(((q.amount / (q.currency === "USD" ? 1 : markets.fx.rates[q.currency])) / list - 1) * 100) : null),
     plans, api: view.api.map((a) => ({ ...a, sourceUrl: apiRaw.get(a.id)?.sourceUrl, verifiedAt: apiRaw.get(a.id)?.verifiedAt })), models: view.models, platforms,
     quotes: new Map(markets.quotes.filter((q) => q.market === market).map((q) => [q.planId, q])),
   };
@@ -44,9 +48,9 @@ async function mount(app: HTMLElement) {
   const live = plans.filter((p) => p.status === "active" || p.status === "sold-out-daily");
   const vendors = new Set(live.map((p) => p.vendor)).size;
   const newest = [...plans, ...ctx.api].map((x) => x.verifiedAt ?? "").sort().pop();
-  const fxNote = market === "PK"
-    ? `Pakistan view: prices converted at 1 USD = PKR ${rate} (${shortDate(markets.fx.date)}). Where we recorded the local App Store price, it is shown next to the converted list price.`
-    : "Prices are published USD list prices. App Store prices can differ from web checkout.";
+  const fxNote = currency === "USD"
+    ? "Prices are published USD list prices. App Store prices can differ from web checkout."
+    : `${MARKETS[market].label.split(" · ")[0]} view: list prices converted at 1 USD = ${currency} ${rate} (${shortDate(markets.fx.date)}). The App Store column is the price recorded in that storefront, with its difference from the converted list price.`;
 
   const hero = h("section", { id: "top", class: "hero wrap" }, [
     h("div", { class: "hero__copy" }, [

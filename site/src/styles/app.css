@@ -141,7 +141,7 @@ input[type="range"] { padding: 0; min-width: 160px; accent-color: var(--ink); bo
 .row__price { display: grid; gap: 0; align-content: start; } .row__price strong { font-size: 20px; line-height: 24px; font-weight: 500; } .row__per { font-size: 12px; color: var(--text-3); }
 .row__first { font-size: 12px; color: var(--warn); } .credit { font: 400 12px var(--mono); color: var(--text-2); } .credit--good { color: var(--good); }
 .row__quota p { font-size: 14px; } .models { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
-.row__local { display: grid; gap: 0; font-size: 13px; color: var(--text-2); } .row__local strong { font: 500 14px var(--mono); color: var(--ink); }
+.row__local { display: grid; gap: 0; font-size: 13px; color: var(--text-2); } .row__local strong { font: 500 14px var(--mono); color: var(--ink); } .premium { font: 400 12px var(--mono); color: var(--good); } .premium--up { color: var(--warn); }
 .row__trust { display: grid; gap: 4px; justify-items: start; font-size: 13px; } .row__links { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 4px; }
 .row__toggle { background: none; border: 0; padding: 0; color: var(--text-2); font: 500 13px var(--sans); cursor: pointer; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
 .row__more { display: none; grid-column: 2 / -1; margin-top: 12px; padding-top: 12px; border-top: 1px dotted var(--line-strong); font-size: 13px; color: var(--text-2); gap: 4px; } .row.is-open .row__more { display: grid; } .row__more b { color: var(--ink); font-weight: 500; }
