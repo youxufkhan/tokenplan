@@ -210,3 +210,6 @@ input[type="range"] { padding: 0; min-width: 160px; accent-color: var(--ink); bo
   .top__in .seg { order:3; flex-basis:100%; justify-content:center; }
   .top__in .icon-btn { margin-left:auto; }
 }
+
+.support { grid-column: 1 / -1; padding-bottom: 1.5rem; }
+.support__links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: .8rem; }

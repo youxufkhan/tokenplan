@@ -75,6 +75,15 @@ async function mount(app: HTMLElement) {
     ]),
     renderCompare(ctx),
     h("footer", { class: "foot" }, h("div", { class: "wrap foot__in" }, [
+      h("div", { class: "support" }, [
+        h("p", null, "Built by Yousuf Khan. If this helps you choose a plan, you can support the project or star it on GitHub."),
+        h("nav", { class: "support__links", "aria-label": "Creator and project links" }, [
+          h("a", { href: "https://www.patreon.com/c/youxufkhan", target: "_blank", rel: "noopener noreferrer", class: "btn btn--solid" }, "Support on Patreon"),
+          h("a", { href: "https://github.com/youxufkhan/tokenplan", target: "_blank", rel: "noopener noreferrer", class: "btn" }, "Star on GitHub"),
+          h("a", { href: "https://github.com/youxufkhan", target: "_blank", rel: "noopener noreferrer" }, "GitHub profile"),
+          h("a", { href: "https://yousufkhan.uk", target: "_blank", rel: "noopener noreferrer" }, "Personal website"),
+        ]),
+      ]),
       h("p", null, `See each quote for its review and price verification dates. Benchmark data: Artificial Analysis via ModelGo, snapshot ${shortDate(rankings.snapshotDate)}.`),
       h("p", null, [h("a", { href: "https://github.com/supercli-site/awesome-coding-plan" }, "Adapted from Awesome Coding Plan"), " · CC BY 4.0 · ", h("a", { href: markets.fx.sourceUrl }, "Exchange rates"), "."]),
     ])),

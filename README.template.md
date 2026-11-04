@@ -64,3 +64,7 @@ pnpm test
 ```
 
 See [Contributing](CONTRIBUTING.md) for source and verification requirements.
+
+## Support and links
+
+Built by [Yousuf Khan](https://yousufkhan.uk). You can [support the project on Patreon](https://www.patreon.com/c/youxufkhan) or [star this repository](https://github.com/youxufkhan/tokenplan). More projects are on [GitHub](https://github.com/youxufkhan).
