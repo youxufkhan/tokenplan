@@ -59,3 +59,9 @@ const pkr = new Intl.NumberFormat("en-PK", { style: "currency", currency: "PKR",
 
 export const currencyMoney = (value: number, currency: "USD" | "PKR") =>
   currency === "USD" ? money(value) : (Math.abs(value) < 0.01 ? pkrPrecise : pkr).format(value);
+
+export const shortDate = (iso?: string) => {
+  if (!iso) return "date unknown";
+  const d = new Date(`${iso}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+};

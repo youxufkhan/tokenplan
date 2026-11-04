@@ -1,86 +1,42 @@
-/** Site header: the brand mark reuses SuperCLI assets and links to the main site. */
+/** Site header: brand, section links, market switch and theme toggle. */
 import { h } from "./dom";
 
-const THEME_KEY = "supercli-theme";
+const THEME_KEY = "tokenplan-theme";
+type Theme = "light" | "dark";
 
-function currentTheme(): "light" | "dark" {
+const currentTheme = (): Theme => {
   const set = document.documentElement.dataset.theme;
-  if (set === "light" || set === "dark") return set;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
+  return set === "light" || set === "dark" ? set : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
+const applyTheme = (t: Theme) => {
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem(THEME_KEY, t); } catch { /* private mode: keep the choice for this visit only */ }
+};
 
-function applyTheme(theme: "light" | "dark") {
-  document.documentElement.dataset.theme = theme;
-  try {
-    localStorage.setItem(THEME_KEY, theme);
-  } catch {
-    /* localStorage is not writable in private mode; ignore */
-  }
-}
+const SECTIONS: [string, string][] = [["plans", "Plans"], ["api", "API rates"], ["models", "Models"], ["providers", "Providers"]];
+const MARK = `<svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M5 20h18" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="20" r="2.6" fill="var(--mark)"/><circle cx="15" cy="20" r="2.6" fill="var(--bg)"/><circle cx="21.5" cy="20" r="2.6" fill="var(--bg)"/><path d="M8 14h7M15 9h6" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" opacity=".55"/></svg>`;
 
-const SUN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6"/></svg>`;
-const MOON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"/></svg>`;
-
-const SECTIONS = [
-  ["market", "Markets"],
-  ["plans", "Subscriptions"],
-  ["api", "API rates"],
-  ["estimate", "Estimator"],
-  ["value", "Benchmarks"],
-  ["platforms", "Providers"],
-];
-
-export function renderHeader(): HTMLElement {
-  const toggle = h("button", {
-    class: "theme-toggle",
-    type: "button",
-    "aria-label": "Toggle color theme",
-    title: "Toggle color theme",
-    html: currentTheme() === "dark" ? SUN : MOON,
-  });
+export function renderHeader(market: "US" | "PK"): HTMLElement {
+  const toggle = h("button", { class: "icon-btn", type: "button", "aria-label": "Switch between light and dark theme" }, currentTheme() === "dark" ? "Light" : "Dark");
   toggle.addEventListener("click", () => {
-    const next = currentTheme() === "dark" ? "light" : "dark";
+    const next: Theme = currentTheme() === "dark" ? "light" : "dark";
     applyTheme(next);
-    toggle.innerHTML = next === "dark" ? SUN : MOON;
+    toggle.textContent = next === "dark" ? "Light" : "Dark";
   });
-
-  const nav = h(
-    "nav",
-    { class: "site-nav", "aria-label": "Main navigation" },
-    SECTIONS.map(([id, label]) =>
-      h("a", { href: `#${id}`, "data-section": id } as never, label),
-    ),
-  );
-
-  const header = h("header", { class: "site-header" }, [
-    h("div", { class: "shell site-header__inner" }, [
-      h("a", { class: "brand", href: "#market" }, [
-        h("span", { class: "brand__symbol", "aria-hidden": "true" }, "≋"),
-        h("span", null, "TokenPlan"),
-      ]),
-      nav,
-      toggle,
-    ]),
-  ] as never);
-
-  // Highlight the current section while scrolling
+  const to = (m: string) => { const q = new URLSearchParams(location.search); q.set("market", m); return `?${q}`; };
+  const seg = h("div", { class: "seg", role: "group", "aria-label": "Market" }, [
+    h("a", { href: to("us"), "aria-current": market === "US" ? "true" : null }, "US · USD"),
+    h("a", { href: to("pk"), "aria-current": market === "PK" ? "true" : null }, "Pakistan · PKR"),
+  ]);
+  const nav = h("nav", { class: "nav", "aria-label": "Sections" }, SECTIONS.map(([id, label]) => h("a", { href: `#${id}`, "data-section": id }, label)));
   const links = new Map<string, HTMLAnchorElement>();
-  nav.querySelectorAll<HTMLAnchorElement>("a[data-section]").forEach((a) => links.set(a.dataset.section!, a));
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (!e.isIntersecting) continue;
-        for (const [id, a] of links) a.setAttribute("aria-current", String(id === e.target.id));
-      }
-    },
-    { rootMargin: "-88px 0px -70% 0px" },
-  );
-  requestAnimationFrame(() => {
-    for (const id of links.keys()) {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    }
-  });
-
-  return header;
+  nav.querySelectorAll<HTMLAnchorElement>("a").forEach((a) => links.set(a.dataset.section!, a));
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) links.forEach((a, id) => a.toggleAttribute("aria-current", id === e.target.id));
+  }, { rootMargin: "-90px 0px -65% 0px" });
+  requestAnimationFrame(() => links.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); }));
+  return h("header", { class: "top" }, h("div", { class: "wrap top__in" }, [
+    h("a", { class: "brand", href: "#top" }, [h("span", { class: "brand__mark", html: MARK }), h("span", null, "TokenPlan")]),
+    nav, seg, toggle,
+  ]));
 }

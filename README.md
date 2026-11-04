@@ -21,7 +21,7 @@ Open [localhost:5183](http://localhost:5183). Run `pnpm -C site build` to genera
 - Plan tables show prices per billing period. The website also shows monthly equivalents.
 - API prices are per million tokens. The site’s blended rate weights uncached input and output 3:1.
 - The monthly API estimator uses your input, output and cache-hit share to project spend in the selected market.
-- Pakistan estimates use the [recorded State Bank of Pakistan rate](data/markets.json). App Store prices are listed separately from USD reference prices.
+- Pakistan estimates use the [recorded daily reference rate](data/markets.json). App Store prices are listed separately from USD reference prices.
 - Model value compares Agentic Index points per USD of task cost for models meeting the minimum benchmark score. Variants are listed separately.
 
 ## Global subscriptions

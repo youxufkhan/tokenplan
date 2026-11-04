@@ -28,6 +28,8 @@ export interface UsdPlan {
   verifiedAt?: string;
   notes?: string | null;
   multimodal?: boolean | null;
+  priceNote?: string | null;
+  creditText?: string | null;
 }
 
 export interface UsdApi {

@@ -15,7 +15,8 @@ const perMonth = { month: 1, quarter: 1 / 3, year: 1 / 12, week: 52 / 12, none: 
 
 const planRows = plans.map((p) => {
   const factor = perMonth[p.price.period];
-  const monthly = p.price.amount == null || factor == null ? null : price(p.price.amount * factor);
+  // A free plan costs nothing in any billing period, so it never needs a period factor.
+  const monthly = p.price.amount === 0 ? 0 : p.price.amount == null || factor == null ? null : price(p.price.amount * factor);
   const credit = p.includedCredit?.amount != null ? price(p.includedCredit.amount) : null;
   return {
     id: p.id,
