@@ -6,7 +6,7 @@ type Theme = "light" | "dark";
 
 const currentTheme = (): Theme => {
   const set = document.documentElement.dataset.theme;
-  return set === "light" || set === "dark" ? set : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return set === "light" || set === "dark" ? set : "light";
 };
 const applyTheme = (t: Theme) => {
   document.documentElement.dataset.theme = t;

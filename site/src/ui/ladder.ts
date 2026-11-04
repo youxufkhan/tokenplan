@@ -20,22 +20,23 @@ export function renderLadder(ctx: Ctx): HTMLElement {
 
   const readout = h("div", { class: "ladder__readout", "aria-live": "polite" });
   const showDefault = () => {
-    readout.replaceChildren(h("span", { class: "ladder__hint" }, "Hover or focus a dot to see the plan. Click it to add it to the comparison."));
+    readout.replaceChildren(h("span", { class: "ladder__hint" }, "Hover a dot for details, click to compare"));
   };
   const show = (p: UsdPlan) => {
     const quote = ctx.quotes.get(p.id);
     readout.replaceChildren(...[
-      h("strong", null, `${p.name}`),
-      h("span", { class: "ladder__price" }, p.monthlyUsd === 0 ? "Free" : `${ctx.fmt(p.monthlyUsd)}/mo`),
+      h("div", { class: "leader" }, [h("strong", null, p.name), h("i", { class: "leader__fill" }), h("span", { class: "ladder__price" }, p.monthlyUsd === 0 ? "Free" : `${ctx.fmt(p.monthlyUsd)}/mo`)]),
       quote ? h("span", null, `${quote.channel}: ${quote.currency === "PKR" ? "PKR " + quote.amount.toLocaleString("en-US") : "$" + quote.amount}`) : null,
       h("span", { class: "ladder__quota" }, p.quota ?? ""),
     ].filter((n): n is HTMLElement => n != null));
   };
   showDefault();
 
-  const axis = h("div", { class: "ladder__axis", "aria-hidden": "true" },
-    TICKS.filter((t) => t <= max * 1.02).map((t) =>
-      h("span", { style: `left:${at(t)}%` }, t === 0 ? "Free" : ctx.fmtCompact(t))));
+  const MINOR = [5, 15, 25, 30, 35, 40, 45, 60, 70, 80, 90, 125, 150, 175, 225, 250, 300, 350];
+  const axis = h("div", { class: "ruler", "aria-hidden": "true" }, [
+    ...MINOR.filter((t) => t <= max * 1.02).map((t) => h("i", { class: "tick", style: `left:${at(t)}%` })),
+    ...TICKS.filter((t) => t <= max * 1.02).map((t) => h("i", { class: "tick tick--major", style: `left:${at(t)}%` }, h("b", null, t === 0 ? "Free" : ctx.fmtCompact(t)))),
+  ]);
 
   const grid = h("div", { class: "ladder__grid", "aria-hidden": "true" },
     TICKS.filter((t) => t <= max * 1.02).map((t) => h("i", { style: `left:${at(t)}%` })));
@@ -63,7 +64,7 @@ export function renderLadder(ctx: Ctx): HTMLElement {
       dot.addEventListener("focus", () => show(p));
       dot.addEventListener("mouseleave", showDefault);
       dot.addEventListener("click", () => {
-        if (!selection.toggle(p.id)) readout.replaceChildren(h("span", { class: "ladder__hint" }, "Compare up to four plans. Remove one first."));
+        if (!selection.toggle(p.id)) readout.replaceChildren(h("span", { class: "ladder__hint" }, "Compare up to four plans, remove one first"));
       });
       return dot;
     });
@@ -87,8 +88,8 @@ export function renderLadder(ctx: Ctx): HTMLElement {
     h("div", { class: "ladder__legend" }, [
       h("span", null, [h("i", { class: "key key--paid" }), "Paid plan"]),
       h("span", null, [h("i", { class: "key key--free" }), "Free plan"]),
-      h("span", null, [h("i", { class: "key key--picked" }), "In your comparison"]),
-      h("span", { class: "ladder__scale" }, "Price scale compresses toward the right so cheap plans stay legible."),
+      h("span", null, [h("i", { class: "key key--picked" }), "Picked"]),
+      h("span", { class: "ladder__scale" }, "Scale compresses toward the right"),
     ]),
   ]);
 

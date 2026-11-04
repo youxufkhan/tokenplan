@@ -50,8 +50,8 @@ async function mount(app: HTMLElement) {
 
   const hero = h("section", { id: "top", class: "hero wrap" }, [
     h("div", { class: "hero__copy" }, [
-      h("h1", null, "Every AI coding plan, on one price line."),
-      h("p", null, `${live.length} subscriptions from ${vendors} providers, placed by what they cost each month. Pick any dots to compare them side by side, then check the same models by the token.`),
+      h("h1", null, "Monthly prices of every AI coding plan, on one line"),
+      h("p", null, `${live.length} subscriptions from ${vendors} providers. Pick any dots to compare plans side by side.`),
     ]),
     renderLadder(ctx),
     renderPicks(ctx),
@@ -63,9 +63,9 @@ async function mount(app: HTMLElement) {
     h("main", null, [
       hero,
       section("plans", "Compare plans", fxNote, renderPlans(ctx)),
-      section("api", "Pay-per-token API rates", "If you call models directly instead of subscribing, cost depends on how much you send and receive. Set your usage and every model is priced for it.", renderApi(ctx, rawApi)),
-      section("models", "Which models earn their price", "Agentic Index measures how well a model completes multi-step coding and tool tasks. Cost per task is what that run cost on the benchmark. The best choices sit up and to the left.", renderScatter(ctx.models)),
-      section("providers", "Providers", "Who sells the plans and APIs above. Labels tell you whether you are buying from the model maker, a cloud platform or a reseller.", renderProviders(platforms, plans, ctx.api)),
+      section("api", "API rates per token", "Calling models directly costs by the token. Set a month of usage and every model is priced for it.", renderApi(ctx, rawApi)),
+      section("models", "Benchmark score against cost", "Agentic Index scores how well a model completes multi-step coding and tool tasks. Cost per task is what the benchmark run cost. Better models sit higher, cheaper ones further left.", renderScatter(ctx.models)),
+      section("providers", "Providers", "Who sells the plans and APIs above, and whether that is the model maker, a cloud platform or a reseller.", renderProviders(platforms, plans, ctx.api)),
     ]),
     renderCompare(ctx),
     h("footer", { class: "foot" }, h("div", { class: "wrap foot__in" }, [

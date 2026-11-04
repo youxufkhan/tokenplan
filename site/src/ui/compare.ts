@@ -8,7 +8,7 @@ import type { UsdPlan } from "../types";
 export function renderCompare(ctx: Ctx): HTMLElement {
   const byId = new Map(ctx.plans.map((p) => [p.id, p]));
   const chips = h("div", { class: "tray__chips" });
-  const open = h("button", { type: "button", class: "btn" }, "Compare side by side");
+  const open = h("button", { type: "button", class: "btn btn--solid" }, "Compare side by side");
   const clearBtn = h("button", { type: "button", class: "btn btn--ghost" }, "Clear");
   const tray = h("div", { class: "tray", hidden: true, role: "region", "aria-label": "Plans to compare" }, [chips, h("div", { class: "tray__actions" }, [clearBtn, open])]);
   const dialog = h("dialog", { class: "cmp", "aria-label": "Plan comparison" });
