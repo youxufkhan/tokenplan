@@ -15,7 +15,7 @@ const applyTheme = (t: Theme) => {
 };
 
 const SECTIONS: [string, string][] = [["plans", "Plans"], ["api", "API rates"], ["models", "Models"], ["providers", "Providers"]];
-const MARK = `<svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M5 20h18" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="20" r="2.6" fill="var(--mark)"/><circle cx="15" cy="20" r="2.6" fill="var(--bg)"/><circle cx="21.5" cy="20" r="2.6" fill="var(--bg)"/><path d="M8 14h7M15 9h6" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" opacity=".55"/></svg>`;
+const MARK = `<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#202124"/><path d="M15 18h23l12 14-12 14H15z" fill="#f5b544"/><circle cx="39" cy="32" r="3" fill="#202124"/><path d="M22 26h7m-7 6h10m-10 6h7" stroke="#202124" stroke-width="4" stroke-linecap="round"/></svg>`;
 
 export function renderHeader(market: Market): HTMLElement {
   const toggle = h("button", { class: "icon-btn", type: "button", "aria-label": "Switch between light and dark theme" }, currentTheme() === "dark" ? "Light" : "Dark");
