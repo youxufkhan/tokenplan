@@ -5,7 +5,7 @@ Use official provider or storefront pages for price updates. Record the source U
 - Update published USD subscription prices in `data/plans.json`.
 - Update published USD API rates per million tokens in `data/api-prices.json`.
 - Record U.S. and Pakistan subscription quotes in `data/markets.json`. Include the market, billing currency, channel, source and verification date. Keep web checkout and app-store offers separate.
-- Update the PKR reference exchange rate in `data/markets.json` with its source and date. Keep FX estimates separate from observed local quotes.
+- Exchange rates and App Store quotes with a `match` label refresh daily through `.github/workflows/sync.yml`; edit them by hand only for new quotes. Keep FX estimates separate from observed local quotes.
 
 Regenerate and check the catalog after changing source data.
 

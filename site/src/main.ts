@@ -9,7 +9,7 @@ import { money, currencyMoney } from "./ui/format";
 import type { UsdView, PlatformsFile, RawApi, RawPlan } from "./types";
 
 interface Markets {
-  fx: { pkrPerUsd: number; date: string; sourceUrl: string };
+  fx: { rates: Record<string, number>; date: string; sourceUrl: string };
   quotes: {
     market: "US" | "PK";
     planId: string;
@@ -18,6 +18,7 @@ interface Markets {
     channel: string;
     sourceUrl: string;
     verifiedAt: string;
+    match?: string;
   }[];
 }
 
@@ -47,7 +48,7 @@ async function mount(app: HTMLElement) {
   const pk = market === "PK";
   const quoteRows = markets.quotes.filter((quote) => quote.market === market);
   const referenceMoney = pk
-    ? (amount: number | null | undefined) => amount == null ? "—" : `≈ ${currencyMoney(amount * markets.fx.pkrPerUsd, "PKR")}`
+    ? (amount: number | null | undefined) => amount == null ? "—" : `≈ ${currencyMoney(amount * markets.fx.rates.PKR, "PKR")}`
     : money;
   const hero = h("section", { id: "market", class: "market" }, [
     h("div", { class: "shell market__layout" }, [
@@ -100,7 +101,7 @@ async function mount(app: HTMLElement) {
     section("method", "How prices are compared", "Source links and verification dates are shown with each quote.", method),
   ]), h("footer", { class: "site-footer" }, [h("div", { class: "shell site-footer__grid" }, [
     h("a", { href: "https://github.com/supercli-site/awesome-coding-plan" }, "Adapted from SuperCLI’s Awesome Coding Plan"),
-    h("a", { href: markets.fx.sourceUrl }, `SBP reference rate: 1 USD = ${markets.fx.pkrPerUsd} PKR (${markets.fx.date})`),
+    h("a", { href: markets.fx.sourceUrl }, `Reference rate: 1 USD = ${markets.fx.rates.PKR} PKR (${markets.fx.date})`),
   ])]));
 }
 

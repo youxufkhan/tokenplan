@@ -18,6 +18,8 @@ const apiPrices = read("../data/api-prices.json");
 const rankings = read("../data/rankings.json");
 const markets = read("../data/markets.json");
 const usd = read("../data/usd.json");
+const history = read("../data/price-history.json");
+assert.ok(Array.isArray(history), "price-history must be an array");
 const platforms = read("../data/platforms.json");
 for (const [name, data] of Object.entries({ plans, apiPrices, rankings, markets, usd, platforms }))
   assertPublicData(data, name);
@@ -76,7 +78,8 @@ assert.ok(apiPrices.length >= 15, `too few api-prices: ${apiPrices.length}`);
 assert.ok(rankings.models.length > 50, "rankings model count is abnormal");
 assert.ok(rankings.snapshotDate, "rankings is missing snapshotDate");
 
-assert.ok(Number.isFinite(markets.fx.pkrPerUsd) && markets.fx.pkrPerUsd > 0);
+for (const [code, rate] of Object.entries(markets.fx.rates)) assert.ok(Number.isFinite(rate) && rate > 0, `Invalid FX rate: ${code}`);
+assert.ok(markets.fx.rates.PKR, "Missing PKR rate");
 assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(markets.fx.date));
 assert.equal(new URL(markets.fx.sourceUrl).protocol, "https:");
 const tomorrow = new Date(Date.now() + 86400000);

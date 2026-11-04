@@ -5,9 +5,10 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 const ICON_DIR = new URL("./public/model-icons/", import.meta.url);
 const ICON_FILES = readdirSync(ICON_DIR).filter((name) => /\.svg$/.test(name) || ["README.md", "LICENSE"].includes(name));
 
-const DATA_FILES = ["plans.json", "api-prices.json", "rankings.json", "markets.json", "usd.json", "platforms.json"];
+const DATA_FILES = ["plans.json", "api-prices.json", "rankings.json", "markets.json", "usd.json", "platforms.json", "price-history.json"];
 
 export default defineConfig({
+  base: "./",
   publicDir: new URL("../public/", import.meta.url).pathname,
   plugins: [{
     name: "bundle-data",

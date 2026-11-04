@@ -6,5 +6,6 @@ node_modules/
 dist/
 site/public/data/
 .env
+.sync-report.md
 .env.*
 .dev.vars*

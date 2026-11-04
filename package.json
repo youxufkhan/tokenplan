@@ -7,7 +7,7 @@
   "license": "CC BY 4.0",
   "repository": "https://github.com/supercli-site/awesome-coding-plan",
   "scripts": {
-    "sync": "node scripts/sync-modelgo.mjs && node scripts/derive-usd.mjs",
+    "sync": "node scripts/sync-modelgo.mjs && node scripts/sync-fx.mjs && node scripts/sync-appstore.mjs && node scripts/watch-sources.mjs && node scripts/derive-usd.mjs",
     "check": "node scripts/validate.mjs",
     "test": "node --test scripts/*.test.mjs",
     "verify": "pnpm check && pnpm test && pnpm -C site exec tsc --noEmit && pnpm -C site build"

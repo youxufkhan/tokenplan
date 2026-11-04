@@ -1,8 +1,13 @@
 {
   "fx": {
-    "pkrPerUsd": 276.7137,
-    "date": "2026-11-03",
-    "sourceUrl": "https://www.sbp.org.pk/psd/reports/report.htm"
+    "rates": {
+      "PKR": 276.5278,
+      "AED": 3.6725,
+      "SAR": 3.75,
+      "BDT": 124.497
+    },
+    "date": "2026-11-04",
+    "sourceUrl": "https://open.er-api.com/v6/latest/USD"
   },
   "quotes": [
     {
@@ -12,7 +17,8 @@
       "currency": "USD",
       "channel": "Apple App Store",
       "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
-      "verifiedAt": "2026-11-04"
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Plus"
     },
     {
       "market": "US",
@@ -21,7 +27,8 @@
       "currency": "USD",
       "channel": "Apple App Store",
       "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
-      "verifiedAt": "2026-11-04"
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Pro - Monthly"
     },
     {
       "market": "PK",
@@ -30,7 +37,8 @@
       "currency": "PKR",
       "channel": "Apple App Store",
       "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069?platform=ipad",
-      "verifiedAt": "2026-11-04"
+      "verifiedAt": "2026-11-04",
+      "match": "ChatGPT Plus"
     },
     {
       "market": "PK",
@@ -39,7 +47,8 @@
       "currency": "PKR",
       "channel": "Apple App Store",
       "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684?platform=ipad",
-      "verifiedAt": "2026-11-04"
+      "verifiedAt": "2026-11-04",
+      "match": "Claude Pro - Monthly"
     }
   ]
 }

@@ -13,7 +13,7 @@
     "context": "1M",
     "buyUrl": "https://platform.deepseek.com",
     "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "deepseek"
   },
@@ -30,7 +30,7 @@
     "context": "1M",
     "buyUrl": "https://platform.deepseek.com",
     "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "deepseek",
     "notes": null
@@ -48,7 +48,7 @@
     "context": null,
     "buyUrl": "https://z.ai/manage-apikey/apikey-list",
     "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "zai",
     "notes": null
@@ -66,7 +66,7 @@
     "context": null,
     "buyUrl": "https://z.ai/manage-apikey/apikey-list",
     "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "zai",
     "notes": null
@@ -120,7 +120,7 @@
     "context": null,
     "buyUrl": "https://platform.minimax.io/user-center/payment/balance",
     "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "minimax",
     "notes": null
@@ -138,7 +138,7 @@
     "context": null,
     "buyUrl": "https://platform.minimax.io/user-center/payment/balance",
     "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "minimax"
   },
@@ -155,7 +155,7 @@
     "context": null,
     "buyUrl": "https://mimo.mi.com",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/pay-as-you-go.md",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "xiaomi",
     "notes": null
@@ -173,7 +173,7 @@
     "context": null,
     "buyUrl": "https://mimo.mi.com",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/pay-as-you-go.md",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "platformId": "xiaomi",
     "notes": null
@@ -193,7 +193,7 @@
     "multimodal": true,
     "buyUrl": "https://platform.claude.com/settings/billing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "anthropic"
@@ -213,7 +213,7 @@
     "multimodal": true,
     "buyUrl": "https://platform.claude.com/settings/billing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "anthropic"
@@ -233,7 +233,7 @@
     "multimodal": true,
     "buyUrl": "https://platform.claude.com/settings/billing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": "The pricing page does not confirm the context window.",
     "platformId": "anthropic"
@@ -253,7 +253,7 @@
     "multimodal": null,
     "buyUrl": "https://platform.openai.com/settings/organization/billing",
     "sourceUrl": "https://developers.openai.com/api/docs/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "openai"
@@ -273,7 +273,7 @@
     "multimodal": null,
     "buyUrl": "https://platform.openai.com/settings/organization/billing",
     "sourceUrl": "https://developers.openai.com/api/docs/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "openai"
@@ -293,7 +293,7 @@
     "multimodal": null,
     "buyUrl": "https://platform.openai.com/settings/organization/billing",
     "sourceUrl": "https://developers.openai.com/api/docs/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": "Coding model for Codex.",
     "platformId": "openai"
@@ -313,7 +313,7 @@
     "multimodal": true,
     "buyUrl": "https://aistudio.google.com/apikey",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": "No free tier.",
     "platformId": "google"
@@ -333,7 +333,7 @@
     "multimodal": true,
     "buyUrl": "https://aistudio.google.com/apikey",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "google"
@@ -353,7 +353,7 @@
     "multimodal": true,
     "buyUrl": "https://aistudio.google.com/apikey",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "google"
@@ -373,7 +373,7 @@
     "multimodal": null,
     "buyUrl": "https://console.x.ai",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "xai"
@@ -393,7 +393,7 @@
     "multimodal": null,
     "buyUrl": "https://console.x.ai",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": "Coding model from xAI.",
     "platformId": "xai"
@@ -413,7 +413,7 @@
     "multimodal": null,
     "buyUrl": "https://console.x.ai",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "xai"
@@ -433,7 +433,7 @@
     "multimodal": true,
     "buyUrl": "https://console.mistral.ai/",
     "sourceUrl": "https://docs.mistral.ai/inference/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": "Public preview. Devstral 2 was deprecated on May 22, 2026.",
     "platformId": "mistral"
@@ -453,7 +453,7 @@
     "multimodal": null,
     "buyUrl": "https://console.mistral.ai/",
     "sourceUrl": "https://docs.mistral.ai/inference/pricing",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "mistral"
@@ -473,7 +473,7 @@
     "multimodal": null,
     "buyUrl": "https://dev.meta.ai/",
     "sourceUrl": "https://dev.meta.ai/docs/pricing-rate-limits",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": "Meta lists the Muse series for pay-as-you-go billing.",
     "platformId": "meta"
@@ -493,7 +493,7 @@
     "multimodal": null,
     "buyUrl": "https://dev.meta.ai/",
     "sourceUrl": "https://dev.meta.ai/docs/pricing-rate-limits",
-    "verifiedAt": "2026-11-03",
+    "verifiedAt": "2026-11-04",
     "confidence": "high",
     "notes": null,
     "platformId": "meta"
