@@ -74,5 +74,5 @@ export function renderCompare(ctx: Ctx): HTMLElement {
     selection.ids().length ? next.set("cmp", selection.ids().join(",")) : next.delete("cmp");
     history.replaceState(null, "", `${location.pathname}${next.size ? `?${next}` : ""}${location.hash}`);
   });
-  return h("div", null, [tray, dialog]);
+  return h("div", { class: "cmpwrap" }, [tray, dialog]);
 }

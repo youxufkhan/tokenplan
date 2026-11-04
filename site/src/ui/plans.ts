@@ -88,7 +88,7 @@ export function renderPlans(ctx: Ctx): HTMLElement {
         h("p", null, p.quota ?? "See provider for limits"),
         h("div", { class: "models" }, (p.models ?? []).slice(0, 4).map((m) => h("span", { class: "tag" }, m))),
       ]),
-      h("div", { class: "row__local" }, quote
+      h("div", { class: `row__local${quote ? "" : " row__local--empty"}` }, quote
         ? [h("strong", null, ctx.fmtQuote(quote)), premiumLine(quote, p), link(quote.channel, quote.sourceUrl) ?? quote.channel]
         : [h("span", { class: "muted" }, "Not recorded")]),
       h("div", { class: "row__trust" }, [
