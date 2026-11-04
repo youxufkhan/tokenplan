@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { parseAmount, parseIap, pickPrice, pageNumbers, validRate } from "./sync-lib.mjs";
+import { parseAmount, parseIap, pickPrice, pageNumbers, showsUsdPrices, validRate } from "./sync-lib.mjs";
 
 const iap = parseIap(readFileSync(new URL("./fixtures/appstore-iap.html", import.meta.url), "utf8"));
 
@@ -19,6 +19,10 @@ test("repeated labels resolve by closeness to the recorded price", () => {
 test("page numbers ignore scripts and normalise separators", () => {
   const nums = pageNumbers("<script>var a=999</script><p>$1,400.00 and 0.006</p>");
   assert.ok(nums.has(1400) && nums.has(0.006) && !nums.has(999));
+});
+test("pages without readable dollar prices are unwatchable", () => {
+  assert.equal(showsUsdPrices("<p>Pro $20 Max $100 Ultra $200</p>"), true);
+  assert.equal(showsUsdPrices("<script>var a='$20 $30 $40'</script><p>Rs 5,600</p>"), false);
 });
 test("FX guard rejects non-finite, non-positive and large swings", () => {
   assert.equal(validRate(280, 276), true);

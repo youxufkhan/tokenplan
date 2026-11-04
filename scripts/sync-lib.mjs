@@ -45,11 +45,15 @@ export const pickPrice = (iap, label, current, pct = 0.4) => {
   return unique.length === 1 ? unique[0] : null;
 };
 
+const visibleText = (html) => html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ");
+
 /** Every number on a page, normalised, for "is the recorded price still shown" checks. */
 export function pageNumbers(html) {
-  const text = html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ");
-  return new Set([...text.matchAll(/\d[\d,]*(?:\.\d+)?/g)].map((m) => Number(m[0].replace(/,/g, ""))));
+  return new Set([...visibleText(html).matchAll(/\d[\d,]*(?:\.\d+)?/g)].map((m) => Number(m[0].replace(/,/g, ""))));
 }
+
+/** A page that shows fewer than three dollar prices is script-rendered or localised, so it cannot confirm or refute a USD price. */
+export const showsUsdPrices = (html) => (visibleText(html).match(/\$\s?\d/g) ?? []).length >= 3;
 
 /** FX guard: finite, positive and within the band of the previous value. */
 export const validRate = (next, prev, pct = 0.05) =>
