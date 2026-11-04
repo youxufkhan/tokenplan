@@ -7,6 +7,10 @@ const PROVIDERS = new Map<string, string>([
   ["moonshot", "kimi-color"], ["minimax", "minimax-color"], ["mistral", "mistral-color"],
   ["meta", "meta-color"], ["aliyun-bailian", "alibaba-color"],
   ["tencent-hunyuan", "tencent-color"], ["tencent-cloud", "tencent-color"],
+  ["xiaomi", "xiaomimimo"], ["aws", "aws-color"], ["fireworks", "fireworks-color"], ["openrouter", "openrouter"],
+  ["opencode", "opencode"], ["ollama", "ollama"], ["kilo", "kilocode"], ["amp", "amp-color"], ["cursor", "cursor"],
+  ["cognition", "devin-color"], ["github", "githubcopilot"], ["qoder", "qoder-color"], ["augment", "augment"],
+  ["factory", "factory"], ["zed", "zed"], ["bytedance-trae", "trae-color"],
 ]);
 const FAMILIES: readonly [RegExp, string][] = [
   [/^claude(?=[\s\d-]|$)/i, "claude-color"],
@@ -21,7 +25,7 @@ const FAMILIES: readonly [RegExp, string][] = [
   [/^minimax(?=[\s\d-]|$)/i, "minimax-color"],
   [/^mimo(?=[\s\d-]|$)/i, "xiaomimimo"],
   [/^mistral(?=[\s\d-]|$)/i, "mistral-color"],
-  [/^llama(?=[\s\d-]|$)/i, "meta-color"],
+  [/^(?:llama|muse)(?=[\s\d-]|$)/i, "meta-color"],
 ];
 
 function badge(slug: string | undefined, name: string): HTMLElement {

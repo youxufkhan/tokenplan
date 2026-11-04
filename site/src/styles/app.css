@@ -43,6 +43,7 @@ a:hover { text-decoration-color: var(--ink); }
 .icon-btn { border: 1px solid var(--line); background: transparent; color: var(--text-2); border-radius: 8px; padding: 4px 12px; font: 500 13px var(--sans); cursor: pointer; }
 .icon-btn:hover { color: var(--ink); background: var(--raised); }
 @media (max-width: 860px) { .nav { display: none; } .seg { margin-left: auto; } }
+@media (max-width: 640px) { .top__in { gap: 8px; } .brand span:last-child { display: none; } .seg a { padding: 4px 8px; font-size: 12px; } .icon-btn { padding: 4px 8px; } }
 
 /* Hero */
 .hero { padding: 64px 0 32px; }
