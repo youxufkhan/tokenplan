@@ -1,0 +1,21 @@
+# AI Plan Pricing
+
+> Compare AI coding subscriptions, API token prices, and model benchmarks with links to official pricing sources.
+
+AI Plan Pricing covers United States, Pakistan, UAE, and Saudi Arabia views in USD, PKR, AED, and SAR. Local App Store quotes are recorded separately from converted USD list prices. Converted prices are estimates. Check each source, billing period, and verification date before buying.
+
+## Website
+
+- [AI Plan Pricing](https://aiplanpricing.yousufkhan.uk/): Subscription comparisons, API workload cost estimates, and model benchmarks.
+- [Repository and documentation](https://github.com/youxufkhan/tokenplan): Source code, methodology, and contribution instructions.
+
+## Pricing data
+
+- [Subscriptions](https://aiplanpricing.yousufkhan.uk/data/plans.json): Published USD prices, quotas, sources, and review dates.
+- [API rates](https://aiplanpricing.yousufkhan.uk/data/api-prices.json): Input, output, and cache rates per million tokens.
+- [Markets and exchange rates](https://aiplanpricing.yousufkhan.uk/data/markets.json): Local storefront quotes and reference FX data.
+- [Model benchmarks](https://aiplanpricing.yousufkhan.uk/data/rankings.json): Artificial Analysis benchmarks via ModelGo, with snapshot date and attribution.
+
+## Attribution
+
+Built by [Yousuf Khan](https://yousufkhan.uk). Adapted from Awesome Coding Plan by SuperCLI and contributors. Data and documentation use CC BY 4.0. Benchmark data retains its upstream attribution.
