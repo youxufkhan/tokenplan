@@ -30,7 +30,8 @@
     "confidence": "high",
     "notes": null,
     "quotaUnit": null,
-    "platformId": "anthropic"
+    "platformId": "anthropic",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "claude-pro",
@@ -66,7 +67,8 @@
     "confidence": "high",
     "notes": null,
     "quotaUnit": "multiplier",
-    "platformId": "anthropic"
+    "platformId": "anthropic",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "claude-max",
@@ -108,7 +110,8 @@
       "text": "$100/mo API credits"
     },
     "quotaUnit": "multiplier",
-    "platformId": "anthropic"
+    "platformId": "anthropic",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "claude-ultra",
@@ -150,7 +153,8 @@
       "text": "$200/mo API credits"
     },
     "quotaUnit": "multiplier",
-    "platformId": "anthropic"
+    "platformId": "anthropic",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "chatgpt-codex-free",
@@ -560,7 +564,8 @@
       "text": "$15/mo AI credits"
     },
     "quotaUnit": "multiplier",
-    "platformId": "github"
+    "platformId": "github",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "copilot-pro-plus",
@@ -601,7 +606,8 @@
       "text": "$70/mo AI credits"
     },
     "quotaUnit": "credits",
-    "platformId": "github"
+    "platformId": "github",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "copilot-max",
@@ -642,7 +648,8 @@
       "text": "$200/mo AI credits"
     },
     "quotaUnit": "credits",
-    "platformId": "github"
+    "platformId": "github",
+    "priceVerifiedAt": "2026-11-05"
   },
   {
     "id": "cursor-free",
