@@ -42,7 +42,7 @@ a:hover { text-decoration-color: var(--ink); }
 .seg a[aria-current] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08), inset 0 0 0 1px var(--line); }
 .icon-btn { border: 1px solid var(--line); background: transparent; color: var(--text-2); border-radius: 8px; padding: 4px 12px; font: 500 13px var(--sans); cursor: pointer; }
 .icon-btn:hover { color: var(--ink); background: var(--raised); }
-@media (max-width: 860px) { .nav { display: none; } .seg { margin-left: auto; } }
+@media (max-width: 860px) { html { scroll-padding-top: 136px; } .top__in { flex-wrap: wrap; height: auto; min-height: 56px; padding-block: 8px; row-gap: 4px; } .nav { order: 4; flex-basis: 100%; margin-left: 0; overflow-x: auto; scrollbar-width: none; } .nav a { white-space: nowrap; } .seg { margin-left: auto; } }
 @media (max-width: 640px) { .top__in { gap: 8px; } .brand span:last-child { display: none; } .seg a { padding: 4px 8px; font-size: 12px; } .icon-btn { padding: 4px 8px; } }
 
 /* Hero */
@@ -213,3 +213,21 @@ input[type="range"] { padding: 0; min-width: 160px; accent-color: var(--ink); bo
 
 .support { grid-column: 1 / -1; padding-bottom: 1.5rem; }
 .support__links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: .8rem; }
+
+/* Method copy */
+.method { display: grid; gap: 12px; max-width: 72ch; color: var(--text-2); }
+
+/* Build-time content, replaced once the app mounts; readable without JavaScript. */
+.prerender { padding-block: 48px; display: grid; gap: 40px; }
+.prerender table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.prerender caption { text-align: left; color: var(--text-2); padding-bottom: 8px; }
+.prerender th, .prerender td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prerender section { display: grid; gap: 12px; overflow-x: auto; }
+
+/* Touch: give small controls a 40px+ hit area without changing their look. */
+.dot::before { content: ""; position: absolute; inset: -10px; border-radius: 50%; }
+@media (pointer: coarse) {
+  .nav a, .seg a, .icon-btn, .row__toggle { min-height: 40px; display: inline-flex; align-items: center; }
+  .chip-btn { min-height: 40px; justify-content: center; }
+  .skip:focus { min-height: 40px; }
+}

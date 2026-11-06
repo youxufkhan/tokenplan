@@ -9,6 +9,7 @@ import { renderScatter } from "./ui/scatter";
 import { renderProviders } from "./ui/providers";
 import { MARKETS, makeFormatters, quoteText, type Ctx, type Market, type Quote } from "./ui/ctx";
 import { shortDate } from "./ui/format";
+import { ABOUT, METHOD, METHOD_TITLE, heading, latest, lede, longDate } from "./copy";
 import type { PlatformsFile, RawApi, RawPlan, UsdPlan, UsdView } from "./types";
 
 interface Markets { fx: { rates: Record<string, number>; date: string; sourceUrl: string }; quotes: Quote[] }
@@ -26,7 +27,8 @@ async function mount(app: HTMLElement) {
   const [view, rawPlans, rawApi, platforms, markets] = await Promise.all([
     load<UsdView>("usd"), load<RawPlan[]>("plans"), load<RawApi[]>("api-prices"), load<PlatformsFile>("platforms"), load<Markets>("markets"),
   ]);
-  const asked = (new URLSearchParams(location.search).get("market") ?? "").toUpperCase();
+  // Market pages live at /pk/, /ae/ and /sa/; ?market= is kept for old links.
+  const asked = (location.pathname.match(/^\/(pk|ae|sa)\//)?.[1] ?? new URLSearchParams(location.search).get("market") ?? "").toUpperCase();
   const market: Market = asked in MARKETS ? (asked as Market) : "US";
   const currency = MARKETS[market].currency;
   const rate = currency === "USD" ? 1 : markets.fx.rates[currency];
@@ -55,14 +57,14 @@ async function mount(app: HTMLElement) {
 
   const hero = h("section", { id: "top", class: "hero wrap" }, [
     h("div", { class: "hero__copy" }, [
-      h("h1", null, "Monthly prices of every AI coding plan, on one line"),
-      h("p", null, `${live.length} subscriptions from ${vendors} providers. Pick any dots to compare plans side by side.`),
+      h("h1", null, heading(market)),
+      h("p", null, `${lede(live.length, vendors)} Prices last checked ${longDate(latest([...rawPlans.map((p) => p.priceVerifiedAt ?? p.verifiedAt), markets.fx.date]))}. Pick any dots to compare plans side by side.`),
     ]),
     renderLadder(ctx),
     renderPicks(ctx),
   ]);
 
-  app.append(
+  app.replaceChildren(
     h("a", { class: "skip", href: "#plans" }, "Skip to plans"),
     renderHeader(market),
     ...(fxStale ? [h("p", { class: "wrap", role: "status" }, "Exchange rates are over seven days old. Converted estimates may be outdated.")] : []),
@@ -71,6 +73,7 @@ async function mount(app: HTMLElement) {
       section("plans", "Compare plans", fxNote, renderPlans(ctx)),
       section("api", "API rates per token", "Calling models directly costs by the token. Set a month of usage and every model is priced for it.", renderApi(ctx, rawApi)),
       section("models", "Benchmark score against cost", "Agentic Index scores how well a model completes multi-step coding and tool tasks. Cost per task is what the benchmark run cost. Better models sit higher, cheaper ones further left.", renderScatter(ctx.models)),
+      section("method", METHOD_TITLE, METHOD[0], h("div", { class: "method" }, [...METHOD.slice(1).map((t) => h("p", null, t)), h("p", null, ABOUT)])),
       section("providers", "Providers", "Who sells the plans and APIs above, and whether that is the model maker, a cloud platform or a reseller.", renderProviders(platforms, plans, ctx.api)),
     ]),
     renderCompare(ctx),
@@ -95,5 +98,5 @@ if (!app) throw new Error("Missing application root");
 mount(app).then(() => { if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView(); }).catch((error: unknown) => {
   const retry = h("button", { type: "button", class: "btn" }, "Reload");
   retry.addEventListener("click", () => location.reload());
-  app.append(h("div", { class: "wrap error", role: "alert" }, [h("h1", null, "Could not load pricing data"), h("p", null, error instanceof Error ? error.message : String(error)), retry]));
+  app.replaceChildren(h("div", { class: "wrap error", role: "alert" }, [h("h1", null, "Could not load pricing data"), h("p", null, error instanceof Error ? error.message : String(error)), retry]));
 });

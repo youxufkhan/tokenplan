@@ -61,8 +61,12 @@ export function renderApi(ctx: Ctx, raw: RawApi[]): HTMLElement {
   function update() {
     paintPresets();
     const next = new URLSearchParams(location.search);
-    for (const [key, value] of [["apiIn", input.value], ["apiOut", output.value], ["apiCache", cache.value], ["apiQ", search.value], ["apiSeller", sellers.value]]) next.set(key, value);
-    history.replaceState(null, "", `${location.pathname}?${next}${location.hash}`);
+    // Only non-default inputs go in the URL, so the plain page keeps one clean address.
+    const defaults = { apiIn: String(PRESETS[1].input), apiOut: String(PRESETS[1].output), apiCache: String(PRESETS[1].cache), apiQ: "", apiSeller: "all" };
+    for (const [key, value] of [["apiIn", input.value], ["apiOut", output.value], ["apiCache", cache.value], ["apiQ", search.value], ["apiSeller", sellers.value]] as const) {
+      if (value === defaults[key]) next.delete(key); else next.set(key, value);
+    }
+    history.replaceState(null, "", `${location.pathname}${next.size ? `?${next}` : ""}${location.hash}`);
     const valid = [input.valueAsNumber, output.valueAsNumber, cache.valueAsNumber].every((value) => Number.isFinite(value) && value >= 0) && cache.valueAsNumber <= 100;
     if (!valid) { clear(list); count.textContent = "Enter valid usage amounts, with cached input between 0 and 100%."; return; }
     try { localStorage.setItem("tokenplan:workload:last:v1", JSON.stringify({ input: input.valueAsNumber, output: output.valueAsNumber, cache: cache.valueAsNumber, search: search.value, seller: sellers.value })); }

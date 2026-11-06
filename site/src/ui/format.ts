@@ -63,5 +63,5 @@ export const currencyMoney = (value: number, currency: "USD" | "PKR") =>
 export const shortDate = (iso?: string) => {
   if (!iso) return "date unknown";
   const d = new Date(`${iso}T00:00:00Z`);
-  return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 };

@@ -1,6 +1,7 @@
 /** Site header: brand, section links, market switch and theme toggle. */
 import { h } from "./dom";
 import { MARKETS, type Market } from "./ctx";
+import { PATH } from "../copy";
 
 const THEME_KEY = "tokenplan-theme";
 type Theme = "light" | "dark";
@@ -14,7 +15,7 @@ const applyTheme = (t: Theme) => {
   try { localStorage.setItem(THEME_KEY, t); } catch { /* private mode: keep the choice for this visit only */ }
 };
 
-const SECTIONS: [string, string][] = [["plans", "Plans"], ["api", "API rates"], ["models", "Models"], ["providers", "Providers"]];
+const SECTIONS: [string, string][] = [["plans", "Plans"], ["api", "API rates"], ["models", "Models"], ["method", "Method"], ["providers", "Providers"]];
 const MARK = `<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#202124"/><path d="M15 18h23l12 14-12 14H15z" fill="#f5b544"/><circle cx="39" cy="32" r="3" fill="#202124"/><path d="M22 26h7m-7 6h10m-10 6h7" stroke="#202124" stroke-width="4" stroke-linecap="round"/></svg>`;
 
 export function renderHeader(market: Market): HTMLElement {
@@ -24,11 +25,12 @@ export function renderHeader(market: Market): HTMLElement {
     applyTheme(next);
     toggle.textContent = next === "dark" ? "Light" : "Dark";
   });
-  const to = (m: string) => { const q = new URLSearchParams(location.search); q.set("market", m); return `?${q}`; };
+  // Each market is its own indexable page; carry the current view state across.
+  const to = (m: Market) => { const q = new URLSearchParams(location.search); q.delete("market"); return `${PATH[m]}${q.size ? `?${q}` : ""}`; };
   const seg = h("div", { class: "seg", role: "group", "aria-label": "Market" },
-    (Object.keys(MARKETS) as Market[]).map((m) => h("a", { href: to(m.toLowerCase()), "aria-current": market === m ? "true" : null }, MARKETS[m].label)));
+    (Object.keys(MARKETS) as Market[]).map((m) => h("a", { href: PATH[m], hreflang: m === "US" ? "en-US" : `en-${m}`, "aria-current": market === m ? "true" : null }, MARKETS[m].label)));
   seg.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor, index) => {
-    anchor.addEventListener("click", () => { anchor.href = to(Object.keys(MARKETS)[index].toLowerCase()); });
+    anchor.addEventListener("click", () => { anchor.href = to((Object.keys(MARKETS) as Market[])[index]); });
   });
   const nav = h("nav", { class: "nav", "aria-label": "Sections" }, SECTIONS.map(([id, label]) => h("a", { href: `#${id}`, "data-section": id }, label)));
   const links = new Map<string, HTMLAnchorElement>();

@@ -7,7 +7,9 @@ AI Plan Pricing covers United States, Pakistan, UAE, and Saudi Arabia views in U
 ## Website
 
 - [AI Plan Pricing](https://aiplanpricing.yousufkhan.uk/): Subscription comparisons, API workload cost estimates, and model benchmarks.
-- [Repository and documentation](https://github.com/youxufkhan/tokenplan): Source code, methodology, and contribution instructions.
+- [Pakistan (PKR)](https://aiplanpricing.yousufkhan.uk/pk/), [UAE (AED)](https://aiplanpricing.yousufkhan.uk/ae/), [Saudi Arabia (SAR)](https://aiplanpricing.yousufkhan.uk/sa/): The same comparison in local currency, with local App Store prices.
+- [Full price list as Markdown](https://aiplanpricing.yousufkhan.uk/llms-full.txt): Every live plan and API rate with sources and verification dates, plus how prices are checked.
+- [Repository](https://github.com/youxufkhan/tokenplan): Source code and contribution instructions.
 
 ## Pricing data
 
