@@ -1,5 +1,5 @@
 /** New adapters observe prices only until a reviewed deployment enables updates. */
-const text = (value) => value.replace(/<[^>]*>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+const text = (value) => value.replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
 const hold = (evidence, status = 'ambiguous') => ({ status, evidence, observationOnly: true, extractorVersion: 'provider-subscriptions-v1' });
 const found = (entry, amount, evidence) => ({ ...hold(evidence), status: amount === entry.price.amount ? 'exact-match' : 'changed-price', amount });
 
@@ -28,11 +28,11 @@ export function extractCommandCode(body, entry) {
   const names = { 'command-code-go': 'Go', 'command-code-goat': 'GOAT', 'command-code-pro': 'Pro', 'command-code-max-10x': 'Max 10×', 'command-code-max-20x': 'Max 20×', 'command-code-provider': 'Provider' };
   const name = names[entry.id];
   if (!name) return hold('Unknown Command Code plan', 'unsupported');
-  const blocks = [...body.matchAll(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>([\s\S]*?)(?=<h[23]\b|$)/gi)].filter(match => text(match[1]).replace(/\.$/, '') === name).map(match => text(match[2]));
+  const blocks = [...body.matchAll(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>([\s\S]*?)(?=<h[23]\b|$)/gi)].filter(match => text(match[1]).replace(/\.$/, '').replace(/^Provider\. The API plan\.$/, 'Provider') === name).map(match => text(match[2]));
   const candidates = [];
   for (const block of blocks) {
     if (/introductory|first month|limited.time|promotion/i.test(block)) continue;
-    const matches = [...block.matchAll(/\$([\d,]+(?:\.\d+)?)\s*\/\s*month\b/gi)];
+    const matches = [...block.matchAll(/\$\s*([\d,]+(?:\.\d+)?)\s*\/\s*month\b/gi)];
     if (matches.length === 1) candidates.push({ amount: Number(matches[0][1].replace(/,/g, '')), block });
   }
   if (candidates.length !== 1) return hold('Expected one named plan and monthly USD price; generic Max headings cannot identify a variant');

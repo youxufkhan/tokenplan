@@ -16,7 +16,7 @@ test('MiMo rejects missing, duplicate and unsupported period tables', () => {
   assert.equal(extractMimo(body, plan('xiaomi-mimo-token-lite', 6, 'quarter')).status, 'unsupported');
 });
 test('Command Code matches named base subscription and preserves processing fee context', () => {
-  const html = '<h3>Go</h3><p>$1/month+ processing fee</p><p>$10 in credits</p><h3>GOAT</h3><p>$10/month+ processing fee</p>';
+  const html = '<h3>Go</h3><p><span>$<!-- -->1</span><span>/month</span>+ processing fee</p><p>$10 in credits</p><h3>GOAT</h3><p>$10/month+ processing fee</p>';
   const result = extractCommandCode(html, plan('command-code-go', 1));
   assert.equal(result.amount, 1);
   assert.match(result.evidence, /processing fee excluded/);
