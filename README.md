@@ -1,12 +1,14 @@
 # AI Plan Pricing
 
-Compare AI coding subscriptions, pay-as-you-go API prices, and model benchmarks in USD. The catalog covers U.S. and Pakistan storefront offers alongside published USD reference prices, with links to official pricing and purchase pages.
+Compare AI coding subscriptions, pay-as-you-go API prices, and model benchmarks in USD. The catalog covers U.S., Pakistan, UAE and Saudi storefront offers alongside published USD reference prices, with links to official pricing and purchase pages.
 
 This English adaptation is based on [Awesome Coding Plan by SuperCLI and contributors](https://github.com/supercli-site/awesome-coding-plan). The underlying data and documentation are distributed under [CC BY 4.0](LICENSE). Model benchmarks are credited to [ModelGo](https://modelgo.ai/models/rankings/agent) and [Artificial Analysis](https://artificialanalysis.ai).
 
 [Visit AI Plan Pricing](https://aiplanpricing.yousufkhan.uk/)
 
 Hosted on Cloudflare Pages. Updates to `main` trigger a verified production build.
+
+See [provider sources and billing caveats](docs/PROVIDER-SOURCES.md) for GLM, Kimi, MiMo, Command Code and DeepSeek. New MiMo and Command Code extractors run in observation mode until their results have been reviewed.
 
 ## Run locally
 
@@ -92,6 +94,24 @@ Open [localhost:5183](http://localhost:5183). Run `pnpm -C site build` to genera
 | **Amp Hobby** | Amp | $0.00 | Pay-as-you-go hosted orbs; unlimited self-hosted; no Amp token fees | BYOK / subscriptions | ✅ | [Open](https://ampcode.com/pricing) | [Official](https://ampcode.com/pricing) |
 | **Amp Individual (Megawatt)** | Amp | $20.00/mo | 45,000 orb minutes; tokens from your own ChatGPT/Claude subs or keys | BYOK / subscriptions | ✅ | [Open](https://ampcode.com/pricing) | [Official](https://ampcode.com/pricing) |
 | **OpenRouter free models** | OpenRouter | $0.00 | 20 req/min, 50 req/day; 1,000/day after buying ≥$10 credits | :free models | ✅ | [Open](https://openrouter.ai) | [Official](https://openrouter.ai/pricing) |
+| **GLM Coding Plan Lite** | Z.ai | $18.00/mo | 2,000 credits per rolling 5-hour window and 10,000 credits per week. | GLM-5.3, GLM-5.3-Flash | — | [Open](https://z.ai/subscribe) | [Official](https://zcode.z.ai/pricing.html) |
+| **GLM Coding Plan Pro** | Z.ai | $80.00/mo | 12,000 credits per rolling 5-hour window and 60,000 credits per week. | GLM-5.3, GLM-5.3-Flash | — | [Open](https://z.ai/subscribe) | [Official](https://zcode.z.ai/pricing.html) |
+| **GLM Coding Plan Max** | Z.ai | $168.00/mo | 28,000 credits per rolling 5-hour window and 140,000 credits per week. | GLM-5.3, GLM-5.3-Flash | — | [Open](https://z.ai/subscribe) | [Official](https://zcode.z.ai/pricing.html) |
+| **MiMo Token Plan Lite** | Xiaomi MiMo | $6.00/mo | 4.1 billion credits per month. Usage stops when the plan quota is exhausted. | mimo-v2.6-pro, mimo-v2.6-flash | — | [Open](https://platform.xiaomimimo.com/#/console/plan-manage) | [Official](https://mimo.mi.com/static/docs/price/token-plan.md) |
+| **MiMo Token Plan Standard** | Xiaomi MiMo | $16.00/mo | 11 billion credits per month. Usage stops when the plan quota is exhausted. | mimo-v2.6-pro, mimo-v2.6-flash | — | [Open](https://platform.xiaomimimo.com/#/console/plan-manage) | [Official](https://mimo.mi.com/static/docs/price/token-plan.md) |
+| **MiMo Token Plan Pro** | Xiaomi MiMo | $50.00/mo | 38 billion credits per month. Usage stops when the plan quota is exhausted. | mimo-v2.6-pro, mimo-v2.6-flash | — | [Open](https://platform.xiaomimimo.com/#/console/plan-manage) | [Official](https://mimo.mi.com/static/docs/price/token-plan.md) |
+| **MiMo Token Plan Max** | Xiaomi MiMo | $100.00/mo | 82 billion credits per month. Usage stops when the plan quota is exhausted. | mimo-v2.6-pro, mimo-v2.6-flash | — | [Open](https://platform.xiaomimimo.com/#/console/plan-manage) | [Official](https://mimo.mi.com/static/docs/price/token-plan.md) |
+| **Kimi Plus** | Moonshot AI (Kimi) | $19.00/mo | Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation. | Kimi K3 | — | [Open](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) | [Official](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) |
+| **Kimi Pro** | Moonshot AI (Kimi) | $39.00/mo | Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation. | Kimi K3 | — | [Open](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) | [Official](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) |
+| **Kimi Max** | Moonshot AI (Kimi) | $99.00/mo | Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation. | Kimi K3 | — | [Open](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) | [Official](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) |
+| **Kimi Ultra** | Moonshot AI (Kimi) | $199.00/mo | Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation. | Kimi K3 | — | [Open](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) | [Official](https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312) |
+| **Command Code Go** | Command Code | $1.00/mo | Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page. | — | — | [Open](https://commandcode.ai/pricing) | [Official](https://commandcode.ai/pricing) |
+| **Command Code GOAT** | Command Code | $10.00/mo | Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page. | — | — | [Open](https://commandcode.ai/pricing) | [Official](https://commandcode.ai/pricing) |
+| **Command Code Pro** | Command Code | $20.00/mo | Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page. | — | — | [Open](https://commandcode.ai/pricing) | [Official](https://commandcode.ai/pricing) |
+| **Command Code Max 10×** | Command Code | $100.00/mo | Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page. | — | — | [Open](https://commandcode.ai/pricing) | [Official](https://commandcode.ai/pricing) |
+| **Command Code Max 20×** | Command Code | $200.00/mo | Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page. | — | — | [Open](https://commandcode.ai/pricing) | [Official](https://commandcode.ai/pricing) |
+| **Command Code Provider** | Command Code | $15.00/mo | Provider API access subscription; model usage charged separately at pay-as-you-go rates. | — | — | [Open](https://commandcode.ai/pricing) | [Official](https://commandcode.ai/pricing) |
+| **DeepSeek API (pay as you go)** | DeepSeek | — | Prepay an Open Platform account and pay for actual API usage. No first-party monthly subscription verified. | — | — | [Open](https://platform.deepseek.com) | [Official](https://www.deepseek.com/harness/data-processing/) |
 
 ## Pay-as-you-go API prices
 
