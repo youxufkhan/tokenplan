@@ -38,7 +38,7 @@ export interface Ctx {
   api: UsdApi[];
   models: UsdModel[];
   platforms: PlatformsFile;
-  quotes: Map<string, Quote>;
+  quotes: Map<string, Quote[]>;
 }
 
 const whole = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
@@ -61,3 +61,14 @@ export function makeFormatters(currency: Currency, rate: number) {
 }
 
 export const quoteText = (q: Quote) => q.currency === "USD" ? `$${cents.format(q.amount)}` : `${q.currency} ${q.amount % 1 ? cents.format(q.amount) : whole.format(q.amount)}`;
+
+/** Preserve separately sold channels instead of silently replacing one quote with another. */
+export function groupQuotes(quotes: Quote[], market: Market): Map<string, Quote[]> {
+  const grouped = new Map<string, Quote[]>();
+  for (const quote of quotes.filter((q) => q.market === market)) {
+    const offers = grouped.get(quote.planId) ?? [];
+    offers.push(quote);
+    grouped.set(quote.planId, offers);
+  }
+  return grouped;
+}

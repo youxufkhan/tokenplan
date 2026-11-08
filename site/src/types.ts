@@ -2,6 +2,12 @@
 
 
 export interface UsdPlan {
+  channel?: string;
+  audience?: string;
+  codingAccess?: boolean;
+  availability?: Partial<Record<"US" | "PK" | "AE" | "SA", "confirmed" | "unconfirmed" | "unavailable">>;
+  fees?: string;
+
   id: string;
   vendor: string;
   name: string;
@@ -96,6 +102,12 @@ export interface UsdView {
 }
 
 export interface RawPlan {
+  channel?: string;
+  audience?: string;
+  codingAccess?: boolean;
+  availability?: Partial<Record<"US" | "PK" | "AE" | "SA", "confirmed" | "unconfirmed" | "unavailable">>;
+  fees?: string;
+
   id: string;
   quota: string;
   models?: string[];

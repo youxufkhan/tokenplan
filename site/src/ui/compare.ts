@@ -18,10 +18,13 @@ export function renderCompare(ctx: Ctx): HTMLElement {
   const field = (label: string, cell: (p: UsdPlan) => Node | string | null, best?: (p: UsdPlan) => boolean) => ({ label, cell, best });
   const rows = (plans: UsdPlan[]) => {
     const cheapest = Math.min(...plans.map((p) => p.monthlyUsd ?? Infinity));
-    const q = (p: UsdPlan) => ctx.quotes.get(p.id);
+    const quotes = (p: UsdPlan) => ctx.quotes.get(p.id) ?? [];
     return [
       field("Monthly price", (p) => p.monthlyUsd === 0 ? "Free" : ctx.fmt(p.monthlyUsd), (p) => p.monthlyUsd === cheapest),
-      field("App Store price", (p) => q(p) ? `${ctx.fmtQuote(q(p)!)} (${ctx.premium(q(p)!, p.monthlyUsd) ?? 0}% vs list)` : "Not recorded"),
+      field("Regional offers", (p) => quotes(p).map((q) => `${q.channel}: ${ctx.fmtQuote(q)}`).join("; ") || "Not recorded"),
+      field("Reference channel", (p) => p.channel ?? "Web"),
+      field("Fees", (p) => p.fees ?? "See provider"),
+
       field("First period", (p) => p.firstPeriodUsd != null ? ctx.fmt(p.firstPeriodUsd) : "Same as regular"),
       field("Included usage credit", (p) => p.includedCreditUsd != null ? `${ctx.fmt(p.includedCreditUsd)} (${p.creditRatio?.toFixed(1)}× the price)` : "None listed"),
       field("Limits", (p) => p.quota ?? "See provider"),

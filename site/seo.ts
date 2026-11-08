@@ -1,6 +1,6 @@
 /** Build-time prerender: crawlable head tags, plan/API tables and method copy for each market page, plus sitemap and llms-full.txt. */
 import { readFileSync } from "node:fs";
-import { MARKETS, makeFormatters, quoteText, type Market, type Quote } from "./src/ui/ctx";
+import { MARKETS, makeFormatters, quoteText, groupQuotes, type Market, type Quote } from "./src/ui/ctx";
 import { ABOUT, COUNTRY, LANG, METHOD, METHOD_TITLE, PATH, SITE, heading, latest, lede, longDate } from "./src/copy";
 import type { RawApi, RawPlan, UsdView } from "./src/types";
 
@@ -71,19 +71,19 @@ function head(m: Market, d: ReturnType<typeof load>) {
 
 function body(m: Market, d: ReturnType<typeof load>) {
   const { fmt } = makeFormatters(MARKETS[m].currency, MARKETS[m].currency === "USD" ? 1 : d.markets.fx.rates[MARKETS[m].currency]);
-  const quotes = new Map(d.markets.quotes.filter((q) => q.market === m).map((q) => [q.planId, q]));
+  const quotes = groupQuotes(d.markets.quotes, m);
   const link = (text: string, url?: string | null) => url && /^https:\/\//.test(url) ? `<a href="${esc(url)}" rel="noopener">${esc(text)}</a>` : "";
   const planRows = d.live.map((p) => {
     const r = d.raw.get(p.id);
     const q = quotes.get(p.id);
-    return `<tr><th scope="row">${esc(p.name)}</th><td>${esc(p.vendor)}</td><td>${p.monthlyUsd === 0 ? "Free" : esc(fmt(p.monthlyUsd))}</td>${`<td>${q ? esc(quoteText(q)) : "—"}</td>`}<td>${esc(r?.quota ?? "")}</td><td>${esc(r?.priceVerifiedAt ?? r?.verifiedAt ?? "")}</td><td>${link("Source", r?.sourceUrl)}</td></tr>`;
+    return `<tr><th scope="row">${esc(p.name)}</th><td>${esc(p.vendor)}</td><td>${p.monthlyUsd === 0 ? "Free" : esc(fmt(p.monthlyUsd)) + (r?.channel ? ` (${esc(r.channel)} reference)` : "")}</td>${`<td>${q ? q.map((offer) => esc(`${offer.channel}: ${quoteText(offer)}`)).join("<br>") : "—"}</td>`}<td>${esc([r?.quota, r?.price?.note, r?.fees].filter(Boolean).join(" "))}</td><td>${esc(r?.priceVerifiedAt ?? r?.verifiedAt ?? "")}</td><td>${link("Source", r?.sourceUrl)}</td></tr>`;
   }).join("");
   const apiRows = d.api.map((a) => `<tr><th scope="row">${esc(a.model)}</th><td>${esc(a.vendor)}</td><td>${esc(fmt(a.inputUsd))}</td><td>${esc(fmt(a.outputUsd))}</td><td>${a.cacheHitUsd == null ? "—" : esc(fmt(a.cacheHitUsd))}</td><td>${link("Source", d.rawApi.get(a.id)?.sourceUrl)}</td></tr>`).join("");
   const fxLine = MARKETS[m].currency === "USD" ? "Prices are published USD list prices." : `List prices converted at 1 USD = ${MARKETS[m].currency} ${d.markets.fx.rates[MARKETS[m].currency]} (${longDate(d.markets.fx.date)}); App Store prices are the amounts recorded in the ${COUNTRY[m]} storefront.`;
   return `<main class="prerender wrap">
       <section class="hero"><div class="hero__copy"><h1>${esc(heading(m))}</h1><p>${esc(lede(d.live.length, d.vendors))} Prices last checked ${esc(longDate(d.checked))}.</p></div></section>
       <section id="plans"><h2>Compare plans</h2><p>${esc(fxLine)}</p>
-        <table><caption>Monthly price of each AI coding plan, cheapest first</caption><thead><tr><th scope="col">Plan</th><th scope="col">Provider</th><th scope="col">Monthly price</th><th scope="col">${m} App Store</th><th scope="col">What you get</th><th scope="col">Price verified</th><th scope="col">Source</th></tr></thead><tbody>${planRows}</tbody></table>
+        <table><caption>Monthly price of each AI coding plan, cheapest first</caption><thead><tr><th scope="col">Plan</th><th scope="col">Provider</th><th scope="col">Monthly price</th><th scope="col">${m} offers</th><th scope="col">What you get</th><th scope="col">Price verified</th><th scope="col">Source</th></tr></thead><tbody>${planRows}</tbody></table>
       </section>
       <section id="api"><h2>API rates per token</h2><p>Price per million tokens, cheapest blended rate first.</p>
         <table><caption>AI model API prices per million tokens</caption><thead><tr><th scope="col">Model</th><th scope="col">Provider</th><th scope="col">Input</th><th scope="col">Output</th><th scope="col">Cached input</th><th scope="col">Source</th></tr></thead><tbody>${apiRows}</tbody></table>
@@ -139,7 +139,7 @@ ${plans}
 |---|---|---|---|---|---|
 ${api}
 
-## Local App Store prices
+## Regional offers
 
 Exchange rates on ${d.markets.fx.date}: 1 USD = ${Object.entries(d.markets.fx.rates).map(([c, r]) => `${r} ${c}`).join(", ")}.
 

@@ -56,3 +56,17 @@ test("explicit workload URL takes precedence over browser restoration", async ({
   await page.getByLabel("Cached share of input in percent").fill("101");
   await expect(page.locator("#api")).toContainText("Enter valid usage amounts");
 });
+
+test("regional offers preserve web and App Store channels", async ({ page }) => {
+  await page.route("**/data/markets.json", async (route) => {
+    const response = await route.fetch();
+    const data = await response.json();
+    data.quotes.push({ market: "PK", planId: "claude-pro", amount: 5500, currency: "PKR", channel: "Web", sourceUrl: "https://claude.com/pricing", verifiedAt: "2026-11-09" });
+    await route.fulfill({ response, json: data });
+  });
+  await page.goto("/?market=pk&q=Claude+Pro");
+  const row = page.locator('.row[data-plan="claude-pro"]');
+  await expect(row.locator(".row__local")).toContainText("Apple App Store");
+  await expect(row.locator(".row__local")).toContainText("Web");
+  await expect(row.locator(".row__local")).toContainText("5,500");
+});

@@ -7,7 +7,7 @@ import { renderCompare } from "./ui/compare";
 import { renderApi } from "./ui/api";
 import { renderScatter } from "./ui/scatter";
 import { renderProviders } from "./ui/providers";
-import { MARKETS, makeFormatters, quoteText, type Ctx, type Market, type Quote } from "./ui/ctx";
+import { MARKETS, makeFormatters, quoteText, groupQuotes, type Ctx, type Market, type Quote } from "./ui/ctx";
 import { shortDate } from "./ui/format";
 import { ABOUT, METHOD, METHOD_TITLE, heading, latest, lede, longDate } from "./copy";
 import type { PlatformsFile, RawApi, RawPlan, UsdPlan, UsdView } from "./types";
@@ -35,7 +35,7 @@ async function mount(app: HTMLElement) {
   const raw = new Map(rawPlans.map((p) => [p.id, p]));
   const plans: UsdPlan[] = view.plans.map((p) => {
     const r = raw.get(p.id);
-    return { ...p, quota: r?.quota, models: r?.models, buyUrl: r?.buyUrl, sourceUrl: r?.sourceUrl, verifiedAt: r?.verifiedAt, priceVerifiedAt: r?.priceVerifiedAt, notes: r?.notes, multimodal: r?.multimodal, priceNote: r?.price?.note, creditText: r?.includedCredit?.text };
+    return { ...p, channel: r?.channel, audience: r?.audience, codingAccess: r?.codingAccess, availability: r?.availability, fees: r?.fees, quota: r?.quota, models: r?.models, buyUrl: r?.buyUrl, sourceUrl: r?.sourceUrl, verifiedAt: r?.verifiedAt, priceVerifiedAt: r?.priceVerifiedAt, notes: r?.notes, multimodal: r?.multimodal, priceNote: r?.price?.note, creditText: r?.includedCredit?.text };
   });
   const apiRaw = new Map(rawApi.map((a) => [a.id, a]));
   const ctx: Ctx = {
@@ -44,7 +44,7 @@ async function mount(app: HTMLElement) {
     fmtQuote: quoteText,
     premium: (q, list) => (list ? Math.round(((q.amount / (q.currency === "USD" ? 1 : markets.fx.rates[q.currency])) / list - 1) * 100) : null),
     plans, api: view.api.map((a) => ({ ...a, sourceUrl: apiRaw.get(a.id)?.sourceUrl, priceVerifiedAt: apiRaw.get(a.id)?.priceVerifiedAt, verifiedAt: apiRaw.get(a.id)?.verifiedAt })), models: view.models, platforms,
-    quotes: new Map(markets.quotes.filter((q) => q.market === market).map((q) => [q.planId, q])),
+    quotes: groupQuotes(markets.quotes, market),
   };
 
   const live = plans.filter((p) => p.status === "active" || p.status === "sold-out-daily");
@@ -52,8 +52,8 @@ async function mount(app: HTMLElement) {
   const rankings = await load<{ snapshotDate: string }>("rankings");
   const fxStale = Date.now() - Date.parse(markets.fx.date) > 7 * 86400000;
   const fxNote = currency === "USD"
-    ? "Prices are published USD list prices. App Store prices can differ from web checkout."
-    : `${MARKETS[market].label.split(" · ")[0]} view: list prices converted at 1 USD = ${currency} ${rate} (${shortDate(markets.fx.date)}). The App Store column is the price recorded in that storefront, with its difference from the converted list price.`;
+    ? "Reference prices are published USD offers. Each plan names its billing channel; web and App Store prices can differ."
+    : `${MARKETS[market].label.split(" · ")[0]} view: list prices converted at 1 USD = ${currency} ${rate} (${shortDate(markets.fx.date)}). Regional offers name the channel where the price was recorded. Converted reference prices do not establish purchase availability.`;
 
   const hero = h("section", { id: "top", class: "hero wrap" }, [
     h("div", { class: "hero__copy" }, [

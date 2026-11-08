@@ -50,12 +50,13 @@ export function renderPlans(ctx: Ctx): HTMLElement {
   const credit = (p: UsdPlan) => p.creditRatio != null ? h("span", { class: `credit${p.creditRatio >= 1 ? " credit--good" : ""}`, title: p.creditText ?? "" }, `${ctx.fmt(p.includedCreditUsd)} credit · ${p.creditRatio.toFixed(1)}×`) : null;
 
   const premiumLine = (quote: Quote, p: UsdPlan) => {
+    if (p.channel && p.channel !== quote.channel) return null;
     const d = ctx.premium(quote, p.monthlyUsd);
-    return d == null || d === 0 ? null : h("span", { class: d > 0 ? "premium premium--up" : "premium" }, `${d > 0 ? "+" : ""}${d}% vs list`);
+    return d == null || d === 0 ? null : h("span", { class: d > 0 ? "premium premium--up" : "premium" }, `${d > 0 ? "+" : ""}${d}% vs reference`);
   };
 
   function row(p: UsdPlan, maxMonthly: number): HTMLElement {
-    const quote = ctx.quotes.get(p.id);
+    const quotes = ctx.quotes.get(p.id) ?? [];
     const bar = p.monthlyUsd != null ? Math.max(p.monthlyUsd > 0 ? 2 : 0, (p.monthlyUsd / maxMonthly) * 100) : 0;
     const price = p.monthlyUsd != null ? (p.monthlyUsd === 0 ? "Free" : ctx.fmt(p.monthlyUsd))
       : p.status === "no-plan" ? "Pay as you go" : p.status === "discontinued" ? "Discontinued" : p.status === "coming-soon" ? "Coming soon" : "Price unverified";
@@ -64,6 +65,9 @@ export function renderPlans(ctx: Ctx): HTMLElement {
       if (!selection.toggle(p.id)) { pick.checked = false; alert_full(); }
     });
     const more = h("div", { class: "row__more" }, [
+      p.fees ? h("p", null, [h("b", null, "Fees. "), p.fees]) : null,
+      p.audience ? h("p", null, [h("b", null, "Audience. "), p.audience]) : null,
+      p.codingAccess != null ? h("p", null, p.codingAccess ? "Coding access included." : "Coding access is not included.") : null,
       p.notes ? h("p", null, [h("b", null, "Terms. "), p.notes]) : null,
       p.priceNote ? h("p", null, [h("b", null, "Billing. "), p.priceNote]) : null,
       p.creditText ? h("p", null, [h("b", null, "Included credit. "), p.creditText]) : null,
@@ -81,6 +85,8 @@ export function renderPlans(ctx: Ctx): HTMLElement {
       h("div", { class: "row__price" }, [
         h("strong", null, price),
         p.monthlyUsd ? h("span", { class: "row__per" }, "per month") : null,
+        p.channel ? h("span", { class: "muted" }, p.channel + " reference") : null,
+        p.availability?.[ctx.market] ? h("span", { class: "muted" }, "Availability " + p.availability[ctx.market]) : null,
         p.monthlyUsd != null ? h("span", { class: "bar" }, h("i", { style: `width:${bar}%` })) : null,
         p.firstPeriodUsd != null ? h("span", { class: "row__first" }, `First period ${ctx.fmt(p.firstPeriodUsd)}`) : null,
         credit(p),
@@ -89,8 +95,8 @@ export function renderPlans(ctx: Ctx): HTMLElement {
         h("p", null, p.quota ?? "See provider for limits"),
         h("div", { class: "models" }, (p.models ?? []).slice(0, 4).map((m) => h("span", { class: "tag" }, m))),
       ]),
-      h("div", { class: `row__local${quote ? "" : " row__local--empty"}` }, quote
-        ? [h("strong", null, ctx.fmtQuote(quote)), premiumLine(quote, p), link(quote.channel, quote.sourceUrl) ?? quote.channel]
+      h("div", { class: `row__local${quotes.length ? "" : " row__local--empty"}` }, quotes.length
+        ? quotes.map((quote) => h("div", null, [h("strong", null, ctx.fmtQuote(quote)), premiumLine(quote, p), link(quote.channel, quote.sourceUrl) ?? quote.channel]))
         : [h("span", { class: "muted" }, "Not recorded")]),
       h("div", { class: "row__trust" }, [
         h("span", { class: `conf conf--${p.confidence}` }, CONFIDENCE[p.confidence] ?? "Unverified"),
@@ -171,7 +177,7 @@ export function renderPlans(ctx: Ctx): HTMLElement {
     ]),
     count,
   ]);
-  const head = h("div", { class: "plist__head", "aria-hidden": "true" }, ["", "Plan", "Monthly price", "What you get", `${ctx.market} App Store`, "Verification"].map((t) => h("span", null, t)));
+  const head = h("div", { class: "plist__head", "aria-hidden": "true" }, ["", "Plan", "Monthly reference", "What you get", `${ctx.market} offers`, "Verification"].map((t) => h("span", null, t)));
   update();
   return h("div", null, [toolbar, head, list]);
 }

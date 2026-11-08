@@ -23,10 +23,10 @@ export function renderLadder(ctx: Ctx): HTMLElement {
     readout.replaceChildren(h("span", { class: "ladder__hint" }, "Hover a dot for details, click to compare"));
   };
   const show = (p: UsdPlan) => {
-    const quote = ctx.quotes.get(p.id);
+    const quotes = ctx.quotes.get(p.id) ?? [];
     readout.replaceChildren(...[
       h("div", { class: "leader" }, [h("strong", null, p.name), h("i", { class: "leader__fill" }), h("span", { class: "ladder__price" }, p.monthlyUsd === 0 ? "Free" : `${ctx.fmt(p.monthlyUsd)}/mo`)]),
-      quote ? h("span", null, `${quote.channel}: ${ctx.fmtQuote(quote)}`) : null,
+      quotes.length ? h("span", null, quotes.map((quote) => `${quote.channel}: ${ctx.fmtQuote(quote)}`).join(" · ")) : null,
       h("span", { class: "ladder__quota" }, p.quota ?? ""),
     ].filter((n): n is HTMLElement => n != null));
   };

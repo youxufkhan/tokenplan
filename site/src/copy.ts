@@ -25,7 +25,7 @@ export const METHOD_TITLE = "How prices are checked";
 export const METHOD = [
   "Every plan and API rate links to the provider's own pricing page, shown as Source. A daily job re-reads those pages and flags any price that changed, and each entry shows the date its price was last verified. Entries are marked Verified, Partially verified or Unverified.",
   "Monthly prices are the regular price: annual plans are divided by 12, quarterly plans by 3 and weekly plans multiplied by 52/12. First-period discounts are shown separately and never used for ranking.",
-  "Pakistan, UAE and Saudi views convert the USD list price at that day's reference exchange rate, so they are estimates. Where a plan is sold in the local Apple App Store, the storefront price is recorded separately with its difference from the converted list price, because App Store prices usually include tax and a premium.",
+  "Pakistan, UAE and Saudi views convert the USD list price at that day's reference exchange rate, so they are estimates. Where a plan is sold in the local Apple App Store, the storefront price is recorded separately with its difference from the converted list price, with the purchase channel and source shown for each offer.",
   "API costs are per million tokens. The workload estimate prices uncached input, cached input and output separately; the single blended rate weights input and output 3:1. Benchmark scores are Artificial Analysis results via ModelGo.",
 ];
 export const ABOUT =
