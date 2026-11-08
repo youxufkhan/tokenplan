@@ -302,6 +302,156 @@
       "sourceUrl": "https://apps.apple.com/sa/app/google-gemini/id6477489729",
       "verifiedAt": "2026-11-04",
       "match": "Google AI Pro (5 TB)"
+    },
+    {
+      "market": "US",
+      "planId": "kimi-code-plus",
+      "amount": 19,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Plus"
+    },
+    {
+      "market": "US",
+      "planId": "kimi-code-pro",
+      "amount": 39,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Pro"
+    },
+    {
+      "market": "US",
+      "planId": "kimi-code-max",
+      "amount": 99,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Max"
+    },
+    {
+      "market": "US",
+      "planId": "kimi-code-ultra",
+      "amount": 199,
+      "currency": "USD",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Ultra"
+    },
+    {
+      "market": "PK",
+      "planId": "kimi-code-plus",
+      "amount": 4900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Plus"
+    },
+    {
+      "market": "PK",
+      "planId": "kimi-code-pro",
+      "amount": 9900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Pro"
+    },
+    {
+      "market": "PK",
+      "planId": "kimi-code-ultra",
+      "amount": 49900,
+      "currency": "PKR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/pk/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Ultra"
+    },
+    {
+      "market": "AE",
+      "planId": "kimi-code-plus",
+      "amount": 69.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Plus"
+    },
+    {
+      "market": "AE",
+      "planId": "kimi-code-pro",
+      "amount": 149.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Pro"
+    },
+    {
+      "market": "AE",
+      "planId": "kimi-code-max",
+      "amount": 399.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Max"
+    },
+    {
+      "market": "AE",
+      "planId": "kimi-code-ultra",
+      "amount": 799.99,
+      "currency": "AED",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Ultra"
+    },
+    {
+      "market": "SA",
+      "planId": "kimi-code-plus",
+      "amount": 79.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Plus"
+    },
+    {
+      "market": "SA",
+      "planId": "kimi-code-pro",
+      "amount": 179.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Pro"
+    },
+    {
+      "market": "SA",
+      "planId": "kimi-code-max",
+      "amount": 399.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Max"
+    },
+    {
+      "market": "SA",
+      "planId": "kimi-code-ultra",
+      "amount": 899.99,
+      "currency": "SAR",
+      "channel": "Apple App Store",
+      "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
+      "verifiedAt": "2026-11-09",
+      "match": "Ultra"
     }
   ]
 }

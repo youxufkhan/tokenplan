@@ -2118,5 +2118,716 @@
     "notes": null,
     "quotaUnit": "credits",
     "platformId": "openrouter"
+  },
+  {
+    "id": "zai-glm-coding-lite",
+    "vendor": "Z.ai",
+    "name": "GLM Coding Plan Lite",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 18,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Regular USD price shown beside discounted pricing. Final subscription terms are shown on z.ai."
+    },
+    "models": [
+      "GLM-5.3",
+      "GLM-5.3-Flash"
+    ],
+    "quota": "2,000 credits per rolling 5-hour window and 10,000 credits per week.",
+    "quotaWindow": {
+      "fiveHours": 2000,
+      "week": 10000,
+      "month": null
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://z.ai/subscribe",
+    "sourceUrl": "https://zcode.z.ai/pricing.html",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Confirm current billing period and checkout price on z.ai. Off-peak model usage consumes credits at 50% of standard rates.",
+    "quotaUnit": "credits",
+    "platformId": "zai",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "zai-glm-coding-pro",
+    "vendor": "Z.ai",
+    "name": "GLM Coding Plan Pro",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 80,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Regular USD price shown beside discounted pricing. Final subscription terms are shown on z.ai."
+    },
+    "models": [
+      "GLM-5.3",
+      "GLM-5.3-Flash"
+    ],
+    "quota": "12,000 credits per rolling 5-hour window and 60,000 credits per week.",
+    "quotaWindow": {
+      "fiveHours": 12000,
+      "week": 60000,
+      "month": null
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://z.ai/subscribe",
+    "sourceUrl": "https://zcode.z.ai/pricing.html",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Confirm current billing period and checkout price on z.ai. Off-peak model usage consumes credits at 50% of standard rates.",
+    "quotaUnit": "credits",
+    "platformId": "zai",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "zai-glm-coding-max",
+    "vendor": "Z.ai",
+    "name": "GLM Coding Plan Max",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 168,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Regular USD price shown beside discounted pricing. Final subscription terms are shown on z.ai."
+    },
+    "models": [
+      "GLM-5.3",
+      "GLM-5.3-Flash"
+    ],
+    "quota": "28,000 credits per rolling 5-hour window and 140,000 credits per week.",
+    "quotaWindow": {
+      "fiveHours": 28000,
+      "week": 140000,
+      "month": null
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://z.ai/subscribe",
+    "sourceUrl": "https://zcode.z.ai/pricing.html",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Confirm current billing period and checkout price on z.ai. Off-peak model usage consumes credits at 50% of standard rates.",
+    "quotaUnit": "credits",
+    "platformId": "zai",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "xiaomi-mimo-token-lite",
+    "vendor": "Xiaomi MiMo",
+    "name": "MiMo Token Plan Lite",
+    "region": "global",
+    "kind": "token-plan",
+    "price": {
+      "amount": 6,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Annual subscription: $63.36 billed yearly. Annual quota: 49.2 billion credits. Monthly and annual commitments differ."
+    },
+    "models": [
+      "mimo-v2.6-pro",
+      "mimo-v2.6-flash"
+    ],
+    "quota": "4.1 billion credits per month. Usage stops when the plan quota is exhausted.",
+    "quotaWindow": {
+      "fiveHours": null,
+      "week": null,
+      "month": "4,100,000,000 credits"
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://platform.xiaomimimo.com/#/console/plan-manage",
+    "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "high",
+    "notes": "Token Plan quota is separate from ordinary API balance. Off-peak usage at 00:00–08:00 Beijing time consumes 0.8× credits.",
+    "quotaUnit": "credits",
+    "platformId": "xiaomi",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "xiaomi-mimo-token-standard",
+    "vendor": "Xiaomi MiMo",
+    "name": "MiMo Token Plan Standard",
+    "region": "global",
+    "kind": "token-plan",
+    "price": {
+      "amount": 16,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Annual subscription: $168.96 billed yearly. Annual quota: 132 billion credits. Monthly and annual commitments differ."
+    },
+    "models": [
+      "mimo-v2.6-pro",
+      "mimo-v2.6-flash"
+    ],
+    "quota": "11 billion credits per month. Usage stops when the plan quota is exhausted.",
+    "quotaWindow": {
+      "fiveHours": null,
+      "week": null,
+      "month": "11,000,000,000 credits"
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://platform.xiaomimimo.com/#/console/plan-manage",
+    "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "high",
+    "notes": "Token Plan quota is separate from ordinary API balance. Off-peak usage at 00:00–08:00 Beijing time consumes 0.8× credits.",
+    "quotaUnit": "credits",
+    "platformId": "xiaomi",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "xiaomi-mimo-token-pro",
+    "vendor": "Xiaomi MiMo",
+    "name": "MiMo Token Plan Pro",
+    "region": "global",
+    "kind": "token-plan",
+    "price": {
+      "amount": 50,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Annual subscription: $528.00 billed yearly. Annual quota: 456 billion credits. Monthly and annual commitments differ."
+    },
+    "models": [
+      "mimo-v2.6-pro",
+      "mimo-v2.6-flash"
+    ],
+    "quota": "38 billion credits per month. Usage stops when the plan quota is exhausted.",
+    "quotaWindow": {
+      "fiveHours": null,
+      "week": null,
+      "month": "38,000,000,000 credits"
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://platform.xiaomimimo.com/#/console/plan-manage",
+    "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "high",
+    "notes": "Token Plan quota is separate from ordinary API balance. Off-peak usage at 00:00–08:00 Beijing time consumes 0.8× credits.",
+    "quotaUnit": "credits",
+    "platformId": "xiaomi",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "xiaomi-mimo-token-max",
+    "vendor": "Xiaomi MiMo",
+    "name": "MiMo Token Plan Max",
+    "region": "global",
+    "kind": "token-plan",
+    "price": {
+      "amount": 100,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Annual subscription: $1,056.00 billed yearly. Annual quota: 984 billion credits. Monthly and annual commitments differ."
+    },
+    "models": [
+      "mimo-v2.6-pro",
+      "mimo-v2.6-flash"
+    ],
+    "quota": "82 billion credits per month. Usage stops when the plan quota is exhausted.",
+    "quotaWindow": {
+      "fiveHours": null,
+      "week": null,
+      "month": "82,000,000,000 credits"
+    },
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://platform.xiaomimimo.com/#/console/plan-manage",
+    "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "high",
+    "notes": "Token Plan quota is separate from ordinary API balance. Off-peak usage at 00:00–08:00 Beijing time consumes 0.8× credits.",
+    "quotaUnit": "credits",
+    "platformId": "xiaomi",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "kimi-code-plus",
+    "vendor": "Moonshot AI (Kimi)",
+    "name": "Kimi Plus",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 19,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "U.S. Apple App Store reference, not a verified web checkout price."
+    },
+    "models": [
+      "Kimi K3"
+    ],
+    "quota": "Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "USD reference is a U.S. App Store listing. Confirm billing period and coding entitlement at checkout. Legacy tier names and quota rules may differ.",
+    "quotaUnit": null,
+    "platformId": "moonshot",
+    "channel": "Apple App Store",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "kimi-code-pro",
+    "vendor": "Moonshot AI (Kimi)",
+    "name": "Kimi Pro",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 39,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "U.S. Apple App Store reference, not a verified web checkout price."
+    },
+    "models": [
+      "Kimi K3"
+    ],
+    "quota": "Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "USD reference is a U.S. App Store listing. Confirm billing period and coding entitlement at checkout. Legacy tier names and quota rules may differ.",
+    "quotaUnit": null,
+    "platformId": "moonshot",
+    "channel": "Apple App Store",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "kimi-code-max",
+    "vendor": "Moonshot AI (Kimi)",
+    "name": "Kimi Max",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 99,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "U.S. Apple App Store reference, not a verified web checkout price."
+    },
+    "models": [
+      "Kimi K3"
+    ],
+    "quota": "Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "USD reference is a U.S. App Store listing. Confirm billing period and coding entitlement at checkout. Legacy tier names and quota rules may differ.",
+    "quotaUnit": null,
+    "platformId": "moonshot",
+    "channel": "Apple App Store",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "kimi-code-ultra",
+    "vendor": "Moonshot AI (Kimi)",
+    "name": "Kimi Ultra",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 199,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "U.S. Apple App Store reference, not a verified web checkout price."
+    },
+    "models": [
+      "Kimi K3"
+    ],
+    "quota": "Shared membership credit pool. Current Plus-and-higher plans include Kimi Code; exact usage limits depend on plan generation.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "USD reference is a U.S. App Store listing. Confirm billing period and coding entitlement at checkout. Legacy tier names and quota rules may differ.",
+    "quotaUnit": null,
+    "platformId": "moonshot",
+    "channel": "Apple App Store",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
+  },
+  {
+    "id": "command-code-go",
+    "vendor": "Command Code",
+    "name": "Command Code Go",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 1,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Monthly subscription plus processing fee. Confirm credit allowances before buying."
+    },
+    "models": [],
+    "quota": "Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://commandcode.ai/pricing",
+    "sourceUrl": "https://commandcode.ai/pricing",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Subscriptions are sold directly by Command Code. Advertised request volumes are estimates. Third-party model access is subject to per-model allowances.",
+    "quotaUnit": null,
+    "platformId": "command-code",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    },
+    "fees": "Processing fee applies; amount not verified."
+  },
+  {
+    "id": "command-code-goat",
+    "vendor": "Command Code",
+    "name": "Command Code GOAT",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 10,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Monthly subscription plus processing fee. Confirm credit allowances before buying."
+    },
+    "models": [],
+    "quota": "Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://commandcode.ai/pricing",
+    "sourceUrl": "https://commandcode.ai/pricing",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Subscriptions are sold directly by Command Code. Advertised request volumes are estimates. Third-party model access is subject to per-model allowances.",
+    "quotaUnit": null,
+    "platformId": "command-code",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    },
+    "fees": "Processing fee applies; amount not verified."
+  },
+  {
+    "id": "command-code-pro",
+    "vendor": "Command Code",
+    "name": "Command Code Pro",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 20,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Monthly subscription plus processing fee. Confirm credit allowances before buying."
+    },
+    "models": [],
+    "quota": "Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://commandcode.ai/pricing",
+    "sourceUrl": "https://commandcode.ai/pricing",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Subscriptions are sold directly by Command Code. Advertised request volumes are estimates. Third-party model access is subject to per-model allowances.",
+    "quotaUnit": null,
+    "platformId": "command-code",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    },
+    "fees": "Processing fee applies; amount not verified."
+  },
+  {
+    "id": "command-code-max-10x",
+    "vendor": "Command Code",
+    "name": "Command Code Max 10×",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 100,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Monthly subscription plus processing fee. Confirm credit allowances before buying."
+    },
+    "models": [],
+    "quota": "Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://commandcode.ai/pricing",
+    "sourceUrl": "https://commandcode.ai/pricing",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Subscriptions are sold directly by Command Code. Advertised request volumes are estimates. Third-party model access is subject to per-model allowances.",
+    "quotaUnit": null,
+    "platformId": "command-code",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    },
+    "fees": "Processing fee applies; amount not verified."
+  },
+  {
+    "id": "command-code-max-20x",
+    "vendor": "Command Code",
+    "name": "Command Code Max 20×",
+    "region": "global",
+    "kind": "coding-plan",
+    "price": {
+      "amount": 200,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Monthly subscription plus processing fee. Confirm credit allowances before buying."
+    },
+    "models": [],
+    "quota": "Per-model usage allowances apply. Exact included credits differ across official pricing and documentation; check the billing page.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://commandcode.ai/pricing",
+    "sourceUrl": "https://commandcode.ai/pricing",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Subscriptions are sold directly by Command Code. Advertised request volumes are estimates. Third-party model access is subject to per-model allowances.",
+    "quotaUnit": null,
+    "platformId": "command-code",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    },
+    "fees": "Processing fee applies; amount not verified."
+  },
+  {
+    "id": "command-code-provider",
+    "vendor": "Command Code",
+    "name": "Command Code Provider",
+    "region": "global",
+    "kind": "token-plan",
+    "price": {
+      "amount": 15,
+      "currency": "USD",
+      "period": "month",
+      "firstPeriodAmount": null,
+      "note": "Monthly subscription plus processing fee. Model usage is additional."
+    },
+    "models": [],
+    "quota": "Provider API access subscription; model usage charged separately at pay-as-you-go rates.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://commandcode.ai/pricing",
+    "sourceUrl": "https://commandcode.ai/pricing",
+    "verifiedAt": "2026-11-09",
+    "status": "active",
+    "confidence": "medium",
+    "notes": "Subscriptions are sold directly by Command Code. Advertised request volumes are estimates. Third-party model access is subject to per-model allowances.",
+    "quotaUnit": null,
+    "platformId": "command-code",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    },
+    "fees": "Processing fee applies; amount not verified."
+  },
+  {
+    "id": "deepseek-api-payg",
+    "vendor": "DeepSeek",
+    "name": "DeepSeek API (pay as you go)",
+    "region": "global",
+    "kind": "token-plan",
+    "price": {
+      "amount": null,
+      "currency": "USD",
+      "period": "none",
+      "firstPeriodAmount": null,
+      "note": null
+    },
+    "models": [],
+    "quota": "Prepay an Open Platform account and pay for actual API usage. No first-party monthly subscription verified.",
+    "quotaWindow": null,
+    "tokenAllowance": null,
+    "multimodal": null,
+    "buyUrl": "https://platform.deepseek.com",
+    "sourceUrl": "https://www.deepseek.com/harness/data-processing/",
+    "verifiedAt": "2026-11-09",
+    "status": "no-plan",
+    "confidence": "high",
+    "notes": "DeepSeek Harness uses Open Platform billing for its default models. Third-party subscriptions offering DeepSeek models are separate products.",
+    "quotaUnit": null,
+    "platformId": "deepseek",
+    "channel": "Web",
+    "audience": "individual",
+    "codingAccess": true,
+    "availability": {
+      "US": "unconfirmed",
+      "PK": "unconfirmed",
+      "AE": "unconfirmed",
+      "SA": "unconfirmed"
+    }
   }
 ]

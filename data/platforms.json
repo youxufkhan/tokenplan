@@ -235,6 +235,14 @@
       "offering": "tool-vendor",
       "bundle": "tool",
       "note": ""
+    },
+    {
+      "id": "command-code",
+      "name": "Command Code",
+      "url": "https://commandcode.ai/pricing",
+      "offering": "reseller",
+      "bundle": "tool",
+      "note": "Coding tool subscriptions and a Provider API plan with third-party model access."
     }
   ]
 }

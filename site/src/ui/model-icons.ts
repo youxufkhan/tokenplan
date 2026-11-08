@@ -10,7 +10,7 @@ const PROVIDERS = new Map<string, string>([
   ["xiaomi", "xiaomimimo"], ["aws", "aws-color"], ["fireworks", "fireworks-color"], ["openrouter", "openrouter"],
   ["opencode", "opencode"], ["ollama", "ollama"], ["kilo", "kilocode"], ["amp", "amp-color"], ["cursor", "cursor"],
   ["cognition", "devin-color"], ["github", "githubcopilot"], ["qoder", "qoder-color"], ["augment", "augment"],
-  ["factory", "factory"], ["zed", "zed"], ["bytedance-trae", "trae-color"],
+  ["command-code", "command-code"], ["factory", "factory"], ["zed", "zed"], ["bytedance-trae", "trae-color"],
 ]);
 const FAMILIES: readonly [RegExp, string][] = [
   [/^claude(?=[\s\d-]|$)/i, "claude-color"],
