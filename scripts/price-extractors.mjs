@@ -1,3 +1,4 @@
+import { extractNewProvider } from "./provider-extractors.mjs";
 /** Conservative product-scoped extractors. Unsupported markup stays unverified. */
 export function guardPrice(next, previous) {
   return Number.isFinite(next) && next >= 0 && (next === previous
@@ -8,6 +9,8 @@ const text = (html) => html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, "
   .replace(/<[^>]*>/g, " ").replace(/&nbsp;|&#160;/g, " ").replace(/\s+/g, " ").trim();
 
 export function extractSubscription(html, entry) {
+  const provider = extractNewProvider(html, entry);
+  if (provider) return provider;
   const host = new URL(entry.sourceUrl).hostname;
   const claude = host === "claude.com";
   const copilot = host === "github.com" && new URL(entry.sourceUrl).pathname === "/features/copilot/plans";

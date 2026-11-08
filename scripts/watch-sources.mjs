@@ -17,13 +17,13 @@ for (const [dataset, entries] of [["plans", plans], ["api", api]]) {
       : dataset === "plans" ? extractSubscription(page.html, entry)
       : { status: "unsupported", evidence: "API rate extraction requires a product-specific adapter" };
     checks[key] = { checkedAt: new Date().toISOString(), sourceUrl: entry.sourceUrl,
-      extractorVersion: "subscriptions-v1", status: observation.status, evidence: observation.evidence.slice(0, 600),
+      extractorVersion: observation.extractorVersion ?? "subscriptions-v1", status: observation.status, evidence: observation.evidence.slice(0, 600),
       ...(observation.amount != null ? { candidate: observation.amount } : {}) };
-    if (observation.status === "exact-match") entry.priceVerifiedAt = today();
-    else if (observation.status === "changed-price" && guardPrice(observation.amount, entry.price.amount)
+    if (!observation.observationOnly && observation.status === "exact-match") entry.priceVerifiedAt = today();
+    else if (!observation.observationOnly && observation.status === "changed-price" && guardPrice(observation.amount, entry.price.amount)
       && process.env.TOKENPLAN_AUTO_WEB_PRICES === "1") {
       logChange({ id: entry.id, from: entry.price.amount, to: observation.amount, currency: "USD",
-        period: "month", channel: "web", source: entry.sourceUrl, evidenceRef: key });
+        period: entry.price.period, channel: "web", source: entry.sourceUrl, evidenceRef: key });
       entry.price.amount = observation.amount;
       entry.priceVerifiedAt = today();
     } else if (observation.status !== "unsupported") report(`${key}: ${observation.status}; ${observation.evidence.slice(0, 200)}`);
