@@ -31,7 +31,7 @@
     "notes": null,
     "quotaUnit": null,
     "platformId": "anthropic",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "claude-pro",
@@ -68,7 +68,7 @@
     "notes": null,
     "quotaUnit": "multiplier",
     "platformId": "anthropic",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "claude-max",
@@ -111,7 +111,7 @@
     },
     "quotaUnit": "multiplier",
     "platformId": "anthropic",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "claude-ultra",
@@ -154,7 +154,7 @@
     },
     "quotaUnit": "multiplier",
     "platformId": "anthropic",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "chatgpt-codex-free",
@@ -565,7 +565,7 @@
     },
     "quotaUnit": "multiplier",
     "platformId": "github",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "copilot-pro-plus",
@@ -607,7 +607,7 @@
     },
     "quotaUnit": "credits",
     "platformId": "github",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "copilot-max",
@@ -649,7 +649,7 @@
     },
     "quotaUnit": "credits",
     "platformId": "github",
-    "priceVerifiedAt": "2026-11-07"
+    "priceVerifiedAt": "2026-11-08"
   },
   {
     "id": "cursor-free",
