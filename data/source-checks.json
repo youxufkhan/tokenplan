@@ -1,27 +1,27 @@
 {
   "markets:US:chatgpt-go": {
-    "checkedAt": "2026-11-09T08:05:54.094Z",
+    "checkedAt": "2026-11-10T08:29:13.521Z",
     "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:US:chatgpt-plus": {
-    "checkedAt": "2026-11-09T08:05:54.114Z",
+    "checkedAt": "2026-11-10T08:29:13.544Z",
     "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:US:chatgpt-pro": {
-    "checkedAt": "2026-11-09T08:05:54.199Z",
+    "checkedAt": "2026-11-10T08:29:13.563Z",
     "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:US:claude-pro": {
-    "checkedAt": "2026-11-09T08:05:54.213Z",
+    "checkedAt": "2026-11-10T08:29:14.028Z",
     "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -29,7 +29,7 @@
     "candidate": 20
   },
   "markets:US:claude-max": {
-    "checkedAt": "2026-11-09T08:05:54.226Z",
+    "checkedAt": "2026-11-10T08:29:14.047Z",
     "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -37,7 +37,7 @@
     "candidate": 124.99
   },
   "markets:US:claude-ultra": {
-    "checkedAt": "2026-11-09T08:05:54.238Z",
+    "checkedAt": "2026-11-10T08:29:14.065Z",
     "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -45,35 +45,35 @@
     "candidate": 249.99
   },
   "markets:US:google-ai-pro": {
-    "checkedAt": "2026-11-09T08:05:54.259Z",
+    "checkedAt": "2026-11-10T08:29:14.100Z",
     "sourceUrl": "https://apps.apple.com/us/app/google-gemini/id6477489729",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:chatgpt-go": {
-    "checkedAt": "2026-11-09T08:05:54.700Z",
+    "checkedAt": "2026-11-10T08:29:14.126Z",
     "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:chatgpt-plus": {
-    "checkedAt": "2026-11-09T08:05:54.713Z",
+    "checkedAt": "2026-11-10T08:29:14.144Z",
     "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:chatgpt-pro": {
-    "checkedAt": "2026-11-09T08:05:54.727Z",
+    "checkedAt": "2026-11-10T08:29:14.163Z",
     "sourceUrl": "https://apps.apple.com/pk/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:claude-pro": {
-    "checkedAt": "2026-11-09T08:05:55.056Z",
+    "checkedAt": "2026-11-10T08:29:14.593Z",
     "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -81,7 +81,7 @@
     "candidate": 4900
   },
   "markets:PK:claude-max": {
-    "checkedAt": "2026-11-09T08:05:55.070Z",
+    "checkedAt": "2026-11-10T08:29:14.610Z",
     "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -89,7 +89,7 @@
     "candidate": 34900
   },
   "markets:PK:claude-ultra": {
-    "checkedAt": "2026-11-09T08:05:55.079Z",
+    "checkedAt": "2026-11-10T08:29:14.628Z",
     "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -97,35 +97,35 @@
     "candidate": 69900
   },
   "markets:PK:google-ai-pro": {
-    "checkedAt": "2026-11-09T08:05:55.638Z",
+    "checkedAt": "2026-11-10T08:29:15.291Z",
     "sourceUrl": "https://apps.apple.com/pk/app/google-gemini/id6477489729",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:chatgpt-go": {
-    "checkedAt": "2026-11-09T08:05:55.985Z",
+    "checkedAt": "2026-11-10T08:29:15.774Z",
     "sourceUrl": "https://apps.apple.com/ae/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:chatgpt-plus": {
-    "checkedAt": "2026-11-09T08:05:55.997Z",
+    "checkedAt": "2026-11-10T08:29:15.792Z",
     "sourceUrl": "https://apps.apple.com/ae/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:chatgpt-pro": {
-    "checkedAt": "2026-11-09T08:05:56.008Z",
+    "checkedAt": "2026-11-10T08:29:15.810Z",
     "sourceUrl": "https://apps.apple.com/ae/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:claude-pro": {
-    "checkedAt": "2026-11-09T08:05:56.383Z",
+    "checkedAt": "2026-11-10T08:29:16.267Z",
     "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -133,7 +133,7 @@
     "candidate": 79.99
   },
   "markets:AE:claude-max": {
-    "checkedAt": "2026-11-09T08:05:56.395Z",
+    "checkedAt": "2026-11-10T08:29:16.286Z",
     "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -141,7 +141,7 @@
     "candidate": 499.99
   },
   "markets:AE:claude-ultra": {
-    "checkedAt": "2026-11-09T08:05:56.404Z",
+    "checkedAt": "2026-11-10T08:29:16.304Z",
     "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -149,35 +149,35 @@
     "candidate": 999.99
   },
   "markets:AE:google-ai-pro": {
-    "checkedAt": "2026-11-09T08:05:56.933Z",
+    "checkedAt": "2026-11-10T08:29:17.218Z",
     "sourceUrl": "https://apps.apple.com/ae/app/google-gemini/id6477489729",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:chatgpt-go": {
-    "checkedAt": "2026-11-09T08:05:57.303Z",
+    "checkedAt": "2026-11-10T08:29:17.636Z",
     "sourceUrl": "https://apps.apple.com/sa/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:chatgpt-plus": {
-    "checkedAt": "2026-11-09T08:05:57.316Z",
+    "checkedAt": "2026-11-10T08:29:17.654Z",
     "sourceUrl": "https://apps.apple.com/sa/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:chatgpt-pro": {
-    "checkedAt": "2026-11-09T08:05:57.326Z",
+    "checkedAt": "2026-11-10T08:29:17.672Z",
     "sourceUrl": "https://apps.apple.com/sa/app/chatgpt/id6448311069",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:claude-pro": {
-    "checkedAt": "2026-11-09T08:05:57.827Z",
+    "checkedAt": "2026-11-10T08:29:18.205Z",
     "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -185,7 +185,7 @@
     "candidate": 89.99
   },
   "markets:SA:claude-max": {
-    "checkedAt": "2026-11-09T08:05:57.838Z",
+    "checkedAt": "2026-11-10T08:29:18.223Z",
     "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -193,7 +193,7 @@
     "candidate": 499.99
   },
   "markets:SA:claude-ultra": {
-    "checkedAt": "2026-11-09T08:05:57.848Z",
+    "checkedAt": "2026-11-10T08:29:18.242Z",
     "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
     "extractorVersion": "appstore-v2",
     "status": "exact-match",
@@ -201,14 +201,14 @@
     "candidate": 999.99
   },
   "markets:SA:google-ai-pro": {
-    "checkedAt": "2026-11-09T08:05:58.363Z",
+    "checkedAt": "2026-11-10T08:29:18.811Z",
     "sourceUrl": "https://apps.apple.com/sa/app/google-gemini/id6477489729",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "plans:claude-free": {
-    "checkedAt": "2026-11-09T08:06:24.046Z",
+    "checkedAt": "2026-11-10T08:29:41.241Z",
     "sourceUrl": "https://claude.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "exact-match",
@@ -216,731 +216,734 @@
     "candidate": 0
   },
   "plans:claude-pro": {
-    "checkedAt": "2026-11-09T08:06:24.050Z",
+    "checkedAt": "2026-11-10T08:29:41.243Z",
     "sourceUrl": "https://claude.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "exact-match",
-    "evidence": "Claude Code included For everyday work $17 Per month with annual subscription discount ( $200 billed up front). $20 if billed monthly. Try Claude Everything in Free, plus: More usage than Free , every 5 hours and every week * Fable, paid with usage credits New Hand off and schedule tasks Claude Dashboards (beta) Claude Science Projects More Claude models Claude in Chrome and Microsoft 365",
+    "evidence": "For everyday work $17 Per month with annual subscription discount ( $200 billed up front). $20 if billed monthly. Try Claude Everything in Free, plus: More usage than Free , every 5 hours and every week * Fable, paid with usage credits New Hand off and schedule tasks Claude Dashboards (beta) Claude Code Claude Science Projects More Claude models Claude in Chrome and Microsoft 365",
     "candidate": 20
   },
   "plans:claude-max": {
-    "checkedAt": "2026-11-09T08:06:24.054Z",
+    "checkedAt": "2026-11-10T08:29:41.244Z",
     "sourceUrl": "https://claude.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "exact-match",
-    "evidence": "Claude Code included For all-day work $100 Per month Try Claude Everything in Pro, plus: 5x Pro usage every 5 hours and every week* Fable included, up to half your weekly limit New $100 a month in API credits to build on the Claude Platform † New Early access to advanced Claude features Priority access at high traffic times",
+    "evidence": "For all-day work $100 Per month Try Claude Everything in Pro, plus: 5x Pro usage every 5 hours and every week* Fable included, up to half your weekly limit New $100 a month in API credits to build on the Claude Platform † New Early access to advanced Claude features Priority access at high traffic times",
     "candidate": 100
   },
   "plans:claude-ultra": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://claude.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "exact-match",
-    "evidence": "Claude Code included For your longest tasks $200 Per month Try Claude Everything in Max, plus: No 5-hour limit ‡ 10x Pro usage every week* $200 a month in API credits, up from $100 on Max † New * Usage limits apply. How fast you reach a limit depends on the model you use, how long your chats are, and how large your files are. ‡ No 5-hour limit for verified accounts . Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic&#x27;s discretion. Price and plans are subject to change at Anthropic&#x27;s discretion.",
+    "evidence": "For your longest tasks $200 Per month Try Claude Everything in Max, plus: No 5-hour limit ‡ 10x Pro usage every week* $200 a month in API credits, up from $100 on Max † New * Usage limits apply. How fast you reach a limit depends on the model you use, how long your chats are, and how large your files are. ‡ No 5-hour limit for verified accounts . Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic&#x27;s discretion. Price and plans are subject to change at Anthropic&#x27;s discretion.",
     "candidate": 200
   },
   "plans:chatgpt-codex-free": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://developers.openai.com/codex/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:chatgpt-go": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://developers.openai.com/codex/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:chatgpt-plus": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://developers.openai.com/codex/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:chatgpt-pro": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://developers.openai.com/codex/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:chatgpt-business": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://developers.openai.com/codex/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:google-ai-pro": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://gemini.google/subscriptions/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:google-ai-ultra": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://gemini.google/subscriptions/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:gemini-cli-free": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://geminicli.com/docs/resources/quota-and-pricing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:antigravity-free": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://antigravity.google/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:jules-free": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://jules.google/docs/usage-limits/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:copilot-free": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.246Z",
     "sourceUrl": "https://github.com/features/copilot/plans",
     "extractorVersion": "subscriptions-v1",
-    "status": "fetch-failed",
-    "evidence": "HTTP 504"
+    "status": "unsupported",
+    "evidence": "Extractor supports regular monthly USD prices only"
   },
   "plans:copilot-pro": {
-    "checkedAt": "2026-11-09T08:06:24.058Z",
+    "checkedAt": "2026-11-10T08:29:41.248Z",
     "sourceUrl": "https://github.com/features/copilot/plans",
     "extractorVersion": "subscriptions-v1",
-    "status": "fetch-failed",
-    "evidence": "HTTP 504"
+    "status": "exact-match",
+    "evidence": "For everyday coding with agents in GitHub Copilot. $ 10 USD per user / month Get started Everything in Free and: Access to Copilot in the cloud and code review Unlimited code completion and next edit suggestions Access to 3rd party agents (Claude Code and Codex) Model selection $15 monthly total credits for Pro",
+    "candidate": 10
   },
   "plans:copilot-pro-plus": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.249Z",
     "sourceUrl": "https://github.com/features/copilot/plans",
     "extractorVersion": "subscriptions-v1",
-    "status": "fetch-failed",
-    "evidence": "HTTP 504"
+    "status": "exact-match",
+    "evidence": "For more complex development with premium models. $ 39 USD per user / month Get started Everything in Pro and: Access to premium models, including Opus Audit logs 4x+ included usage than Pro $70 monthly total credits for Pro+",
+    "candidate": 39
   },
   "plans:copilot-max": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://github.com/features/copilot/plans",
     "extractorVersion": "subscriptions-v1",
-    "status": "fetch-failed",
-    "evidence": "HTTP 504"
+    "status": "exact-match",
+    "evidence": "For sustained, high-volume agent workflows with GitHub Copilot. $ 100 USD per user / month Get started Everything in Pro+ and: Priority access to new models and features 2.9x+ included usage than Pro+ $200 monthly total credits for Max Best value GitHub Copilot is available on your favorite platforms: GitHub GitHub VS Code VS Code Visual Studio Visual Studio Xcode Xcode JetBrains IDEs JetBrains IDEs Neovim Neovim Eclipse Eclipse Raycast Raycast SQL Server Management Studio SQL Server Management Studio Zed Zed Compare features Pricing plans Free $0 Get started Pro $10 per month Get started Pro+",
+    "candidate": 100
   },
   "plans:cursor-free": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://cursor.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:cursor-plus": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://cursor.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:cursor-premium": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://cursor.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:cursor-super": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://cursor.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:cursor-ultra": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://cursor.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:windsurf-devin-free": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://devin.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:windsurf-devin-pro": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://devin.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:windsurf-devin-max": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://devin.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kiro-free": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kiro.dev/pricing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kiro-pro": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kiro.dev/pricing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kiro-pro-plus": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kiro.dev/pricing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kiro-pro-max": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kiro.dev/pricing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kiro-power": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kiro.dev/pricing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:augment-standard": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://www.augmentcode.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:augment-business": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://www.augmentcode.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:factory-pro": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://factory.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:factory-plus": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://factory.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:factory-max": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://factory.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:zed-personal": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://zed.dev/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:zed-pro": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://zed.dev/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kilo-free": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kilo.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kilo-pass": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://kilo.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:qoder-free": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://docs.qoder.com/account/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:qoder-lite": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://docs.qoder.com/account/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:qoder-pro": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://docs.qoder.com/account/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:qoder-pro-plus": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://docs.qoder.com/account/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:qoder-ultra": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://docs.qoder.com/account/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:trae-free": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://www.trae.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:trae-pro": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://www.trae.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:trae-pro-plus": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://www.trae.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:trae-ultra": {
-    "checkedAt": "2026-11-09T08:06:24.059Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://www.trae.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:ollama-pro": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://ollama.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:ollama-max": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://ollama.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:opencode-go": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://opencode.ai/docs/go/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:opencode-go-plus": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://opencode.ai/docs/go/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:opencode-zen-free": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://opencode.ai/docs/zen/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:fireworks-fire-pass": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://fireworks.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:xai-supergrok": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.251Z",
     "sourceUrl": "https://x.ai/grok",
     "extractorVersion": "subscriptions-v1",
     "status": "fetch-failed",
     "evidence": "HTTP 403"
   },
   "plans:xai-grok-build": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.252Z",
     "sourceUrl": "https://x.ai/grok",
     "extractorVersion": "subscriptions-v1",
     "status": "fetch-failed",
     "evidence": "HTTP 403"
   },
   "plans:amp-hobby": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.252Z",
     "sourceUrl": "https://ampcode.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:amp-individual": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.252Z",
     "sourceUrl": "https://ampcode.com/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:openrouter-free": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.252Z",
     "sourceUrl": "https://openrouter.ai/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "api:deepseek-flash-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:deepseek-v4-pro-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:zai-glm-5-3-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:zai-glm-5-3-flashx-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:kimi-k3-1-pro-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:kimi-k2-7-code-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:minimax-m3-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:minimax-m3-1-flash-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:mimo-v2-6-pro-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/pay-as-you-go.md",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:mimo-v2-6-flash-global": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/pay-as-you-go.md",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:claude-opus-5-5": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:claude-sonnet-5-5": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:claude-haiku-5-5": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:gpt-6-1-sol": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://developers.openai.com/api/docs/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:gpt-6-1-terra": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://developers.openai.com/api/docs/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:gpt-5-3-codex": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://developers.openai.com/api/docs/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:gemini-4-argon": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:gemini-3-8-flash": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:gemini-3-5-flash-lite": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:grok-4-7": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:grok-build-0-1": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:grok-4-3": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:mistral-large-4": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.mistral.ai/inference/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:mistral-small-4": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://docs.mistral.ai/inference/pricing",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:meta-muse-wonder": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://dev.meta.ai/docs/pricing-rate-limits",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "api:meta-muse-spark-1-3": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://dev.meta.ai/docs/pricing-rate-limits",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "API rate extraction requires a product-specific adapter"
   },
   "markets:US:kimi-code-plus": {
-    "checkedAt": "2026-11-09T08:05:58.613Z",
+    "checkedAt": "2026-11-10T08:29:19.143Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:US:kimi-code-pro": {
-    "checkedAt": "2026-11-09T08:05:58.630Z",
+    "checkedAt": "2026-11-10T08:29:19.160Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:US:kimi-code-max": {
-    "checkedAt": "2026-11-09T08:05:58.639Z",
+    "checkedAt": "2026-11-10T08:29:19.176Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:US:kimi-code-ultra": {
-    "checkedAt": "2026-11-09T08:05:58.650Z",
+    "checkedAt": "2026-11-10T08:29:19.193Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:kimi-code-plus": {
-    "checkedAt": "2026-11-09T08:05:58.825Z",
+    "checkedAt": "2026-11-10T08:29:19.555Z",
     "sourceUrl": "https://apps.apple.com/pk/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:kimi-code-pro": {
-    "checkedAt": "2026-11-09T08:05:58.835Z",
+    "checkedAt": "2026-11-10T08:29:19.572Z",
     "sourceUrl": "https://apps.apple.com/pk/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:PK:kimi-code-ultra": {
-    "checkedAt": "2026-11-09T08:05:58.845Z",
+    "checkedAt": "2026-11-10T08:29:19.589Z",
     "sourceUrl": "https://apps.apple.com/pk/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:kimi-code-plus": {
-    "checkedAt": "2026-11-09T08:05:59.009Z",
+    "checkedAt": "2026-11-10T08:29:19.917Z",
     "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:kimi-code-pro": {
-    "checkedAt": "2026-11-09T08:05:59.019Z",
+    "checkedAt": "2026-11-10T08:29:19.934Z",
     "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:kimi-code-max": {
-    "checkedAt": "2026-11-09T08:05:59.029Z",
+    "checkedAt": "2026-11-10T08:29:19.951Z",
     "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:AE:kimi-code-ultra": {
-    "checkedAt": "2026-11-09T08:05:59.039Z",
+    "checkedAt": "2026-11-10T08:29:19.968Z",
     "sourceUrl": "https://apps.apple.com/ae/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:kimi-code-plus": {
-    "checkedAt": "2026-11-09T08:05:59.253Z",
+    "checkedAt": "2026-11-10T08:29:20.259Z",
     "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:kimi-code-pro": {
-    "checkedAt": "2026-11-09T08:05:59.264Z",
+    "checkedAt": "2026-11-10T08:29:20.276Z",
     "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:kimi-code-max": {
-    "checkedAt": "2026-11-09T08:05:59.273Z",
+    "checkedAt": "2026-11-10T08:29:20.293Z",
     "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "markets:SA:kimi-code-ultra": {
-    "checkedAt": "2026-11-09T08:05:59.282Z",
+    "checkedAt": "2026-11-10T08:29:20.309Z",
     "sourceUrl": "https://apps.apple.com/sa/app/kimi-your-personal-ai-agent/id6474233312?platform=ipad",
     "extractorVersion": "appstore-v2",
     "status": "ambiguous",
     "evidence": "Product, currency and monthly period could not be matched uniquely"
   },
   "plans:zai-glm-coding-lite": {
-    "checkedAt": "2026-11-09T08:06:24.060Z",
+    "checkedAt": "2026-11-10T08:29:41.252Z",
     "sourceUrl": "https://zcode.z.ai/pricing.html",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "ambiguous",
     "evidence": "GLM paired prices require explicit billing-period confirmation"
   },
   "plans:zai-glm-coding-pro": {
-    "checkedAt": "2026-11-09T08:06:24.061Z",
+    "checkedAt": "2026-11-10T08:29:41.253Z",
     "sourceUrl": "https://zcode.z.ai/pricing.html",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "ambiguous",
     "evidence": "GLM paired prices require explicit billing-period confirmation"
   },
   "plans:zai-glm-coding-max": {
-    "checkedAt": "2026-11-09T08:06:24.061Z",
+    "checkedAt": "2026-11-10T08:29:41.253Z",
     "sourceUrl": "https://zcode.z.ai/pricing.html",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "ambiguous",
     "evidence": "GLM paired prices require explicit billing-period confirmation"
   },
   "plans:xiaomi-mimo-token-lite": {
-    "checkedAt": "2026-11-09T08:06:24.062Z",
+    "checkedAt": "2026-11-10T08:29:41.254Z",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
@@ -948,7 +951,7 @@
     "candidate": 6
   },
   "plans:xiaomi-mimo-token-standard": {
-    "checkedAt": "2026-11-09T08:06:24.062Z",
+    "checkedAt": "2026-11-10T08:29:41.254Z",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
@@ -956,7 +959,7 @@
     "candidate": 16
   },
   "plans:xiaomi-mimo-token-pro": {
-    "checkedAt": "2026-11-09T08:06:24.063Z",
+    "checkedAt": "2026-11-10T08:29:41.254Z",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
@@ -964,7 +967,7 @@
     "candidate": 50
   },
   "plans:xiaomi-mimo-token-max": {
-    "checkedAt": "2026-11-09T08:06:24.063Z",
+    "checkedAt": "2026-11-10T08:29:41.255Z",
     "sourceUrl": "https://mimo.mi.com/static/docs/price/token-plan.md",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
@@ -972,72 +975,72 @@
     "candidate": 100
   },
   "plans:kimi-code-plus": {
-    "checkedAt": "2026-11-09T08:06:24.063Z",
+    "checkedAt": "2026-11-10T08:29:41.255Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kimi-code-pro": {
-    "checkedAt": "2026-11-09T08:06:24.063Z",
+    "checkedAt": "2026-11-10T08:29:41.255Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kimi-code-max": {
-    "checkedAt": "2026-11-09T08:06:24.063Z",
+    "checkedAt": "2026-11-10T08:29:41.255Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:kimi-code-ultra": {
-    "checkedAt": "2026-11-09T08:06:24.063Z",
+    "checkedAt": "2026-11-10T08:29:41.255Z",
     "sourceUrl": "https://apps.apple.com/us/app/kimi-your-personal-ai-agent/id6474233312",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
     "evidence": "No product-specific extractor"
   },
   "plans:command-code-go": {
-    "checkedAt": "2026-11-09T08:06:24.065Z",
+    "checkedAt": "2026-11-10T08:29:41.256Z",
     "sourceUrl": "https://commandcode.ai/pricing",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
-    "evidence": "Go; USD/month; processing fee excluded; $1 /month + processing fee $10 in credits included Up to ~$15 usage with deals A buck. Lots of code. Subscribe What&#x27;s included ~9K requests taste-1 model access Per-model allowances $10 on GLM-5.2 $10 on Tencent Hy3 $10 on Qwen 3.8 27B $10 on Qwen 3.7 Max $10 on Qwen 3.7 Plus $10 on DeepSeek V4.1 Flash + 18 more models: Kimi, DeepSeek, MiniMax, Qwen, MiMo, Grok, GLM… Free on Glyph Cluster Free on Crouton Alpha Free on Beam 1.0 Limited usage analytics Discord community support ✦ New",
+    "evidence": "Go; USD/month; processing fee excluded; $1 /month + processing fee $10 in credits included Up to ~$15 usage with deals A buck. Lots of code. Subscribe What&#x27;s included ~9K requests taste-1 model access Per-model allowances $10 on GLM-5.2 $10 on Tencent Hy3 $10 on Qwen 3.8 27B $10 on Qwen 3.7 Max $10 on Qwen 3.7 Plus $10 on DeepSeek V4.1 Flash + 18 more models: Kimi, DeepSeek, MiniMax, Qwen, MiMo, Grok, GLM… Free on Glyph Cluster Free on Crouton Alpha Limited usage analytics Discord community support ✦ New",
     "candidate": 1
   },
   "plans:command-code-goat": {
-    "checkedAt": "2026-11-09T08:06:24.066Z",
+    "checkedAt": "2026-11-10T08:29:41.257Z",
     "sourceUrl": "https://commandcode.ai/pricing",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
-    "evidence": "GOAT; USD/month; processing fee excluded; $10 /month + processing fee Up to $100 in credits included Up to ~$100 usage with deals Best value subscription in market. Subscribe What&#x27;s included ~75K requests taste-1 model access API access Per-model allowances $100 on Ling 3.1 Flash $100 on DeepSeek V4.1 Flash $100 on GLM-5.3 Flash $70 on Tencent Hy3 $70 on Qwen 3.8 27B + 33 more models: Kimi, DeepSeek, MiniMax, Qwen, MiMo, Grok, GLM… Free on Glyph Cluster Free on Crouton Alpha Free on Beam 1.0 Usage analytics Discord community support Pro $20 Max 10× Max 20×",
+    "evidence": "GOAT; USD/month; processing fee excluded; $10 /month + processing fee Up to $100 in credits included Up to ~$100 usage with deals Best value subscription in market. Subscribe What&#x27;s included ~75K requests taste-1 model access API access Per-model allowances $100 on Ling 3.1 Flash $100 on DeepSeek V4.1 Flash $100 on GLM-5.3 Flash $70 on Tencent Hy3 $70 on Qwen 3.8 27B + 33 more models: Kimi, DeepSeek, MiniMax, Qwen, MiMo, Grok, GLM… Free on Glyph Cluster Free on Crouton Alpha Usage analytics Discord community support Pro $20 Max 10× Max 20×",
     "candidate": 10
   },
   "plans:command-code-pro": {
-    "checkedAt": "2026-11-09T08:06:24.067Z",
+    "checkedAt": "2026-11-10T08:29:41.257Z",
     "sourceUrl": "https://commandcode.ai/pricing",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "ambiguous",
     "evidence": "Expected one named plan and monthly USD price; generic Max headings cannot identify a variant"
   },
   "plans:command-code-max-10x": {
-    "checkedAt": "2026-11-09T08:06:24.068Z",
+    "checkedAt": "2026-11-10T08:29:41.258Z",
     "sourceUrl": "https://commandcode.ai/pricing",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "ambiguous",
     "evidence": "Expected one named plan and monthly USD price; generic Max headings cannot identify a variant"
   },
   "plans:command-code-max-20x": {
-    "checkedAt": "2026-11-09T08:06:24.070Z",
+    "checkedAt": "2026-11-10T08:29:41.259Z",
     "sourceUrl": "https://commandcode.ai/pricing",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "ambiguous",
     "evidence": "Expected one named plan and monthly USD price; generic Max headings cannot identify a variant"
   },
   "plans:command-code-provider": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.259Z",
     "sourceUrl": "https://commandcode.ai/pricing",
     "extractorVersion": "provider-subscriptions-v1",
     "status": "exact-match",
@@ -1045,7 +1048,7 @@
     "candidate": 15
   },
   "plans:deepseek-api-payg": {
-    "checkedAt": "2026-11-09T08:06:24.071Z",
+    "checkedAt": "2026-11-10T08:29:41.260Z",
     "sourceUrl": "https://www.deepseek.com/harness/data-processing/",
     "extractorVersion": "subscriptions-v1",
     "status": "unsupported",
