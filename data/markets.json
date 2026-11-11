@@ -1,13 +1,13 @@
 {
   "fx": {
     "rates": {
-      "PKR": 276.5413,
+      "PKR": 276.9517,
       "AED": 3.6725,
       "SAR": 3.75
     },
-    "date": "2026-11-10",
-    "publishedAt": "2026-11-10T00:02:31.000Z",
-    "fetchedAt": "2026-11-10T08:29:13.277Z",
+    "date": "2026-11-11",
+    "publishedAt": "2026-11-11T00:02:32.000Z",
+    "fetchedAt": "2026-11-11T07:47:51.073Z",
     "sourceUrl": "https://open.er-api.com/v6/latest/USD"
   },
   "quotes": [
@@ -50,7 +50,7 @@
       "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Pro - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "US",
@@ -61,7 +61,7 @@
       "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Max - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "US",
@@ -72,7 +72,7 @@
       "sourceUrl": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Ultra - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "US",
@@ -123,7 +123,7 @@
       "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Pro - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "PK",
@@ -134,7 +134,7 @@
       "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Max - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "PK",
@@ -145,7 +145,7 @@
       "sourceUrl": "https://apps.apple.com/pk/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Ultra - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "PK",
@@ -196,7 +196,7 @@
       "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Pro - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "AE",
@@ -207,7 +207,7 @@
       "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Max - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "AE",
@@ -218,7 +218,7 @@
       "sourceUrl": "https://apps.apple.com/ae/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Ultra - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "AE",
@@ -269,7 +269,7 @@
       "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Pro - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "SA",
@@ -280,7 +280,7 @@
       "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Max - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "SA",
@@ -291,7 +291,7 @@
       "sourceUrl": "https://apps.apple.com/sa/app/claude-by-anthropic/id6473753684",
       "verifiedAt": "2026-11-04",
       "match": "Claude Ultra - Monthly",
-      "priceVerifiedAt": "2026-11-10"
+      "priceVerifiedAt": "2026-11-11"
     },
     {
       "market": "SA",
