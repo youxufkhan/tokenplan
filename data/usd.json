@@ -49,7 +49,7 @@
       "bestValue": [
         "GPT-5.6 Luna (Max)",
         "DeepSeek V4 Flash 0731 (Max)",
-        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (Max)",
         "Qwen3.8-Flash-Next",
         "Grok 4.6 (Low)"
       ],
@@ -57,7 +57,7 @@
         "K2 Horizon 375B A23B",
         "DeepSeek V4 Flash 0731 (Max)",
         "GPT-5.6 Luna (Max)",
-        "GLM-5.3-Flash",
+        "GLM-5.3-Flash (Max)",
         "Qwen3.8-Flash-Next"
       ]
     }
@@ -2184,7 +2184,7 @@
       "outputUsd": 50
     },
     {
-      "model": "GLM-5.3-Flash",
+      "model": "GLM-5.3-Flash (Max)",
       "creator": "Z AI",
       "openWeights": true,
       "agenticIndex": 50.9,
@@ -2620,8 +2620,8 @@
       "agenticIndex": 31.4,
       "costPerTaskUsd": 0.1481,
       "valuePerUsd": 212,
-      "inputUsd": 0.11,
-      "outputUsd": 0.33
+      "inputUsd": null,
+      "outputUsd": null
     },
     {
       "model": "GPT-5.6 Terra (Medium)",
@@ -2710,8 +2710,8 @@
       "agenticIndex": 26.3,
       "costPerTaskUsd": 0.1215,
       "valuePerUsd": 216.5,
-      "inputUsd": 1.31,
-      "outputUsd": 3.135
+      "inputUsd": 1.5016,
+      "outputUsd": 3.2
     },
     {
       "model": "Gemini 3.5 Flash (High)",
@@ -2750,8 +2750,8 @@
       "agenticIndex": 24.1,
       "costPerTaskUsd": 0.0724,
       "valuePerUsd": 332.9,
-      "inputUsd": 0.136,
-      "outputUsd": 0.555
+      "inputUsd": 0.14,
+      "outputUsd": 0.58
     },
     {
       "model": "GLM-5.1 (Reasoning)",
@@ -2840,8 +2840,8 @@
       "agenticIndex": 21.3,
       "costPerTaskUsd": 0.1493,
       "valuePerUsd": 142.7,
-      "inputUsd": 0.435,
-      "outputUsd": 0.87
+      "inputUsd": 0.348,
+      "outputUsd": 0.696
     },
     {
       "model": "Kimi K2.7 Code",
@@ -2870,8 +2870,8 @@
       "agenticIndex": 20.1,
       "costPerTaskUsd": 0.3666,
       "valuePerUsd": 54.8,
-      "inputUsd": 0.6,
-      "outputUsd": 2.7
+      "inputUsd": 0.55,
+      "outputUsd": 2.3
     },
     {
       "model": "Ling 3.0 Flash",
@@ -2950,8 +2950,8 @@
       "agenticIndex": 15.8,
       "costPerTaskUsd": 0.0418,
       "valuePerUsd": 378,
-      "inputUsd": 0.133,
-      "outputUsd": 0.266
+      "inputUsd": 0.112,
+      "outputUsd": 0.224
     },
     {
       "model": "Grok 4.3 (High)",
@@ -3030,8 +3030,8 @@
       "agenticIndex": 10.7,
       "costPerTaskUsd": 0.2872,
       "valuePerUsd": 37.3,
-      "inputUsd": 0.3,
-      "outputUsd": 2.5
+      "inputUsd": null,
+      "outputUsd": null
     },
     {
       "model": "Muse Glimmer (High)",
@@ -3086,7 +3086,7 @@
     {
       "model": "Ling 3.0 Tiny",
       "creator": "InclusionAI",
-      "openWeights": false,
+      "openWeights": true,
       "agenticIndex": 4.4,
       "costPerTaskUsd": 0,
       "valuePerUsd": null,
